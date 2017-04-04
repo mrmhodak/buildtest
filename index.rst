@@ -3,10 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Documentation for BuildTest
+BuildTest Documentation
 =========================================
 
 **Author: Shahzeb Siddiqui**
+
 
 Description
 --------------------
@@ -96,6 +97,29 @@ For instance, **BUILDTEST_MODULEROOT** on my system is set to /nfs/grid/software
         gompi 2016.03
         iimpi 2017.01-GCC-5.4.0-2.27
 
+Two Step Verification
+-----------------------------
+
+BuildTest utilizes a two-step verification before creating any test case. This is designed to prevent buildtest from creating incorrect test cases that would fail during execution.
+
+1. ModuleFile Verication
+2. Easyconfig Toolchain Verification
+
+**Module File Verification:** buildtest makes use of **$BUILDTEST_MODULEROOT** to find all the modules and stores the values in an array. Whenever an argument is passed for **--software** it is checked with the module array to make sure it exist. If there is no module found with the following name, the program will terminate immediately 
+
+**Easyconfig Toolchain verification:** Each software version is built with a particular toolchain in EasyBuild. In order to make sure we are building for the correct test in the event of multiple packages being installed with different toolchain we need a way to classify which package to use. For instance if **flex/2.6.0** is installed with **GCCcore/5.4.0**, **GCCcore/6.2.0**, and **dummy** toolchain then we have three instances of this package. In HMNS these 3 instances could be in different module trees. We can perform this test by searching all the easyconfig files with the directory name **flex** and search for the tag **toolchain = { name='toolchain-name', version='toolchain-version' }**
+
+
+The Toolchain verification will pass if the following condition is met:
+
+        - software,version argument specified to buildtest matches **name**, **version** tag in easyconfig
+        - toolchain argument from buildtest matches **toolchain-name**, **toolchain-version** tag in easyconfig
+        - **versionsuffix** from eb file name matches the module file. 
+                - For **Hierarchical Module Naming Scheme (HMNS)** modulefile: <version>-<version-suffix>.lua 
+                - For **Flat Naming Scheme (FNS)** modulefile: <version>-<toolchain>-<version-suffix>.lua
+
+Module File Check is not sufficient for checking modules in the event when there is a match for a software package but there is a toolchain mismatch. For instance if Python 2.7.12 is built with foss toolchain only and the user request to build Python 2.7.12 with intel, the module file verification will pass but it wouldn't pass the Toolchain verification stage.
+
 
 Testing Directory Structure
 -------------------------------
@@ -121,7 +145,7 @@ Testing Structure Layout
 
 .. Note:: Whenever you build the test, you must specify the software and version and this must match the name of the module you are trying to test, otherwise there is no way of knowing what is being tested.  Each test will attempt to load the application module along with the toolchain if specified prior to anything.
 
---------------------
+
 Source Code Layout
 --------------------
 
