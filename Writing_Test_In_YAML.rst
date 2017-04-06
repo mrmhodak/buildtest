@@ -1,26 +1,20 @@
 .. _Writing_Test_In_YAML:
 
+==============
+Title
+==============
+
 Writing Test in YAML
 -----------------------
 
-Writing test in YAML is easy. YAML test are processed by buildtest using the yaml library into a dictionary which is then processed to generate the test-script.
+Writing test in YAML is easy. YAML test are processed by buildtest using the yaml library into a dictionary which is then processed to generate the test-script. The buildtest parser will load the YAML and generate the build and run command line.  
 
-The binary test is stored in a file **command.yaml** which contains a list of commands along with any arguments. Each entry creates a separate test-script to test the binary. 
-
-An example of the GCC binary test is shown below.
-.. image:: _static/binarytest.png
-:alt: binary test example
-
-
-buildtest will generate a test as follows.
-
-.. image:: _static/gcc_binarytest.png
 
 YAML Key Description
 --------------------
 
 +---------------+--------------------------------------------------------------------+
-| Key           |            Description                                             |
+| **Key**       |                        ** Description**                            |
 +---------------+--------------------------------------------------------------------+        
 | Name          | Name of the test script. It must match the name of the yaml file.  |
 +---------------+--------------------------------------------------------------------+        
@@ -42,17 +36,35 @@ YAML Key Description
 +---------------+--------------------------------------------------------------------+
 | mpi           | enable mpi. Sets the compiler wrapper accordingly.                 | 
 |               |                                                                    |
-|               | value: [enabled]                                                   |
+|               | **value: [enabled]**                                               |
 +---------------+--------------------------------------------------------------------+
 | cuda          | enable cuda. Sets the compiler wrapper to nvcc                     | 
 |               |                                                                    |
-|               | value: [enabled]                                                   |
+|               | **value: [enabled]**                                               |
 +---------------+--------------------------------------------------------------------+
 | binaries      | list of binary command to execute in command.yaml                  |
 +---------------+--------------------------------------------------------------------+
 | scheduler     | Generate test for job scheduler. Feature not implemented           |
 |               |                                                                    |
-|               | value: [lsf,pbs,slurm]                                             | 
+|               | **value: [lsf,pbs,slurm]**                                         | 
 +---------------+--------------------------------------------------------------------+
 
+
+The binary test configs is stored in a file **command.yaml** which contains a list of executables along with any arguments. Buildtest will create a separate test-script to test the executable. The **binaries** is specific key for command.yaml file. The binary test are specific to the software packge to test. Figure out the binaries in the install path for the software, typically in **bin** directory and add this to the command.yaml file.
+
+GCC BinaryTest YAML Example:
+_____________________________
+
+.. program-output:: cat scripts/command.yaml
+
+
+GCC-5.4.0-2.27 buildtest Test Script
+_____________________________________
+
+.. program-output:: cat scripts/gcc.sh
+
+BuildTest YAML Hello World Example:
+____________________________________
+
+.. program-output:: cat scripts/hello.c.yaml
 

@@ -8,12 +8,16 @@ BuildTest Documentation
 
 **Author: Shahzeb Siddiqui**
 
+Contents:
+
 .. toctree::
    :glob:
    :maxdepth: 2
-   
-   Writing_Test_In_YAML    
+ 
+     
    BuildTest_Setup
+   Writing_Test_In_YAML    
+   
 
 Description
 --------------------
@@ -71,19 +75,20 @@ generates Makefiles necessary to build and run the test. CTest will utilize *CMa
 Testing Structure Layout
 
 
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|File                                                                                        |       Description                                                       |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/CMakeLists.txt                                                           |       List of entries for each software                                 |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/CMakeLists.txt                                                 |       List of version entries for each software                         | 
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/$version/CMakeLists.txt                                        |       List of toolchain name entries for each version of the software   |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/$version/$toolchain-name/CMakeLists.txt                        |       Entry for each toolchain version for each toolchain name          |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/$version/$toolchain-name/$toolchain-version/CMakeLists.txt     |       Entry for each test to run                                        |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------+
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|File                                                                  |       Description                                                       |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/CMakeLists.txt                                     |       List of entries for each software                                 |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/$software/CMakeLists.txt                           |       List of version entries for each software                         | 
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/$software/$version/CMakeLists.txt                  |       List of toolchain name entries for each version of the software   |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/$software/$version/$toolchain-name/CMakeLists.txt  |       Entry for each toolchain version for each toolchain name          |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/$software/$version/$toolchain-name/ \              |        Entry for each test to run                                       |
+|      $toolchain-version/CMakeLists.txt                               |                                                                         |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
 
 .. Note:: Whenever you build the test, you must specify the software and version and this must match the name of the module you are trying to test, otherwise there is no way of knowing what is being tested.  Each test will attempt to load the application module along with the toolchain if specified prior to anything.
 
@@ -95,21 +100,16 @@ The source directory **BUILDTEST_SOURCEDIR** contains all the source code that w
 generate the test.
 
 
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-|File                                                                                        |       Description                                                             |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-|$BUILDTEST_SOURCEDIR/<software>/command.txt                                                 |       A list of binary executables and parameters to test                     |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/config/                                                        |       Contains the config files used for building test from source            | 
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/code/                                                          |       Directory Containing the source code, which is referenced by the test   |
-+--------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------+
-
-
-.. toctree::
-   :maxdepth: 2
-   :caption: Contents:
-
++----------------------------------------------------+-------------------------------------------------------------------------------+
+|                     File                           |                                Description                                    |     
++----------------------------------------------------+-------------------------------------------------------------------------------+
+| $BUILDTEST_SOURCEDIR/<software>/command.yaml       |       A list of binary executables and parameters to test                     |
++----------------------------------------------------+-------------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/$software/config/               |       Contains the yaml config files used for building test from source       |
++----------------------------------------------------+-------------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/$software/code/                  |       Directory Containing the source code, which is referenced               |
+|                                                    |       by the testscript and yaml files                                        |
++----------------------------------------------------+-------------------------------------------------------------------------------+
 
 
 Indices and tables
