@@ -1,0 +1,22 @@
+[hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py -h
+usage: buildtest.py [-h] [-s SOFTWARE] [-t TOOLCHAIN] [-lt] [-ls] [-svr]
+                    [-v {1,2}]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s SOFTWARE, --software SOFTWARE
+                        Specify software package to test
+  -t TOOLCHAIN, --toolchain TOOLCHAIN
+                        Specify toolchain for the software package
+  -lt, --list-toolchain
+                        retrieve toolchain used based on the easyconfig files
+                        provided by BUILDTEST_EASYCONFIGDIR
+  -ls, --list-unique-software
+                        retrieve all unique software found in your module tree
+                        specified by BUILDTEST_MODULETREE
+  -svr, --software-version-relation
+                        retrieve a relationship between software and version
+                        found in module files
+  -v {1,2}, --verbose {1,2}
+                        increase verbosity level
+

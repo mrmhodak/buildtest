@@ -1,0 +1,14 @@
+$ python ./buildtest.sh -s GCC/5.4.0-2.27
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcc.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcov-tool.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcc-nm.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/c++.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/cpp.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/g++.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcc-ar.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gfortran.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcc-ranlib.sh
+Creating Test: /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/gcov.sh
+Creating Test:  /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+Creating Test:  /hpc/grid/scratch/workspace/BuildTest/BuildTest/testing/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+
