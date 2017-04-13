@@ -72,5 +72,5 @@ Figure out the binaries in the install path for the software, typically in
 
 **BuildTest Hello World Test Script** 
 
-.. program-output:: cat scripts/hello.c.yaml
+.. program-output:: cat scripts/hello.c.sh
 
