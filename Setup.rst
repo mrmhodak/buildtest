@@ -1,6 +1,6 @@
 .. _Setup:
 
-BuildTest Setup
+buildtest Setup
 ===============
 
 

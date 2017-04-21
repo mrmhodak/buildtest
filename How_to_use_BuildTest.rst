@@ -31,4 +31,29 @@ Create a new directory for instance **build**, then do the following
 .. program-output:: cat scripts/test-GCC-5.4.0-2.27.txt
 
 
+System Package Test
+-------------------
+
+buildtest can generate tests for system packages using the flag **--system**. Currently, system package 
+test only perform binary test. This means you need to find the binaries associated with the package and
+add the executable and any parameters in command.yaml.
+
+This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is name of system package.
+At this moment, buildtest is using Redhat package naming convention.
+
+
+.. code::
+
+   [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py --system gcc-c++
+        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/x86_64-redhat-linux-c++.sh
+        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/g++.sh
+        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/x86_64-redhat-linux-g++.sh
+        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/c++.sh
+
+To run all system package test do the following
+
+.. code::
+
+   [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py --system all
+
 

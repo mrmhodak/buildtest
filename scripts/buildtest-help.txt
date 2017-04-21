@@ -1,6 +1,5 @@
-[hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py -h
 usage: buildtest.py [-h] [-s SOFTWARE] [-t TOOLCHAIN] [-lt] [-ls] [-svr]
-                    [-v {1,2}]
+                    [--system SYSTEM] [-v {1,2}]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -17,6 +16,7 @@ optional arguments:
   -svr, --software-version-relation
                         retrieve a relationship between software and version
                         found in module files
+  --system SYSTEM       Build test for system packages To build all system
+                        package test use --system all
   -v {1,2}, --verbose {1,2}
                         increase verbosity level
-

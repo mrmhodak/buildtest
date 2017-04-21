@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-BuildTest Documentation
+buildtest Documentation
 =========================================
 
 **Author: Shahzeb Siddiqui**
@@ -21,10 +21,11 @@ Contents:
 
 Description
 --------------------
-**BuildTest** is an Automatic Test Generating Framework for writing test cases 
-efficiently and quickly for scientific applications. The BuildTest makes use 
-of EasyBuild_ easyconfig files to determine how to build test. You will need 
-a module environment EnvironmentModules_ or Lmod_ on your system to use this
+**buildtest** is an Automatic Test Generating Framework for writing test cases 
+efficiently and quickly for scientific applications. buildtest can generate 
+test scripts (.sh) automatically and tests can be recreated as many times. buildtest
+makes use of EasyBuild_ easyconfig files to determine which module + toolchain to use. 
+You will need module environment EnvironmentModules_ or Lmod_ on your system to use this
 framework 
 
 .. _EasyBuild: https://easybuild.readthedocs.io/en/latest/
@@ -38,9 +39,9 @@ Motivation
 An HPC environment has hundreds of application that running constantly, the 
 HPC engineers would build these apps and put them on production system. Some
 of the application have vendor provided scripts such as **make test** or 
-**ctest** that can test the software after **make** step. Unfortunatelly, 
-both of these methods test software in the build directory and does not 
-perform a "Post Install Test". Changing the vendor test script to the install
+**ctest** that can test the software after **make** step. Unfortunately, 
+these methods perform tests in the build directory and does not perform a 
+"Post Install Test". Changing the vendor test script to the install
 paths can be tedious and this would have to be done manually. 
 
 Writing test scripts manually can be tedious, also there is no sharing of code 
@@ -48,22 +49,23 @@ and most likely they are not compatible to work on different systems. Easybuild
 takes a step at improving application build process by automating the entire 
 software workflow.
 
-BuildTest takes a step to ease testing of software with similar objectives as 
+buildtest takes a step to ease testing of software with similar objectives as 
 EasyBuild but focusing on Testing.
 
-What is BuildTest?
+What is buildtest?
 ------------------
 
 
-BuildTest is a python script that can generate self-contained testscripts in 
+buildtest is a python script that can generate self-contained testscripts in 
 shell scripts (.sh). The test scripts can be run independently but they are 
 designed to work in CMake_ CTest Framework. 
 
 BuildTest can:
 
  - Creates test for binary testing 
- - Builds test from source using a YAML configuration syntax
- - Verify modulefile can be loaded
+ - Generates test that requires compilation 
+ - Verify modulefile can be loaded. 
+ - generate tests for system packages
  - List software packages provided by MODULEPATH
  - List available toolchain based on the easyconfig files provided to BuildTest
  - List a tabular software-version relationship
@@ -79,7 +81,6 @@ BuildTest has few dependendencies
 
 Python Packages:
  - PyYAML
- - argparse
 
 Setup
 -----
@@ -149,13 +150,17 @@ CTest is the Testing Framework that automatically generates Makefiles necessary
 to build and run the test. CTest will utilize *CMakeLists.txt* that will invoke 
 CTest api to run the the test.  
 
-Testing Structure Layout
+**Testing CMakeList Structure Layout:** 
 
 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 |File                                                                  |       Description                                                       |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 |$BUILDTEST_TESTDIR/CMakeLists.txt                                     |       List of entries for each software                                 |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/system/CMakeLists.txt                              |       Entry for each system package                                     |
++----------------------------------------------------------------------+-------------------------------------------------------------------------+
+|$BUILDTEST_TESTDIR/system/$systempkg/CMakeLists.txt                   |       List of tests for system package                                  |
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
 |$BUILDTEST_TESTDIR/$software/CMakeLists.txt                           |       List of version entries for each software                         | 
 +----------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -182,16 +187,18 @@ for generating scripts. buildtest processes these config scripts inorder to
 generate the test.
 
 
-+----------------------------------------------------+-------------------------------------------------------------------------------+
-|                     File                           |                                Description                                    |     
-+----------------------------------------------------+-------------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/<software>/command.yaml       |       A list of binary executables and parameters to test                     |
-+----------------------------------------------------+-------------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/$software/config/               |       Contains the yaml config files used for building test from source       |
-+----------------------------------------------------+-------------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$software/code/                  |       Directory Containing the source code, which is referenced               |
-|                                                    |       by the testscript and yaml files                                        |
-+----------------------------------------------------+-------------------------------------------------------------------------------+
++----------------------------------------------------+--------------------------------------------------------------------------+
+|                     File                           |                                Description                               |  
++----------------------------------------------------+--------------------------------------------------------------------------+
+| $BUILDTEST_SOURCEDIR/<software>/command.yaml       |       A list of binary executables and parameters to test                |  
++----------------------------------------------------+--------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/$software/config/               |       Contains the yaml config files used for building test from source  |
++----------------------------------------------------+--------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/$software/code/                 |       Directory Containing the source code, which is referenced          |
+|                                                    |       by the testscript and yaml files                                   |
++----------------------------------------------------+--------------------------------------------------------------------------+
+| $BUILDTEST_SOURCEDIR/system/command.yaml           |       A list of binary executables and parameters to for system packages |
++----------------------------------------------------+--------------------------------------------------------------------------+
 
 
 Indices and tables
