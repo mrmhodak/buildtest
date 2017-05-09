@@ -18,6 +18,7 @@ Contents:
    Setup 
    Writing_Test_In_YAML    
    How_to_use_BuildTest
+   Future_Work
 
 Description
 --------------------

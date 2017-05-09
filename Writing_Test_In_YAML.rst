@@ -38,6 +38,8 @@ YAML Key Description
 |               |                                                                    |
 |               | **value: [enabled]**                                               |
 +---------------+--------------------------------------------------------------------+
+| nproc         | Argument to -np to indicate number of processes to use with mpirun |
++---------------+--------------------------------------------------------------------+
 | cuda          | enable cuda. Sets the compiler wrapper to nvcc. (Not implemented)  | 
 |               |                                                                    |
 |               | **value: [enabled]**                                               |
@@ -73,4 +75,17 @@ Figure out the binaries in the install path for the software, typically in
 **BuildTest Hello World Test Script** 
 
 .. program-output:: cat scripts/hello.c.sh
+
+
+BuildTest can build mpi programs. It automatically detects the compiler wrapper based on file extension and the MPI wrapper.
+
+Below is an example of OpenMPI 2.0.0 with GCC-5.4.0 that runs a matrix multiplication C program with 4 processes
+
+**BuildTest MPI example**
+ 
+.. program-output:: cat scripts/mpi_mm_c.yaml
+
+.. program-output:: cat scripts/mpi_mm_c.sh
+
+
 

@@ -69,11 +69,10 @@ I have my buildtest directory at /hpc/grid/scratch/workspace/BuildTest/BuildTest
 
 .. code::
        
-        [hpcswadm@hpcv27 scripts]$ export BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
-        [hpcswadm@hpcv27 scripts]$ export BUILDTEST_ROOT=/hpc/grid/scratch/workspace/BuildTest/BuildTest
-        [hpcswadm@hpcv27 scripts]$ export BUILDTEST_MODULEROOT=/nfs/grid/software/RHEL7/easybuild/modules
-        [hpcswadm@hpcv27 scripts]$ export BUILDTEST_EASYCONFIGDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/easybuild
-        [hpcswadm@hpcv27 scripts]$ export BUILDTEST_TESTDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/testing
+        [hpcswadm@hpcv27 scripts]$ pwd
+        /hpc/grid/scratch/workspace/BuildTest/BuildTest
+
+        [hpcswadm@hpcv27 scripts]$ source ./setup.sh
 
         [hpcswadm@hpcv27 scripts]$ env | grep BUILDTEST
         BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
