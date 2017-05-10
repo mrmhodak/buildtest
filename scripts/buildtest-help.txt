@@ -1,8 +1,16 @@
-usage: buildtest.py [-h] [-s SOFTWARE] [-t TOOLCHAIN] [-lt] [-ls] [-svr]
-                    [--system SYSTEM] [-v {1,2}]
+[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -h
+usage: buildtest.py [-h] [-fc FINDCONFIG] [-ft FINDTEST] [-s SOFTWARE]
+                    [-t TOOLCHAIN] [-lt] [-ls] [-svr] [--system SYSTEM]
+                    [-v {1,2}]
 
 optional arguments:
   -h, --help            show this help message and exit
+  -fc FINDCONFIG, --findconfig FINDCONFIG
+                        " Find buildtest YAML config files To find all yaml
+                        config files use -fc all
+  -ft FINDTEST, --findtest FINDTEST
+                        Find buildtest generated test scripts To find all test
+                        scripts use -ft all
   -s SOFTWARE, --software SOFTWARE
                         Specify software package to test
   -t TOOLCHAIN, --toolchain TOOLCHAIN
@@ -20,3 +28,4 @@ optional arguments:
                         package test use --system all
   -v {1,2}, --verbose {1,2}
                         increase verbosity level
+

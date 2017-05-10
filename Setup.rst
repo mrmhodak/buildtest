@@ -15,27 +15,15 @@ Requirements
 
 Let's first get you setup with buildtest, so you can than start testing :)
 
-Setup
------
+Pre-Setup
+----------
 
-Make sure you have python on your system. If not please install it.
+Make sure you have Python and the PyYAML package on your system. If not please install it.
 
 .. code:: 
 
    $ python -V
      Python 2.7.5
-
-Let's check if you have argparse and PyYAML package installed. Start up a
-python session and try importing the argparse and yaml package
-
-.. code::
-
-   -bash-4.2$ python
-        Python 2.7.5 (default, Oct 11 2015, 17:47:16) 
-        [GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
-        Type "help", "copyright", "credits" or "license" for more information.
-        >>> import argparse
-        >>>
 
 If you get an error like the following: 
 
@@ -43,37 +31,22 @@ If you get an error like the following:
 
         Traceback (most recent call last):
         File "<stdin>", line 1, in <module>
-        ImportError: No module named argparse
+        ImportError: No module named yaml
 
-Then you need to install the package via pip or a package manager. Similarly try the
-same with **yaml** package
-
-.. code::
-
-      -bash-4.2$ python
-        Python 2.7.5 (default, Oct 11 2015, 17:47:16) 
-        [GCC 4.8.3 20140911 (Red Hat 4.8.3-9)] on linux2
-        Type "help", "copyright", "credits" or "license" for more information.
-        >>> import yaml
-        >>>
+Then you need to install the package via pip or a package manager.
      
-Another way to check this is by running **pip list** to see if you have the 
-package installed, for this you would need pip on your system.
 
-buildtest Configuration
------------------------
+Setup
+------
 
-Setup your shell environment for buildtest to match your directory path.
-
-I have my buildtest directory at /hpc/grid/scratch/workspace/BuildTest/BuildTest/
 
 .. code::
        
-        [hpcswadm@hpcv27 scripts]$ pwd
-        /hpc/grid/scratch/workspace/BuildTest/BuildTest
-
+        [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest.git
+        [hpcswadm@hpcv27 scripts]$ cd buildtest
+        [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest-configs.git
+        [hpcswadm@hpcv27 scripts]$ git clone <easyconfig>.git
         [hpcswadm@hpcv27 scripts]$ source ./setup.sh
-
         [hpcswadm@hpcv27 scripts]$ env | grep BUILDTEST
         BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
         BUILDTEST_ROOT=/hpc/grid/scratch/workspace/BuildTest/BuildTest
@@ -81,40 +54,16 @@ I have my buildtest directory at /hpc/grid/scratch/workspace/BuildTest/BuildTest
         BUILDTEST_EASYCONFIGDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/easybuild
         BUILDTEST_TESTDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/testing
 
+buildtest requires easyconfig and buildtest-config repo to reside in the directory where you cloned buildtest.
+If your easyconfig repo is named differently, specify the name accordingly in setup.sh for the value 
+BUILDTEST_EASYCONFIGDIR to specify the location where all your easyconfig files resides.
 
-The shell environment variables are used only by test-scripts in case you need to
-build a test that can't be achieved by buildtest framework. The testscript can
+
+The shell environment variables are used by buildtest to determine paths where to retrieve
+module files, easyconfigs, and yaml configs and write test scripts. You can also reference
+these variables in yaml configs to write custom build and run commands. The testscript can
 reference source directory via **BUILDTEST_SOURCEDIR** to find files of interest
 
-Python buildtest variable configuration
----------------------------------------
-
-The shell environment variables that we setup previously, we will now do the same 
-for python variables found in file **setup.py**. These variables are referenced by 
-multiple python scripts. 
-
-1. Edit **setup.py** and specify path for your module tree root at 
-**BUILDTEST_MODULEROOT**. This variable is used by **buildtest** to find modules 
-in your system and used to verify which test can be created by buildtest.
-
-
-For instance, **BUILDTEST_MODULEROOT** on my system is set to /nfs/grid/software/RHEL7/easybuild/modules/ 
-
-.. code:: 
-           
-      [hpcswadm@amrndhl1157 BuildTest]$ ls -l /nfs/grid/software/RHEL7/easybuild/modules 
-      total 2
-      drwxr-xr-x 5 hpcswadm hpcswadm 69 Mar 27 14:25 all
-
-2.  Specify the path for the easyconfig directory in **setup.py** for variable 
-**BUILDTEST_EASYCONFIGDIR**. This will be used for finding the toolchains which 
-is necessary to build the test.
-
-
-
-.. Note:: If you haven't cloned your easyconfig repo, make sure you do this otherwise
-        buildtest will hang. easyconfig files in repo but not installed on the system can 
-        cause issues
 
 Verification
 -------------
@@ -132,7 +81,7 @@ Software List
 
 .. code::    
 
-        [hpcswadm@amrndhl1157 BuildTest]$ ./buildtest.py -ls | head -n 15
+        [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py -ls | head -n 15
         
                        List of Unique Software: 
                       ---------------------------- 
@@ -154,7 +103,7 @@ Toolchain List
 
 .. code::
 
-        [hpcswadm@amrndhl1157 BuildTest]$ ./buildtest.py -lt
+        [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py -lt
  
                 List of Toolchains:
                 --------------------

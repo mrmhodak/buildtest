@@ -1,0 +1,10 @@
+[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -fc hello.c
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/config/hello.c.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/config/hello.cpp.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/OpenMPI/config/mpi-hello.c.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/OpenMPI/config/mpi-hello.cpp.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/hello.c.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/hello.cpp.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/mpi-hello.c.yaml
+/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/mpi-hello.cpp.yaml
+

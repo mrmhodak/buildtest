@@ -1,0 +1,235 @@
+------------------------------------------- 
+buildtest 
+------------------------------------------- 
+easyconfig file= GCC-5.4.0-2.27.eb
+stripping file extension .eb 
+easyconfig file:GCC-5.4.0-2.27
+eb name format using string concat of <name>-<version>-<toolchain-name>-<toolchain-version> 
+eb name format string: GCC-5.4.0
+Extracting version suffix from eb name: GCC-5.4.0-2.27
+Version Suffix: -2.27
+Version + Version Suffix: 5.4.0-2.27
+Comparing strings: the following strings
+name: GCC with appname: GCC AND 
+version_versionsuffix: 5.4.0-2.27 with appversion: 5.4.0-2.27
+Source App Directory:/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC
+Config Directory: /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/config
+Code Directory:/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code
+--------------------------------- 
+ function: generate_binary_test 
+--------------------------------- 
+ Creating Directory /hpc/hpcswadm/buildtest/testing
+--------------------------------------- 
+ function: process_binary_file 
+--------------------------------------- 
+ Variables Assignments 
+test_ebapp_dir = /hpc/hpcswadm/buildtest/testing/ebapp
+test_name_dir = /hpc/hpcswadm/buildtest/testing/ebapp/GCC
+test_version_dir = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27
+test_toolchain_name_dir = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy
+test_toolchain_version_dir = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy
+test_cmakelist = /hpc/hpcswadm/buildtest/testing/CMakeLists.txt
+test_name_cmakelist = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/CMakeLists.txt
+test_version_cmakelist = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/CMakeLists.txt
+test_toolchain_name_cmakelist = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/CMakeLists.txt
+test_toolchain_version_cmakelist = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt
+test_destdir = /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy
+
+Creating directory: /hpc/hpcswadm/buildtest/testing/ebapp
+Creating directory: /hpc/hpcswadm/buildtest/testing/ebapp/GCC
+Creating directory: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27
+Creating directory: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy
+Creating directory: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy
+Creating CMakeLists.txt file: /hpc/hpcswadm/buildtest/testing/ebapp/CMakeLists.txt
+Creating CMakeLists.txt file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/CMakeLists.txt
+Creating CMakeLists.txt file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/CMakeLists.txt
+Creating CMakeLists.txt file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/CMakeLists.txt
+Creating CMakeLists.txt file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt
+Updating /hpc/hpcswadm/buildtest/testing/CMakeLists.txt with add_subdirectory(ebapp) 
+Updating /hpc/hpcswadm/buildtest/testing/ebapp/CMakeLists.txt with add_subdirectory(GCC)
+Updating /hpc/hpcswadm/buildtest/testing/ebapp/GCC/CMakeLists.txt with add_subdirectory(5.4.0-2.27)
+Updating /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/CMakeLists.txt with add_subdirectory(dummy)
+Updating /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/CMakeLists.txt with add_subdirectory(dummy)
+
+Reading File: /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/command.yaml
+Loading YAML content 
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcc --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcc.sh	 COMMAND sh gcc.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov-tool.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov-tool.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcov-tool --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcov-tool.sh	 COMMAND sh gcov-tool.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov-tool.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-nm.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-nm.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcc-nm --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcc-nm.sh	 COMMAND sh gcc-nm.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-nm.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/c++.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/c++.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+c++ --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-c++.sh	 COMMAND sh c++.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/c++.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/cpp.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/cpp.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+cpp --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-cpp.sh	 COMMAND sh cpp.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/cpp.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/g++.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/g++.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+g++ --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-g++.sh	 COMMAND sh g++.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/g++.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ar.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ar.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcc-ar --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcc-ar.sh	 COMMAND sh gcc-ar.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ar.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gfortran.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gfortran.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gfortran --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gfortran.sh	 COMMAND sh gfortran.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gfortran.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ranlib.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ranlib.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcc-ranlib --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcc-ranlib.sh	 COMMAND sh gcc-ranlib.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ranlib.sh
+Creating test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov.sh
+Content of test file: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov.sh
+----------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcov --version
+----------------------------------------------------- 
+Updating CMakeLists: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with content: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-gcov.sh	 COMMAND sh gcov.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+Creating Test:/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov.sh
+------------------------------------------------ 
+function: generate_source_test 
+------------------------------------------------ 
+Test Name: hello.c.sh
+Test Path: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+Source File: /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.c
+Executable Name: hello.c.exe
+Build Flags: -O2
+buildtest will auto-generate buildcmd & runcmd 
+Compiler: gcc
+Compiler Type: gnu
+Updating File /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-hello.c.sh	 COMMAND sh hello.c.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+
+ Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+Content of Testfile: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+-------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gcc -o hello.c.exe /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.c -O2
+./hello.c.exe
+-------------------------------------------------- 
+------------------------------------------------ 
+function: generate_source_test 
+------------------------------------------------ 
+Test Name: hello.cpp.sh
+Test Path: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
+Source File: /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.cpp
+Executable Name: hello.cpp.exe
+Build Flags: -O2
+buildtest will auto-generate buildcmd & runcmd 
+Compiler: g++
+Compiler Type: gnu
+Updating File /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-hello.cpp.sh	 COMMAND sh hello.cpp.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+
+ Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
+Content of Testfile: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
+-------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+g++ -o hello.cpp.exe /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.cpp -O2
+./hello.cpp.exe
+-------------------------------------------------- 
+------------------------------------------------ 
+function: generate_source_test 
+------------------------------------------------ 
+Test Name: hello.f.sh
+Test Path: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+Source File: /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.f90
+Executable Name: hello.f90.exe
+Build Flags: -O2
+buildtest will auto-generate buildcmd & runcmd 
+Compiler: gfortran
+Compiler Type: gnu
+Updating File /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/CMakeLists.txt with: add_test(NAME GCC-5.4.0-2.27-dummy-dummy-hello.f.sh	 COMMAND sh hello.f.sh	 WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}) 
+
+ Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+Content of Testfile: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+-------------------------------------------------- 
+
+#!/bin/sh
+module purge
+module load GCC/5.4.0-2.27
+gfortran -o hello.f90.exe /hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/code/hello.f90 -O2
+./hello.f90.exe
+-------------------------------------------------- 
+

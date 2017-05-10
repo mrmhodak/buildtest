@@ -1,0 +1,5 @@
+[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -ft hello
+/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
+/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+
