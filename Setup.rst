@@ -1,7 +1,7 @@
 .. _Setup:
 
-buildtest Setup
-===============
+Setup
+=====
 
 
 Requirements
@@ -36,8 +36,8 @@ If you get an error like the following:
 Then you need to install the package via pip or a package manager.
      
 
-Setup
-------
+Environment Setup
+-----------------
 
 
 .. code::
@@ -55,8 +55,8 @@ Setup
         BUILDTEST_TESTDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/testing
 
 buildtest requires easyconfig and buildtest-config repo to reside in the directory where you cloned buildtest.
-If your easyconfig repo is named differently, specify the name accordingly in setup.sh for the value 
-BUILDTEST_EASYCONFIGDIR to specify the location where all your easyconfig files resides.
+Make sure the name of your easyconfig repo matches the value for BUILDTEST_EASYCONFIGDIR
+in setup.sh that is used to specify the location where all your easyconfig files resides.
 
 
 The shell environment variables are used by buildtest to determine paths where to retrieve
