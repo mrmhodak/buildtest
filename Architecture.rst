@@ -7,7 +7,7 @@ buildtest Architecture
 Two Step Verification
 ---------------------
 
-BuildTest goes through a two-step verification process before creating any test case. This 
+BuildTest performs a two-step verification before creating any test case. This 
 is designed to prevent buildtest from creating testscripts that would fail during execution.
 
 1. ModuleFile Verication
@@ -84,6 +84,13 @@ CTest api to run the the test.
    toolchain. If toolchain is hidden module in your system, you must specify 
    your toolchain version accordingly
 
+CMakeLists.txt for $BUILDTEST_TESTDIR/ebapps/GCC/CMakeLists.txt would like like this for GCC-5.4.0-2.27 and GCC-6.2.0-2.27 test
+
+.. program-output:: cat scripts/Architecture/GCC/CMakeLists.txt
+
+The CMakeLists.txt in your test directory will look something like this
+
+.. program-output:: cat scripts/Architecture/GCC/test/CMakeLists.txt
 
 Source Code Layout
 --------------------

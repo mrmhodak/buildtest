@@ -54,13 +54,13 @@ framework.
 
 Environment Description:
 
-    - BUILDTEST_ROOT: root directory of buildtest
-    - BUILDTEST_SOURCEDIR: source directory where YAML test scripts are picked up
-    - BUILDTEST_EASYCONFIGDIR: easyconfig directory used for toolchain verification
-    - BUILDTEST_TESTDIR: directory where test scripts will be generated and used by CTEST
-    - BUILDTEST_MODULEPATH: root of module tree
+    - **BUILDTEST_ROOT**: root directory of buildtest
+    - **BUILDTEST_SOURCEDIR**: source directory where YAML test scripts are picked up
+    - **BUILDTEST_EASYCONFIGDIR**: easyconfig directory used for toolchain verification
+    - **BUILDTEST_TESTDIR**: directory where test scripts will be generated and used by CTEST
+    - **BUILDTEST_MODULEPATH**: root of module tree
 
-This can be done by sourcing setup.sh
+This can be done by sourcing **setup.sh**
 
 .. code::
 

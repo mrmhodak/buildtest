@@ -61,20 +61,20 @@ Figure out the binaries in the install path for the software, typically in
 
 **GCC BinaryTest YAML Example** 
 
-.. program-output:: cat scripts/command.yaml
+.. program-output:: cat scripts/Writing_Test_In_YAML/command.yaml
 
 
 **GCC-5.4.0-2.27 buildtest Test Script**
 
-.. program-output:: cat scripts/gcc.sh
+.. program-output:: cat scripts/Writing_Test_In_YAML/gcc.sh
 
 **BuildTest YAML Hello World Example**
 
-.. program-output:: cat scripts/hello.c.yaml
+.. program-output:: cat scripts/Writing_Test_In_YAML/hello.c.yaml
 
 **BuildTest Hello World Test Script** 
 
-.. program-output:: cat scripts/hello.c.sh
+.. program-output:: cat scripts/Writing_Test_In_YAML/hello.c.sh
 
 
 BuildTest can build mpi programs. It automatically detects the compiler wrapper based on file extension and the MPI wrapper.
@@ -83,9 +83,9 @@ Below is an example of OpenMPI 2.0.0 with GCC-5.4.0 that runs a matrix multiplic
 
 **BuildTest MPI example**
  
-.. program-output:: cat scripts/mpi_mm_c.yaml
+.. program-output:: cat scripts/Writing_Test_In_YAML/mpi_mm_c.yaml
 
-.. program-output:: cat scripts/mpi_mm_c.sh
+.. program-output:: cat scripts/Writing_Test_In_YAML/mpi_mm_c.sh
 
 
 
