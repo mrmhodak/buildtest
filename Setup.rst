@@ -42,13 +42,9 @@ Environment Setup
 Let's get buildtest on your system. Follow instructions below to clone buildtest
 buildtest-config and your easyconfig repo in your system
 
-.. code::
-          
-        [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest.git
-        [hpcswadm@hpcv27 scripts]$ cd buildtest
-        [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest-configs.git
-        [hpcswadm@hpcv27 scripts]$ git clone <easyconfig>.git
+.. program-output:: cat scripts/Setup/clonerepo.txt
 
+          
 There is a few environment variables that need to be set prior to using this
 framework.
 
@@ -62,15 +58,7 @@ Environment Description:
 
 This can be done by sourcing **setup.sh**
 
-.. code::
-
-        [hpcswadm@hpcv27 scripts]$ source ./setup.sh
-        [hpcswadm@hpcv27 scripts]$ env | grep BUILDTEST
-        BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
-        BUILDTEST_ROOT=/hpc/grid/scratch/workspace/BuildTest/BuildTest
-        BUILDTEST_MODULEROOT=/nfs/grid/software/RHEL7/easybuild/modules
-        BUILDTEST_EASYCONFIGDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/easybuild
-        BUILDTEST_TESTDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/testing
+.. program-output:: cat scripts/Setup/envsetup.txt
 
 buildtest requires easyconfig and buildtest-config repo to reside in the directory where you cloned buildtest.
 Make sure the name of your easyconfig repo matches the value for BUILDTEST_EASYCONFIGDIR

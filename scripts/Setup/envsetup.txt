@@ -1,0 +1,8 @@
+[hpcswadm@hpcv27 scripts]$ source ./setup.sh
+[hpcswadm@hpcv27 scripts]$ env | grep BUILDTEST
+BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
+BUILDTEST_ROOT=/hpc/grid/scratch/workspace/BuildTest/BuildTest
+BUILDTEST_MODULEROOT=/nfs/grid/software/RHEL7/easybuild/modules
+BUILDTEST_EASYCONFIGDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/easybuild
+BUILDTEST_TESTDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/testing
+

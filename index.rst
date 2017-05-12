@@ -72,6 +72,8 @@ BuildTest can:
  - List available toolchain based on the easyconfig files provided to BuildTest
  - List a tabular software-version relationship
  - Verbosity level to control output
+ - Support for logging
+ - Search for YAML and test scripts
 
 .. _CMake: https://cmake.org/documentation/
 
