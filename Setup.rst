@@ -39,13 +39,31 @@ Then you need to install the package via pip or a package manager.
 Environment Setup
 -----------------
 
+Let's get buildtest on your system. Follow instructions below to clone buildtest
+buildtest-config and your easyconfig repo in your system
 
 .. code::
-       
+          
         [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest.git
         [hpcswadm@hpcv27 scripts]$ cd buildtest
         [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest-configs.git
         [hpcswadm@hpcv27 scripts]$ git clone <easyconfig>.git
+
+There is a few environment variables that need to be set prior to using this
+framework.
+
+Environment Description:
+
+    - BUILDTEST_ROOT: root directory of buildtest
+    - BUILDTEST_SOURCEDIR: source directory where YAML test scripts are picked up
+    - BUILDTEST_EASYCONFIGDIR: easyconfig directory used for toolchain verification
+    - BUILDTEST_TESTDIR: directory where test scripts will be generated and used by CTEST
+    - BUILDTEST_MODULEPATH: root of module tree
+
+This can be done by sourcing setup.sh
+
+.. code::
+
         [hpcswadm@hpcv27 scripts]$ source ./setup.sh
         [hpcswadm@hpcv27 scripts]$ env | grep BUILDTEST
         BUILDTEST_SOURCEDIR=/hpc/grid/scratch/workspace/BuildTest/BuildTest/source
