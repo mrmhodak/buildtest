@@ -77,6 +77,7 @@ can be done as follows.
 
 buildtest can search all test scripts using the flag **-ft all**
 
+
 Log files
 ---------
 
@@ -86,6 +87,3 @@ create log files in $BUILDTEST_ROOT/log/**[system | ebapps]**.
 For instance a GCC/5.4.0 build will be logged at **$BUILDTEST_ROOT/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_HH_MM_DD_MM_YYYY.log**
 using the python string function strftime() to create a unique log file using date and hour/minute stamp
  
-**Log file GCC-5.4.0 example output:**
-
-.. program-output:: cat scripts/How_to_use_buildtest/buildtest_15_35_10_05_2017.log

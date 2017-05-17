@@ -92,6 +92,53 @@ The CMakeLists.txt in your test directory will look something like this
 
 .. program-output:: cat scripts/Architecture/GCC/test/CMakeLists.txt
 
+
+Testsets
+---------
+
+Test sets are meant to reuse YAML configs between different apps. For instance, we can have all the MPI wrappers (OpenMPI, MPICH, MVAPICH, etc...) use
+one set of YAML files. For applications like R, Python, Perl, etc... that comes with 100s of subpackages, we have the YAML and scripts organized in each 
+subdirectory. buildtest will process subdirectories and properly name the tests for CTest to avoid name conflict
+
+
+R directory structure
+.. code::
+
+        code:
+        abc  abind  acepack  ade4  adegenet  adephylo  ADGofTest  akima  AlgDesign  animation  ape  arm  assertthat  AUC  base
+
+        config:
+        abc  abind  acepack  ade4  adegenet  adephylo  ADGofTest  akima  AlgDesign  animation  ape  arm  assertthat  AUC  base
+
+
+If you run the R testset then you will notice each of the R package tests are stored in a separate directory.
+.. code::
+
+        [hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -s R/3.3.1 -t intel/2017.01 --testset R
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/R_--version.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/Rscript_--version.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/hello.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ADGofTest/ad.test.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/AUC/auc.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/AlgDesign/gen.factorial.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/abc/human.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/abind/abind.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/acepack/ace.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ade4/acacia.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/adegenet/nancycats.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/adephylo/tipToRoot.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/akima/aspline.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/animation/ani.pause.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ape/add.scale.bar.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/arm/bayespolr.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/assertthat/are_equal.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/abbreviate.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/abs.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/acos.R.sh
+        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/addNA.R.sh
+        Writing Log File: /hpc/hpcswadm/buildtest/log/R/3.3.1/intel/2017.01/buildtest_11_57_17_05_2017.log
+
+
 Source Code Layout
 --------------------
 

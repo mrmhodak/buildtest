@@ -1,7 +1,7 @@
-[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -h
+[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py --help
 usage: buildtest.py [-h] [-fc FINDCONFIG] [-ft FINDTEST] [-s SOFTWARE]
                     [-t TOOLCHAIN] [-lt] [-ls] [-svr] [--system SYSTEM]
-                    [-v {1,2}]
+                    [--testset {python,R,mpi,ruby,perl}] [-v {1,2}]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -26,6 +26,8 @@ optional arguments:
                         found in module files
   --system SYSTEM       Build test for system packages To build all system
                         package test use --system all
+  --testset {python,R,mpi,ruby,perl}
+                        Select the type of test set to run
+                        (python,mpi,ruby,perl,R)
   -v {1,2}, --verbose {1,2}
                         increase verbosity level
-

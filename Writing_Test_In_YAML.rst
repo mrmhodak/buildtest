@@ -14,7 +14,7 @@ YAML Key Description
 --------------------
 
 +---------------+--------------------------------------------------------------------+
-| **Key**       |                        ** Description**                            |
+| **Key**       |                        **Description**                             |
 +---------------+--------------------------------------------------------------------+        
 | Name          | Name of the test script. It must match the name of the yaml file.  |
 +---------------+--------------------------------------------------------------------+        
@@ -33,6 +33,15 @@ YAML Key Description
 | runextracmd   | Add extra commands after running code, only used when **buildcmd** | 
 |               | and **runcmd** are not specified and additional instructions need  |
 |               | to be specified.                                                   |
++---------------+--------------------------------------------------------------------+
+| inputfile     | inputfile is used to change stdin to a file that is passed to      |
+|               | executable.                                                        |
++---------------+--------------------------------------------------------------------+
+| outputfile    | outputfile is used to change stdout to a file                      |
++---------------+--------------------------------------------------------------------+
+| iter          | Create N tests scripts from a particular YAML file                 |
++---------------+--------------------------------------------------------------------+
+| args          | specify arguments to an executable                                 |
 +---------------+--------------------------------------------------------------------+
 | mpi           | enable mpi. Sets the compiler wrapper accordingly.                 | 
 |               |                                                                    |
@@ -87,5 +96,33 @@ Below is an example of OpenMPI 2.0.0 with GCC-5.4.0 that runs a matrix multiplic
 
 .. program-output:: cat scripts/Writing_Test_In_YAML/mpi_mm_c.sh
 
+
+**inputfile Example**
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/inputfile.yaml
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/inputfile.sh
+
+
+**outputfile Example**
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/outputfile.yaml
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/outputfile.sh
+
+**args Example**
+
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/args.yaml
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/args.sh
+
+
+**iter Example**
+
+We can create duplicate test scripts with an iteration suffix *_#* at the end of the testname. 
+.. program-output:: cat scripts/Writing_Test_In_YAML/iter.yaml
+
+.. program-output:: cat scripts/Writing_Test_In_YAML/iter.txt
 
 
