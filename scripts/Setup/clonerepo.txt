@@ -1,5 +1,8 @@
 [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest.git
 [hpcswadm@hpcv27 scripts]$ cd buildtest
 [hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/buildtest-configs.git
+[hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/R-buildtest-config.git
+[hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/Python-buildtest-config.git
+[hpcswadm@hpcv27 scripts]$ git clone git@github.com:shahzebsiddiqui/Perl-buildtest-config.git
 [hpcswadm@hpcv27 scripts]$ git clone <easyconfig>.git
 

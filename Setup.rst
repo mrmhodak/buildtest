@@ -55,6 +55,9 @@ Environment Description:
     - **BUILDTEST_EASYCONFIGDIR**: easyconfig directory used for toolchain verification
     - **BUILDTEST_TESTDIR**: directory where test scripts will be generated and used by CTEST
     - **BUILDTEST_MODULEPATH**: root of module tree
+    - **BUILDTEST_PYTHON_DIR**: root of Python buildtest directory
+    - **BUILDTEST_PERL_DIR**: root of Perl buildtest directory
+    - **BUILDTEST_R_DIR**: root of R buildtest directory
 
 This can be done by sourcing **setup.sh**
 

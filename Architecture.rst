@@ -71,7 +71,7 @@ CTest api to run the the test.
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 |$BUILDTEST_TESTDIR/ebapps/$software/$version/CMakeLists.txt                  |       List of toolchain name entries for each version of the software   |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/$ebapps/software/$version/$toolchain-name/CMakeLists.txt  |       Entry for each toolchain version for each toolchain name          |
+|$BUILDTEST_TESTDIR/ebapps/software/$version/$toolchain-name/CMakeLists.txt   |      Entry for each toolchain version for each toolchain name           |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
 |$BUILDTEST_TESTDIR/ebapps/$software/$version/$toolchain/CMakeLists.txt       |       Entry for each test to run                                        |
 +-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
@@ -97,17 +97,15 @@ Testsets
 ---------
 
 Test sets are meant to reuse YAML configs between different apps. For instance, we can have all the MPI wrappers (OpenMPI, MPICH, MVAPICH, etc...) use
-one set of YAML files. For applications like R, Python, Perl, etc... that comes with 100s of subpackages, we have the YAML and scripts organized in each 
-subdirectory. buildtest will process subdirectories and properly name the tests for CTest to avoid name conflict
+one set of YAML files. For applications like R, Python, Perl, etc... that comes with 100s of subpackages, we only have the scripts and buildtest will automatically
+build the testscripts. buildtest will process subdirectories and properly name the tests for CTest to avoid name conflict
 
 
 R directory structure
+
 .. code::
 
         code:
-        abc  abind  acepack  ade4  adegenet  adephylo  ADGofTest  akima  AlgDesign  animation  ape  arm  assertthat  AUC  base
-
-        config:
         abc  abind  acepack  ade4  adegenet  adephylo  ADGofTest  akima  AlgDesign  animation  ape  arm  assertthat  AUC  base
 
 
