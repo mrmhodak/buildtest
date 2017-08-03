@@ -74,19 +74,21 @@ BuildTest can:
  - Verbosity level to control output
  - Support for logging
  - Search for YAML and test scripts
- - build tests easily for scripting languages (R, Python, Perl, etc...) 
+ - build tests easily for scripting languages (R, Python, Perl) 
 
 .. _CMake: https://cmake.org/documentation/
 
 Useful Links
 -------------
-* buildtest_ - The buildtest Testing framework
+* buildtest_ - The buildtest documentation
+* buildtest-framework_ - The buildtest Testing framework
 * buildtest-configs_ - buildtest YAML configs for generic apps
 * R-buildtest-config_ - R test scripts repository
 * Perl-buildtest-config_ - Perl test scripts repository
 * Python-buildtest-config_ - Python test scripts repository
 
 .. _buildtest: https://github.com/shahzebsiddiqui/buildtest
+.. _buildtest-framework: https://github.com/shahzebsiddiqui/buildtest-framework
 .. _buildtest-configs: https://github.com/shahzebsiddiqui/buildtest-configs
 .. _R-buildtest-config: https://github.com/shahzebsiddiqui/R-buildtest-config
 .. _Perl-buildtest-config: https://github.com/shahzebsiddiqui/Perl-buildtest-config

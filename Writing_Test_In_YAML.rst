@@ -120,7 +120,8 @@ Below is an example of OpenMPI 2.0.0 with GCC-5.4.0 that runs a matrix multiplic
 
 **iter Example**
 
-We can create duplicate test scripts with an iteration suffix *_#* at the end of the testname. 
+We can create duplicate test scripts using the iter keyword in YAML. 
+
 .. program-output:: cat scripts/Writing_Test_In_YAML/iter.yaml
 
 .. program-output:: cat scripts/Writing_Test_In_YAML/iter.txt

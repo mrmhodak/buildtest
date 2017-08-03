@@ -84,6 +84,6 @@ Log files
 Log files are stored in $BUILDTEST_ROOT/log. Flags for building tests ebapps (**-s**) and system package (**--system**) will 
 create log files in $BUILDTEST_ROOT/log/**[system | ebapps]**. 
 
-For instance a GCC/5.4.0 build will be logged at **$BUILDTEST_ROOT/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_HH_MM_DD_MM_YYYY.log**
-using the python string function strftime() to create a unique log file using date and hour/minute stamp
+For instance a GCC/5.4.0-2.27 build will be stored in **$BUILDTEST_ROOT/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_HH_MM_DD_MM_YYYY.log**
+
  
