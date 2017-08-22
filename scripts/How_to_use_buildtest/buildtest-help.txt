@@ -1,10 +1,13 @@
-[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py --help
-usage: buildtest.py [-h] [-fc FINDCONFIG] [-ft FINDTEST] [-s SOFTWARE]
-                    [-t TOOLCHAIN] [-lt] [-ls] [-svr] [--system SYSTEM]
-                    [--testset {python,R,mpi,ruby,perl}] [-v {1,2}]
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest --help
+usage: main.py [-h] [--check-setup] [-fc FINDCONFIG] [-ft FINDTEST]
+               [-s SOFTWARE] [-t TOOLCHAIN] [-lt] [-ls] [-svr]
+               [--system SYSTEM] [--testset {python,R,mpi,ruby,perl}]
+               [-v {1,2}] [-V]
 
 optional arguments:
   -h, --help            show this help message and exit
+  --check-setup         Check buildtest configuration and determine if you
+                        have it setup properly for testing
   -fc FINDCONFIG, --findconfig FINDCONFIG
                         " Find buildtest YAML config files To find all yaml
                         config files use -fc all
@@ -31,3 +34,5 @@ optional arguments:
                         (python,mpi,ruby,perl,R)
   -v {1,2}, --verbose {1,2}
                         increase verbosity level
+  -V, --version         show program version number and exit
+

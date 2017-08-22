@@ -8,35 +8,45 @@ Two Step Verification
 ---------------------
 
 BuildTest performs a two-step verification before creating any test case. This 
-is designed to prevent buildtest from creating testscripts that would fail during execution.
+is designed to prevent buildtest from creating testscripts that would fail 
+during execution.
 
 1. ModuleFile Verication
 2. Easyconfig Toolchain Verification
 
-**Module File Verification:** buildtest makes use of **$BUILDTEST_MODULEROOT** 
+**Module File Verification:** buildtest makes use of **$BUILDTEST_MODULE_EBROOT** 
 to find all the modules and stores the values in an array. Whenever an argument 
 is passed for **--software** it is checked with the module array to make sure 
 it exist. If there is no module found with the following name, the program will 
 terminate immediately 
 
 **Easyconfig Toolchain verification:** Every application is built with a 
-particular toolchain in EasyBuild. In order to make sure we are building for 
+particular toolchain in EasyBuild. In order to make sure we are building for
 the correct test in the event of multiple packages being installed with 
 different toolchain we need a way to classify which package to use. For instance 
 if **flex/2.6.0** is installed with **GCCcore/5.4.0**, **GCCcore/6.2.0**, and 
-**dummy** toolchain then we have three instances of this package. In HMNS these 
-3 instances could be in different module trees. We can perform this test by 
-searching all the easyconfig files with the directory name **flex** and search 
-for the tag **toolchain = { name='toolchain-name', version='toolchain-version' }**
+**dummy** toolchain then we have three instances of this package. In 
+**Hierarchical Module Nameing Scheme (HMNS)**  these 3 instances could be in 
+different module trees. We can perform this test by searching all the easyconfig 
+files with the directory name **flex** and search for the tag 
+**toolchain = { name='toolchain-name', version='toolchain-version' }**
 
 
 The Toolchain verification will pass if the following condition is met:
 
-   - software,version argument specified to buildtest matches **name**, **version** tag in easyconfig
-   - toolchain argument from buildtest matches **toolchain-name**, **toolchain-version** tag in easyconfig
-   - **versionsuffix** from eb file name matches the module file. 
-   - For **Hierarchical Module Naming Scheme (HMNS)** modulefile: <version>-<version-suffix>.lua 
-   - For **Flat Naming Scheme (FNS)** modulefile: <version>-<toolchain>-<version-suffix>.lua
+   1. software,version argument specified to buildtest matches 
+      **name**, **version** tag in easyconfig
+
+   2. toolchain argument from buildtest matches 
+      **toolchain-name**, **toolchain-version** tag in easyconfig
+
+   3. **versionsuffix** from eb file name matches the module file. 
+
+   4. For **Hierarchical Module Naming Scheme (HMNS)** 
+      modulefile: <version>-<version-suffix>.lua 
+
+   5. For **Flat Naming Scheme (FNS)** 
+      modulefile: <version>-<toolchain>-<version-suffix>.lua
 
 Module File Check is not sufficient for checking modules in the event when there
 is a match for a software package but there is a toolchain mismatch. For instance 
@@ -58,25 +68,26 @@ CTest api to run the the test.
 **Testing CMakeList Structure Layout:** 
 
 
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|File                                                                         |       Description                                                       |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/CMakeLists.txt                                            |       List of entries for each software                                 |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/system/CMakeLists.txt                                     |       Entry for each system package                                     |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/system/$systempkg/CMakeLists.txt                          |       List of tests for system package                                  |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/ebapps/$software/CMakeLists.txt                           |       List of version entries for each software                         | 
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/ebapps/$software/$version/CMakeLists.txt                  |       List of toolchain name entries for each version of the software   |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/ebapps/software/$version/$toolchain-name/CMakeLists.txt   |      Entry for each toolchain version for each toolchain name           |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
-|$BUILDTEST_TESTDIR/ebapps/$software/$version/$toolchain/CMakeLists.txt       |       Entry for each test to run                                        |
-+-----------------------------------------------------------------------------+-------------------------------------------------------------------------+
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| File                                                                         |       Description                                                       |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/CMakeLists.txt                                            |       List of entries for each software                                 |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/system/CMakeLists.txt                                     |       Entry for each system package                                     |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/system/$systempkg/CMakeLists.txt                          |       List of tests for system package                                  |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/ebapps/$software/CMakeLists.txt                           |       List of version entries for each software                         | 
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/ebapps/$software/$version/CMakeLists.txt                  |       List of toolchain name entries for each version of the software   |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/ebapps/software/$version/$toolchain-name/CMakeLists.txt   |      Entry for each toolchain version for each toolchain name           |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
+| $BUILDTEST_TESTDIR/ebapps/$software/$version/$toolchain/CMakeLists.txt       |       Entry for each test to run                                        |
++------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. Note:: Whenever you build the test, you must specify the software and version 
+.. Note:: 
+   Whenever you build the test, you must specify the software and version 
    and this must match the name of the module you are trying to test, otherwise 
    there is no way of knowing what is being tested.  Each test will attempt to 
    load the application module along with the toolchain if specified prior to 
@@ -101,40 +112,16 @@ one set of YAML files. For applications like R, Python, Perl, etc... that comes 
 build the testscripts. buildtest will process subdirectories and properly name the tests for CTest to avoid name conflict
 
 
-R directory structure
 
-.. code::
+If you build R without testset it will build not build the tests for R packages that are stored in R-buildtest-config repo
 
-        code:
-        abc  abind  acepack  ade4  adegenet  adephylo  ADGofTest  akima  AlgDesign  animation  ape  arm  assertthat  AUC  base
+.. program-output:: cat scripts/Architecture/R-3.3.1_without_testset.txt
 
 
-If you run the R testset then you will notice each of the R package tests are stored in a separate directory.
-.. code::
+If you build R with  **--testset** flag you will notice each R package will be build and stored in a separate directory.
 
-        [hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -s R/3.3.1 -t intel/2017.01 --testset R
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/R_--version.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/Rscript_--version.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/hello.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ADGofTest/ad.test.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/AUC/auc.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/AlgDesign/gen.factorial.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/abc/human.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/abind/abind.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/acepack/ace.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ade4/acacia.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/adegenet/nancycats.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/adephylo/tipToRoot.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/akima/aspline.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/animation/ani.pause.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/ape/add.scale.bar.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/arm/bayespolr.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/assertthat/are_equal.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/abbreviate.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/abs.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/acos.R.sh
-        Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/R/3.3.1/intel/2017.01/base/addNA.R.sh
-        Writing Log File: /hpc/hpcswadm/buildtest/log/R/3.3.1/intel/2017.01/buildtest_11_57_17_05_2017.log
+.. program-output:: cat scripts/Architecture/R-3.3.1_with_testset.txt
+
 
 
 Source Code Layout

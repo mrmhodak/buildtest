@@ -25,6 +25,13 @@ exist on your system, then simply run the test as follows:
 
 .. program-output:: cat scripts/How_to_use_buildtest/example-GCC-5.4.0-2.27.txt
 
+For instance if you want to build tests for OpenMPI/2.0.0 and you specified the GCC
+as the toolchain and you made a mistake in the toolchain version you will get the 
+following.
+
+.. program-output:: cat scripts/How_to_use_buildtest/fail_toolchain.txt
+
+
 Launching Testing 
 -----------------
 buildtest will setup your environment with CTEST so you can build from out-of-source directory.
@@ -44,19 +51,14 @@ This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is na
 At this moment, buildtest is using Redhat package naming convention.
 
 
-.. code::
+.. program-output:: cat scripts/How_to_use_buildtest/systempkg_gcc-c++.txt
 
-   [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py --system gcc-c++
-        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/x86_64-redhat-linux-c++.sh
-        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/g++.sh
-        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/x86_64-redhat-linux-g++.sh
-        Creating Test: /hpc/hpcswadm/BuildTest/testing/system/gcc-c++/c++.sh
 
 To run all system package test do the following
 
 .. code::
 
-   [hpcswadm@amrndhl1157 BuildTest]$ python buildtest.py --system all
+   [siddis14@amrndhl1295 buildtest-framework]$  buildtest --system all
 
 
 Searching YAML configs

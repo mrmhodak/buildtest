@@ -1,0 +1,17 @@
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest -ls | head -n 15
+
+
+                       List of Unique Software:
+                       ----------------------------
+
+Advisor
+Anaconda2
+Anaconda3
+Autoconf
+Automake
+Autotools
+BEDTools
+BWA
+BamTools
+Bison
+

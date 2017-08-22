@@ -1,15 +1,9 @@
-[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -s GCC/5.4.0-2.27
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov-tool.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-nm.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/c++.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/cpp.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/g++.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ar.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gfortran.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcc-ranlib.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/gcov.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
-Creating Test: /hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
-Writing Log File: /hpc/hpcswadm/buildtest/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_15_35_10_05_2017.log
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27
+Checking Software Exists ... SUCCESS
+Checking Toolchain Exists ... SUCCESS
+Checking easyconfig file ... SUCCESS
+Generating 10 binary tests
+Binary Tests are written in /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy
+Generating 4 Source Tests
+Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_17_32_22_08_2017.log
+

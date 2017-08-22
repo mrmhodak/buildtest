@@ -1,10 +1,17 @@
-[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -fc hello.c
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/config/hello.c.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/GCC/config/hello.cpp.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/OpenMPI/config/mpi-hello.c.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/OpenMPI/config/mpi-hello.cpp.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/hello.c.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/hello.cpp.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/mpi-hello.c.yaml
-/hpc/hpcswadm/buildtest/buildtest-configs/source/ebapps/intel/config/mpi-hello.cpp.yaml
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest -fc hello
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/mpi/config/mpi-hello.c.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/mpi/config/mpi-hello.cpp.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/mpi/config/hello_arg.c.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/mpi/config/mpi-hello.f.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/config/hello.c.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/config/hello.f.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/config/hello.cpp.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/intel/config/hello.c.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/intel/config/hello.f.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/intel/config/hello.cpp.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/Perl/config/hello.pl.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/Python/config/hello_logoutput.yaml
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/R/config/hello.R.yaml
+
+Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_17_49_22_08_2017.log
 

@@ -1,5 +1,16 @@
-[hpcswadm@amrndhl1157 buildtest]$ python buildtest.py -ft hello
-/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
-/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
-/hpc/hpcswadm/buildtest/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest -ft hello
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.cpp.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.c.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy/hello.f.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/hello_arg.c.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/hello.cpp.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/mpi-hello.f.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/mpi-hello.cpp.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/mpi-hello.c.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/hello.c.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/intel/2017.01/dummy/dummy/hello.f.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/Python/2.7.12/foss/.2016.03/hello_logoutput.sh
+/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/R/3.3.1/intel/2017.01/hello.R.sh
+
+Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_17_49_22_08_2017.log
 
