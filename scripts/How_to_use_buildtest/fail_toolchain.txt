@@ -21,10 +21,10 @@
       module -r spider '.*OpenMPI/2.0.0.*'
 
 
+[siddis14@amrndhl1295 buildtest-framework]$ buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.25
+Checking Software: OpenMPI/2.0.0  ... SUCCESS
+Checking Software: GCC/5.4.0-2.25 ... FAILED
+Can't find software: GCC 5.4.0-2.25
 
-[siddis14@amrndhl1295 buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.25
-Checking Software Exists ... SUCCESS
-Checking Toolchain Exists ... SUCCESS
-Checking easyconfig file ... FAILED
-Can't find easyconfig file with argument: -s OpenMPI/2.0.0 -t GCC/5.4.0-2.25
+Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_11_08_28_08_2017.log
 

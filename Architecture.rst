@@ -3,36 +3,100 @@
 buildtest Architecture
 =======================
 
+This section will explain how the buildtest framework is designed in regards
+to
 
-Two Step Verification
----------------------
+* Module, Toolchain, easyconfig check
+* Testing Directory Structure
+* CTest configuration
+* Source Directory Structure
 
-BuildTest performs a two-step verification before creating any test case. This 
+Three Step Verification
+------------------------
+
+BuildTest performs a three-step verification before creating any test case. This 
 is designed to prevent buildtest from creating testscripts that would fail 
 during execution.
 
 1. ModuleFile Verication
-2. Easyconfig Toolchain Verification
+2. Toolchain verfication
+3. Easyconfig Verification
+
+ModuleFile Verification
+-----------------------
 
 **Module File Verification:** buildtest makes use of **$BUILDTEST_MODULE_EBROOT** 
 to find all the modules and stores the values in an array. Whenever an argument 
-is passed for **--software** it is checked with the module array to make sure 
-it exist. If there is no module found with the following name, the program will 
-terminate immediately 
+is passed for **--software** and **--toolchain** it is checked with the module 
+array to make sure it exist. If there is no module found with the following 
+name, the program will terminate immediately 
 
-**Easyconfig Toolchain verification:** Every application is built with a 
-particular toolchain in EasyBuild. In order to make sure we are building for
-the correct test in the event of multiple packages being installed with 
-different toolchain we need a way to classify which package to use. For instance 
-if **flex/2.6.0** is installed with **GCCcore/5.4.0**, **GCCcore/6.2.0**, and 
-**dummy** toolchain then we have three instances of this package. In 
-**Hierarchical Module Nameing Scheme (HMNS)**  these 3 instances could be in 
+.. code-block:: bash
+
+       [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t xzy/1.0
+        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
+        Checking Software: xzy/1.0 ... FAILED
+        Can't find software: xzy 1.0
+
+        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_09_57_28_08_2017.log
+
+
+Toolchain Verification
+----------------------
+
+Argument to **--toolchain** is checked with the toolchain list that stores
+all valid toolchains defined by **eb --list-toolchains**. If argument is not
+found in list then buildtest will terminate immediately.
+
+Argument to **--toolchain** needs to be explicit if module is hidden file or not.
+For instance, if GCCcore 5.4.0 is hidden module, buildtest will not find the module
+
+
+.. code-block:: bash
+
+        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/5.4.0
+        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
+        Checking Software: GCCcore/5.4.0 ... FAILED
+        Can't find software: GCCcore 5.4.0
+
+        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_02_28_08_2017.log
+
+
+Specify GCCcore as hidden file will pass the toolchain check since GCCcore module is hidden.
+
+
+.. code-block:: bash
+
+        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/.5.4.0
+        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
+        Checking Software: GCCcore/.5.4.0  ... SUCCESS
+        Checking Toolchain: GCCcore/.5.4.0 ... SUCCESS
+        Checking easyconfig file ... FAILED
+        ERROR: Attempting to  find easyconfig file  GCC-5.4.0-2.27-GCCcore-5.4.0.eb
+        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_03_28_08_2017.log
+
+
+.. Note:: 
+
+        Toolchain verification will happen after the module check, this assumes the system has a 
+        module file, but we need to determine if its a hidden module and whether it is a valid eb toolchain
+
+Easyconfig Verification
+-----------------------
+
+Every application is built with a particular toolchain in EasyBuild. 
+In order to make sure we are building for the correct test in the event
+of multiple packages are installed with different toolchain we need a 
+way to classify which package to use. For instance if **flex/2.6.0** is 
+installed with **GCCcore/5.4.0**, **GCCcore/6.2.0**, and **dummy** toolchain 
+then we have three instances of this package. In 
+**Hierarchical Module Naming Scheme (HMNS)**  these 3 instances could be in 
 different module trees. We can perform this test by searching all the easyconfig 
 files with the directory name **flex** and search for the tag 
 **toolchain = { name='toolchain-name', version='toolchain-version' }**
 
 
-The Toolchain verification will pass if the following condition is met:
+The easyconfig verification will pass if all of the conditions are met:
 
    1. software,version argument specified to buildtest matches 
       **name**, **version** tag in easyconfig
@@ -50,10 +114,20 @@ The Toolchain verification will pass if the following condition is met:
 
 Module File Check is not sufficient for checking modules in the event when there
 is a match for a software package but there is a toolchain mismatch. For instance 
-if Python 2.7.12 is built with foss toolchain only and the user request to build 
-Python 2.7.12 with intel, the module file verification will pass but it wouldn't 
-pass the Toolchain verification stage.
+if R/3.3.1 is built with intel/2017.01 toolchain and the user request to build 
+R/3.3.1 with foss/2016.09, the module file & toolchain verification will pass 
+but it wouldn't pass the easyconfig verification if there is no easyconfig found.
 
+
+.. code-block:: bash
+
+        [siddis14@amrndhl1295 buildtest-framework]$ buildtest -s R/3.3.1 -t foss/.2016.09
+        Checking Software: R/3.3.1  ... SUCCESS
+        Checking Software: foss/.2016.09  ... SUCCESS
+        Checking Toolchain: foss/.2016.09 ... SUCCESS
+        Checking easyconfig file ... FAILED
+        ERROR: Attempting to  find easyconfig file  R-3.3.1-foss-2016.09.eb
+        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_32_28_08_2017.log
 
 
 Testing Directory Structure
@@ -86,16 +160,20 @@ CTest api to run the the test.
 | $BUILDTEST_TESTDIR/ebapps/$software/$version/$toolchain/CMakeLists.txt       |       Entry for each test to run                                        |
 +------------------------------------------------------------------------------+-------------------------------------------------------------------------+
 
-.. Note:: 
-   Whenever you build the test, you must specify the software and version 
-   and this must match the name of the module you are trying to test, otherwise 
-   there is no way of knowing what is being tested.  Each test will attempt to 
-   load the application module along with the toolchain if specified prior to 
-   anything. Similarly, toolchain must be specified with the exception of dummy 
-   toolchain. If toolchain is hidden module in your system, you must specify 
-   your toolchain version accordingly
 
-CMakeLists.txt for $BUILDTEST_TESTDIR/ebapps/GCC/CMakeLists.txt would like like this for GCC-5.4.0-2.27 and GCC-6.2.0-2.27 test
+Whenever you build the test, you must specify the software and version 
+and this must match the name of the module you are trying to test, otherwise 
+there is no way of knowing what is being tested.  Each test will attempt to 
+load the application module along with the toolchain if specified prior to 
+anything. Similarly, toolchain must be specified with the exception of dummy 
+toolchain. If toolchain is hidden module in your system, you must specify 
+your toolchain version accordingly
+
+CMake Configuration
+-------------------
+
+CMakeLists.txt for $BUILDTEST_TESTDIR/ebapps/GCC/CMakeLists.txt would like
+this for GCC-5.4.0-2.27 and GCC-6.2.0-2.27 test
 
 .. program-output:: cat scripts/Architecture/GCC/CMakeLists.txt
 
@@ -107,18 +185,23 @@ The CMakeLists.txt in your test directory will look something like this
 Testsets
 ---------
 
-Test sets are meant to reuse YAML configs between different apps. For instance, we can have all the MPI wrappers (OpenMPI, MPICH, MVAPICH, etc...) use
-one set of YAML files. For applications like R, Python, Perl, etc... that comes with 100s of subpackages, we only have the scripts and buildtest will automatically
-build the testscripts. buildtest will process subdirectories and properly name the tests for CTest to avoid name conflict
+Test sets are meant to reuse YAML configs between different apps. For instance,
+we can have all the MPI wrappers (OpenMPI, MPICH, MVAPICH, etc...) use
+one set of YAML files. For applications like R, Python, Perl, etc... that comes 
+with 100s of subpackages, we only have the scripts and buildtest will automatically
+build the testscripts. buildtest will process subdirectories and properly name the 
+tests for CTest to avoid name conflict
 
 
 
-If you build R without testset it will build not build the tests for R packages that are stored in R-buildtest-config repo
+If you build R without testset it will build not build the tests for R packages 
+that are stored in R-buildtest-config repo
 
 .. program-output:: cat scripts/Architecture/R-3.3.1_without_testset.txt
 
 
-If you build R with  **--testset** flag you will notice each R package will be build and stored in a separate directory.
+If you build R with  **--testset** flag you will notice each R package will be 
+build and stored in a separate directory.
 
 .. program-output:: cat scripts/Architecture/R-3.3.1_with_testset.txt
 
@@ -145,4 +228,3 @@ generate the test.
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | $BUILDTEST_SOURCEDIR/system/command.yaml           |       A list of binary executables and parameters to for system packages |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-

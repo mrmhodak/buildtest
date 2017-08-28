@@ -1,9 +1,9 @@
 [siddis14@amrndhl1295 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27
-Checking Software Exists ... SUCCESS
-Checking Toolchain Exists ... SUCCESS
+Checking Software: GCC/5.4.0-2.27  ... SUCCESS
+Checking Toolchain: dummy/dummy ... SUCCESS
 Checking easyconfig file ... SUCCESS
-Generating 10 binary tests
+Generating 10 binary tests 
 Binary Tests are written in /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/dummy/dummy
-Generating 4 Source Tests
-Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_17_32_22_08_2017.log
+Generating 4 Source Tests 
+Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_11_07_28_08_2017.log
 

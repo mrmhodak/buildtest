@@ -6,7 +6,14 @@
 buildtest Documentation
 =========================================
 
+Welcome to buildtest_ documentation. buildtest is a HPC Application Testing 
+Framework designed to build tests more quickly and verify application in a 
+module environment. 
+
+This documentation was last rebuild on |today| and is intended for version |version|. 
+
 **Author: Shahzeb Siddiqui**
+
 
 Contents:
 
@@ -62,19 +69,20 @@ buildtest is a python script that can generate self-contained testscripts in
 shell scripts (.sh). The test scripts can be run independently but they are 
 designed to work in CMake_ CTest Framework. 
 
-BuildTest can:
+buildtest can:
 
  - Creates test for binary testing 
  - Generates test that requires compilation 
  - Verify modulefile can be loaded. 
  - generate tests for system packages
  - List software packages provided by MODULEPATH
- - List available toolchain based on the easyconfig files provided to BuildTest
+ - List available toolchains
  - List a tabular software-version relationship
  - Verbosity level to control output
  - Support for logging
  - Search for YAML and test scripts
  - build tests easily for scripting languages (R, Python, Perl) 
+ - Run tests through an interactive menu
 
 .. _CMake: https://cmake.org/documentation/
 
@@ -87,12 +95,12 @@ Useful Links
 * Perl-buildtest-config_ - Perl test scripts repository
 * Python-buildtest-config_ - Python test scripts repository
 
-.. _buildtest: https://github.com/shahzebsiddiqui/buildtest
-.. _buildtest-framework: https://github.com/shahzebsiddiqui/buildtest-framework
-.. _buildtest-configs: https://github.com/shahzebsiddiqui/buildtest-configs
-.. _R-buildtest-config: https://github.com/shahzebsiddiqui/R-buildtest-config
-.. _Perl-buildtest-config: https://github.com/shahzebsiddiqui/Perl-buildtest-config
-.. _Python-buildtest-config: https://github.com/shahzebsiddiqui/Python-buildtest-config
+.. _buildtest: https://github.com/HPC-buildtest/buildtest
+.. _buildtest-framework: https://github.com/HPC-buildtest/buildtest-framework
+.. _buildtest-configs: https://github.com/HPC-buildtest/buildtest-configs
+.. _R-buildtest-config: https://github.com/HPC-buildtest/R-buildtest-config
+.. _Perl-buildtest-config: https://github.com/HPC-buildtest/Perl-buildtest-config
+.. _Python-buildtest-config: https://github.com/HPC-buildtest/Python-buildtest-config
 
 
 

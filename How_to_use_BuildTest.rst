@@ -39,16 +39,26 @@ Create a new directory for instance **build**, then do the following
 
 .. program-output:: cat scripts/How_to_use_buildtest/test-GCC-5.4.0-2.27.txt
 
+You can launch an interactive session to run the test. This can be done by running the following.
+
+
+.. code::
+
+   buildtest --runtest
+
+Follow instruction in the menu to run the test.
 
 System Package Test
 -------------------
 
-buildtest can generate tests for system packages using the flag **--system**. Currently, system package 
-test only perform binary test. This means you need to find the binaries associated with the package and
-add the executable and any parameters in command.yaml.
+buildtest can generate tests for system packages using the flag **--system**. 
+Currently, system package test only perform binary test. This means you need to 
+find the binaries associated with the package and add the executable and any 
+parameters in command.yaml.
 
-This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is name of system package.
-At this moment, buildtest is using Redhat package naming convention.
+This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is 
+name of system package. At this moment, buildtest is using Redhat package 
+naming convention.
 
 
 .. program-output:: cat scripts/How_to_use_buildtest/systempkg_gcc-c++.txt
@@ -84,7 +94,7 @@ Log files
 ---------
 
 Log files are stored in $BUILDTEST_ROOT/log. Flags for building tests ebapps (**-s**) and system package (**--system**) will 
-create log files in $BUILDTEST_ROOT/log/**[system | ebapps]**. 
+create log files in $BUILDTEST_ROOT/log/ with directories **[system | ebapps]**. 
 
 For instance a GCC/5.4.0-2.27 build will be stored in **$BUILDTEST_ROOT/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_HH_MM_DD_MM_YYYY.log**
 
