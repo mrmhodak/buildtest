@@ -1,0 +1,16 @@
+.. table: buildtest Environment Variables
+
+=======================          ==============================================
+Environment Variable             Description
+-----------------------          ----------------------------------------------
+BUILDTEST_ROOT		  	 root directory of buildtest
+BUILDTEST_SOURCEDIR 	 	 source directory where YAML test configs
+BUILDTEST_EASYCONFIGDIR  	 easyconfig directory used for easyconfig check
+BUILDTEST_TESTDIR 	 	 directory where test scripts will be generated
+BUILDTEST_MODULE_EBROOT	 	 root of easybuild module tree
+BUILDTEST_PYTHON_DIR	 	 root of Python buildtest directory
+BUILDTEST_PERL_DIR		 root of Perl buildtest directory
+BUILDTEST_R_DIR 		 root of R buildtest directory
+BUILDTEST_TCL_DIR 		 root of TCL buildtest directory
+BUILDTEST_RUBY_DIR 		 root of Ruby buildtest directory
+=======================          ==============================================

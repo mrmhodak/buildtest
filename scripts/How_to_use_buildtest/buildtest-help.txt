@@ -2,7 +2,7 @@
 usage: main.py [-h] [--check-setup] [-fc FINDCONFIG] [-ft FINDTEST]
                [-s SOFTWARE] [-t TOOLCHAIN] [-lt] [-ls] [-svr]
                [--system SYSTEM] [--testset {python,R,mpi,ruby,perl}]
-               [-v {1,2}] [-V]
+               [--runtest] [-v {1,2}] [-V]
 
 optional arguments:
   -h, --help            show this help message and exit
@@ -32,6 +32,7 @@ optional arguments:
   --testset {python,R,mpi,ruby,perl}
                         Select the type of test set to run
                         (python,mpi,ruby,perl,R)
+  --runtest             Run the test interactively through runtest.py
   -v {1,2}, --verbose {1,2}
                         increase verbosity level
   -V, --version         show program version number and exit
