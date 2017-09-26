@@ -23,15 +23,16 @@ during execution.
 3. Easyconfig Verification
 
 ModuleFile Verification
------------------------
+~~~~~~~~~~~~~~~~~~~~~~~
 
 **Module File Verification:** buildtest makes use of **$BUILDTEST_MODULE_EBROOT** 
 to find all the modules and stores the values in an array. Whenever an argument 
 is passed for **--software** and **--toolchain** it is checked with the module 
 array to make sure it exist. If there is no module found with the following 
-name, the program will terminate immediately 
+name, the program will terminate immediately. Module check is done for both software
+and toolchain since both are installed as modules in the system 
 
-.. code-block:: bash
+.. code:: 
 
        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t xzy/1.0
         Checking Software: GCC/5.4.0-2.27  ... SUCCESS
@@ -42,7 +43,7 @@ name, the program will terminate immediately
 
 
 Toolchain Verification
-----------------------
+~~~~~~~~~~~~~~~~~~~~~~
 
 Argument to **--toolchain** is checked with the toolchain list that stores
 all valid toolchains defined by **eb --list-toolchains**. If argument is not
@@ -50,9 +51,9 @@ found in list then buildtest will terminate immediately.
 
 Argument to **--toolchain** needs to be explicit if module is hidden file or not.
 For instance, if GCCcore 5.4.0 is hidden module, buildtest will not find the module
+until it is specified as **-t GCCcore/.5.4.0**
 
-
-.. code-block:: bash
+.. code::
 
         [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/5.4.0
         Checking Software: GCC/5.4.0-2.27  ... SUCCESS
@@ -65,7 +66,10 @@ For instance, if GCCcore 5.4.0 is hidden module, buildtest will not find the mod
 Specify GCCcore as hidden file will pass the toolchain check since GCCcore module is hidden.
 
 
-.. code-block:: bash
+Easyconfig Verification
+~~~~~~~~~~~~~~~~~~~~~~~
+
+.. code:: 
 
         [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/.5.4.0
         Checking Software: GCC/5.4.0-2.27  ... SUCCESS
@@ -80,9 +84,6 @@ Specify GCCcore as hidden file will pass the toolchain check since GCCcore modul
 
         Toolchain verification will happen after the module check, this assumes the system has a 
         module file, but we need to determine if its a hidden module and whether it is a valid eb toolchain
-
-Easyconfig Verification
------------------------
 
 Every application is built with a particular toolchain in EasyBuild. 
 In order to make sure we are building for the correct test in the event
@@ -139,27 +140,7 @@ CTest is the Testing Framework that automatically generates Makefiles necessary
 to build and run the test. CTest will utilize *CMakeLists.txt* that will invoke 
 CTest api to run the the test.  
 
-**Testing CMakeList Structure Layout:** 
-
-
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| File                                                                         |       Description                                                       |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/CMakeLists.txt                                            |       List of entries for each software                                 |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/system/CMakeLists.txt                                     |       Entry for each system package                                     |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/system/$systempkg/CMakeLists.txt                          |       List of tests for system package                                  |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/ebapps/$software/CMakeLists.txt                           |       List of version entries for each software                         | 
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/ebapps/$software/$version/CMakeLists.txt                  |       List of toolchain name entries for each version of the software   |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/ebapps/software/$version/$toolchain-name/CMakeLists.txt   |      Entry for each toolchain version for each toolchain name           |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/ebapps/$software/$version/$toolchain/CMakeLists.txt       |       Entry for each test to run                                        |
-+------------------------------------------------------------------------------+-------------------------------------------------------------------------+
-
+.. include:: Architecture/cmakelist_layout.txt
 
 Whenever you build the test, you must specify the software and version 
 and this must match the name of the module you are trying to test, otherwise 
