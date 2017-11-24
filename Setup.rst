@@ -32,6 +32,10 @@ that too.
 
 .. program-output:: cat scripts/Setup/clonerepo.txt
 
+Once you clone the repos you should have the following layout
+
+.. program-output:: cat scripts/Setup/buildtest-directory.txt
+
 
 buildtest Environment Variables
 -------------------------------
@@ -44,7 +48,7 @@ be aware of when using this framework.
 
 
 
-To setup the buildtest environment variable source  **setup.sh** in your shell environment. 
+To setup the buildtest environment variable run ``source  setup.sh`` in your shell environment. 
 
 .. note:: 
    The script assumes you have cloned buildtest-framework and all the extra repos inside 
@@ -60,7 +64,8 @@ Once you have sourced setup.sh you will need to specify the following environmen
 * BUILDTEST_MODULE_EBROOT
 * BUILDTEST_EASYCONFIGDIR
 
-Each site will have their own configuration where they install their eb apps and easyconfig repo.
+Each site will have their own configuration where they install their eb apps and location
+to easyconfig repo.
 
 
 The environment variables are used by buildtest to determine the path where to retrieve
@@ -75,7 +80,7 @@ You can check if you are configured properly by running the following
 
 .. code::
 
-   buildtest --check-config
+   buildtest --check-setup
 
 This will check if the system has the following set
     
@@ -83,6 +88,11 @@ This will check if the system has the following set
 2. Check if module exists and whether you are running Lmod/environment-modules
 
 .. program-output:: cat scripts/Setup/check_setup.txt
+
+Don't worry if BUILDTEST_TESTDIR failed, once you create a test $BUILDTEST_ROOT/testing will be
+created where all the tests will be stored. The check indicates the directory doesn't exist, 
+but buildtest will check this before creating the test.
+
 
 buildtest version
 -----------------

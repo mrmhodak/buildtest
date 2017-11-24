@@ -1,0 +1,47 @@
+
+[siddis14@amrndhl1157 buildtest-framework]$ ls -l /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/
+total 1097
+-rw-rw-r-- 1 siddis14 hpceng  245 Nov 24 17:52 arglist.c.bash
+-rw-rw-r-- 1 siddis14 hpceng 5740 Nov 24 17:52 CMakeLists.txt
+-rw-rw-r-- 1 siddis14 hpceng   65 Nov 24 17:52 cpp_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   65 Nov 24 17:52 c++_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   68 Nov 24 17:52 gcc-ar_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   68 Nov 24 17:52 gcc-nm_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   72 Nov 24 17:52 gcc-ranlib_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   65 Nov 24 17:52 gcc_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   71 Nov 24 17:52 gcov-tool_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   66 Nov 24 17:52 gcov_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   70 Nov 24 17:52 gfortran_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng   65 Nov 24 17:52 g++_--version.bash
+-rw-rw-r-- 1 siddis14 hpceng  188 Nov 24 17:52 hello.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  194 Nov 24 17:52 hello.cpp.bash
+-rw-rw-r-- 1 siddis14 hpceng  199 Nov 24 17:52 hello.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  261 Nov 24 17:52 omp_dotprod_openmp.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  266 Nov 24 17:52 omp_dotprod_openmp.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  227 Nov 24 17:52 omp_dotprod_serial.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  232 Nov 24 17:52 omp_dotprod_serial.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  249 Nov 24 17:52 omp_getEnvInfo.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  254 Nov 24 17:52 omp_getEnvInfo.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  235 Nov 24 17:52 omp_hello.c_nthread_13.bash
+-rw-rw-r-- 1 siddis14 hpceng  235 Nov 24 17:52 omp_hello.c_nthread_17.bash
+-rw-rw-r-- 1 siddis14 hpceng  234 Nov 24 17:52 omp_hello.c_nthread_5.bash
+-rw-rw-r-- 1 siddis14 hpceng  234 Nov 24 17:52 omp_hello.c_nthread_9.bash
+-rw-rw-r-- 1 siddis14 hpceng  239 Nov 24 17:52 omp_hello.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  226 Nov 24 17:52 omp_mm.c_nthread_10.bash
+-rw-rw-r-- 1 siddis14 hpceng  226 Nov 24 17:52 omp_mm.c_nthread_12.bash
+-rw-rw-r-- 1 siddis14 hpceng  226 Nov 24 17:52 omp_mm.c_nthread_14.bash
+-rw-rw-r-- 1 siddis14 hpceng  226 Nov 24 17:52 omp_mm.c_nthread_16.bash
+-rw-rw-r-- 1 siddis14 hpceng  225 Nov 24 17:52 omp_mm.c_nthread_2.bash
+-rw-rw-r-- 1 siddis14 hpceng  225 Nov 24 17:52 omp_mm.c_nthread_4.bash
+-rw-rw-r-- 1 siddis14 hpceng  225 Nov 24 17:52 omp_mm.c_nthread_6.bash
+-rw-rw-r-- 1 siddis14 hpceng  225 Nov 24 17:52 omp_mm.c_nthread_8.bash
+-rw-rw-r-- 1 siddis14 hpceng  230 Nov 24 17:52 omp_mm.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  237 Nov 24 17:52 omp_orphan.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  242 Nov 24 17:52 omp_orphan.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  246 Nov 24 17:52 omp_reduction.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  251 Nov 24 17:52 omp_reduction.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  249 Nov 24 17:52 omp_workshare1.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  254 Nov 24 17:52 omp_workshare1.f.bash
+-rw-rw-r-- 1 siddis14 hpceng  249 Nov 24 17:52 omp_workshare2.c.bash
+-rw-rw-r-- 1 siddis14 hpceng  254 Nov 24 17:52 omp_workshare2.f.bash
+

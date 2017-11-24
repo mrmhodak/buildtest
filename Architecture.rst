@@ -181,8 +181,10 @@ that are stored in R-buildtest-config repo
 .. program-output:: cat scripts/Architecture/R-3.3.1_without_testset.txt
 
 
-If you build R with  **--testset** flag you will notice each R package will be 
-build and stored in a separate directory.
+If you run ``buildtest -s R/3.3.1 -t intel/2017.01`` without ``--testset R`` flag, buildtest
+will only build tests from YAML files in $BUILDTEST_SOURCE. If ``--testset R`` was enabled 
+buildtest will also build tests from $BUILDTEST_R_DIR. To illustrate this see what happens
+when enabling ``--testset R``
 
 .. program-output:: cat scripts/Architecture/R-3.3.1_with_testset.txt
 
@@ -200,11 +202,11 @@ generate the test.
 +----------------------------------------------------+--------------------------------------------------------------------------+
 |                     File                           |                                Description                               |  
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/<software>/command.yaml       |       A list of binary executables and parameters to test                |  
+| $BUILDTEST_SOURCEDIR/$software/command.yaml        |       A list of binary executables and parameters to test                |  
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/$software/config/               |       Contains the yaml config files used for building test from source  |
+| $BUILDTEST_SOURCEDIR/$software/config/             |       Contains the yaml config files used for building test from source  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_TESTDIR/$software/code/                 |       Directory Containing the source code, which is referenced          |
+| $BUILDTEST_SOURCEDIR/$software/code/               |       Directory Containing the source code, which is referenced          |
 |                                                    |       by the testscript and yaml files                                   |
 +----------------------------------------------------+--------------------------------------------------------------------------+
 | $BUILDTEST_SOURCEDIR/system/command.yaml           |       A list of binary executables and parameters to for system packages |

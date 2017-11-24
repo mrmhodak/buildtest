@@ -7,8 +7,7 @@ buildtest Documentation
 =========================================
 
 Welcome to buildtest_ documentation. buildtest is a HPC Application Testing 
-Framework designed to build tests quickly verify an entire HPC software stack  
-that operates in a module environment. 
+Framework designed to build tests quickly and verify an entire HPC software stack  
 
 This documentation was last rebuild on |today| and is intended for version |version|. 
 
@@ -19,14 +18,15 @@ Contents:
 
 .. toctree::
    :glob:
-   :maxdepth: 2
+   :maxdepth: 1
  
    Setup 
    Features_of_buildtest
    Architecture
    Writing_Test_In_YAML    
    How_to_use_BuildTest
-   
+   Shell
+  
    Future_Work
 
 Description
@@ -46,16 +46,20 @@ EnvironmentModules_ or Lmod_ on your system to use this framework
 Motivation
 -----------
 
-An HPC environment has hundreds of application that running constantly, the 
-HPC engineers would build these apps and put them on production system. Some
-of the application have vendor provided scripts such as **make test** or 
-**ctest** that can test the software after **make** step. Unfortunately, 
-these methods perform tests in the build directory and does not perform a 
-**Post Install Test**. Changing the vendor test script to the install
-paths can be tedious and this would have to be done manually. 
+A typical HPC facility supports hundreds of applications that is supported by the HPC team.
+Building these software is a challnege and then figuring out how this software stack behaves
+due to system changes (OS release, kernel path, glibc, etc...). 
 
-Writing test scripts manually can be tedious, also there is no sharing of code 
-and most likely they are not compatible to work at other HPC sites. Easybuild
+Application Testing is difficult, COTS and open-source project typically provide 
+test scripts such as **make test** or **ctest** that can test the software after building 
+(**make**) step. Unfortunately, these methods perform tests prior to installation so 
+the ability to test software in production is not possible. One could try to change the 
+the vendor test script to the install path but this requires significant change into
+a complex makefile
+
+Writing test scripts manually can be tedious, also there is no sharing of tests
+and most likely they are not compatible to work with other HPC sites because of different
+software stack and hardcoded paths specific to the site. Easybuild
 takes a step at improving application build process by automating the entire 
 software workflow that can be built on any HPC site .
 
@@ -67,17 +71,19 @@ Objectives
 
 buildtest will focus on the following key elements
 
-        1. Provide a test toolkit with test examples for all HPC apps
-        2. Provide quick means for doing functional testing 
-        3. Generate tests to be run with job scheduler to verify apps on all Nodes
-        4. Provide performance metrics for tests scripts  
-        5. Integrate application benchmarks to buildtest for stress testing
+        1. Provide a test toolkit with  examples for verifying software stack
+        2. Ability to share test toolkit with the HPC community
+        3. Parameterize tests and jobs for OpenMP, MPI to observe relationship with varying process/thread configuration
+        4. Generate tests to be run with job scheduler to verify apps work on all compute nodes
+        5. Provide performance metrics for tests scripts  
+        6. Integrate application benchmarks to buildtest for stress testing
+        7. Generate report for each test used for post-processing 
 
 What is buildtest?
 ------------------
 
 buildtest is a python script that can generate self-contained testscripts in 
-shellscript (.sh). The test scripts can be run independently but they are 
+shellscript. The test scripts can be run independently but they are 
 designed to work in CMake_ CTest Framework. 
 
 buildtest can do the following:
@@ -93,6 +99,9 @@ buildtest can do the following:
  - build tests easily for scripting languages (R, Python, Perl, Ruby, Tcl) 
  - Run tests through an interactive menu
  - Scan tests and report which ones can be built with buildtest
+ - build test for different shells (csh, bash, sh)
+ - Generate job submission scripts for each test
+ - build YAML configuration from buildtest for system & easybuild package
 
 .. _CMake: https://cmake.org/documentation/
 
@@ -106,6 +115,9 @@ Useful Links
 * Python-buildtest-config_ - Python test scripts repository
 * Tcl-buildtest-config_ - Tcl test scripts repository
 * Ruby-buildtest-config_ - Ruby test scripts repository
+
+Join the buildtest slack channel (hpcbuildtest.slack.com) to get connected
+with the community. To join this channel please email **shahzebmsiddiqui@gmail.com**
 
 .. _buildtest: https://github.com/HPC-buildtest/buildtest
 .. _buildtest-framework: https://github.com/HPC-buildtest/buildtest-framework
