@@ -4,7 +4,10 @@ BUILDTEST_SOURCEDIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/bu
 BUILDTEST_PERL_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Perl-buildtest-config
 BUILDTEST_R_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/R-buildtest-config
 BUILDTEST_ROOT=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework
+BUILDTEST_RUBY_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Ruby-buildtest-config
 BUILDTEST_PYTHON_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Python-buildtest-config
+BUILDTEST_MODULE_NAMING_SCHEME=HMNS
 BUILDTEST_TESTDIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing
+BUILDTEST_TCL_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Tcl-buildtest-config
 
 

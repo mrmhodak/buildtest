@@ -62,5 +62,4 @@ xlmpich
 xlmpich2
 xlmvapich2
 xlompi
-Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_17_16_22_08_2017.log
 

@@ -1,0 +1,17 @@
+[siddis14@amrndhl1157 buildtest-framework]$ buildtest --system firefox
+
+Generating 1 binary tests for package: firefox
+Binary Tests are written in /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox
+Writing Log file to: /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/system/firefox/buildtest_19_01_27_11_2017.log
+
+
+[siddis14@amrndhl1157 buildtest-framework]$ ls -l /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/
+total 51
+-rw-rw-r-- 1 siddis14 hpceng 144 Nov 27 19:01 CMakeLists.txt
+-rw-rw-r-- 1 siddis14 hpceng  37 Nov 27 19:01 _usr_bin_firefox_--help.sh
+
+
+[siddis14@amrndhl1157 buildtest-framework]$ cat /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/_usr_bin_firefox_--help.sh
+module purge
+/usr/bin/firefox --help
+

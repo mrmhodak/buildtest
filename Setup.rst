@@ -1,26 +1,25 @@
 .. _Setup:
 
-Setup
-=====
+buildtest Setup
+===============
 
 
-**Requirements**
+.. contents::
+   :backlinks: none
 
----------------------------------------
 
+Requirements
+------------
 
- - Python
+ - Linux OS (Redhat or Centos)
+ - Python 2.6 or recent version of 2.x
  - argparse, PyYAML library
  - easyconfig repo
- - Lmod/Environment Modules
+ - A module tool environment - Lmod or EnvironmentModules
  - CMake >= 2.8
 
 
 Let's first get you setup with buildtest, so you can than start testing :)
-
-.. contents::
-   :depth: 2
-   :backlinks: none
 
 
 Installing buildtest
@@ -32,19 +31,24 @@ that too.
 
 .. program-output:: cat scripts/Setup/clonerepo.txt
 
+Once you clone the repos you should have the following layout
+
+.. program-output:: cat scripts/Setup/buildtest-directory.txt
+
 
 buildtest Environment Variables
 -------------------------------
           
-There is a few buildtest environment variables that you should
-be aware of when using this framework.
+There are a few buildtest environment variables that you should
+be aware of when using buildtest
 
 
 .. include:: Setup/buildtest-environment.txt
 
 
 
-To setup the buildtest environment variable source  **setup.sh** in your shell environment. 
+
+To setup the buildtest environment variable run ``source  setup.sh`` in your shell environment. 
 
 .. note:: 
    The script assumes you have cloned buildtest-framework and all the extra repos inside 
@@ -60,22 +64,22 @@ Once you have sourced setup.sh you will need to specify the following environmen
 * BUILDTEST_MODULE_EBROOT
 * BUILDTEST_EASYCONFIGDIR
 
-Each site will have their own configuration where they install their eb apps and easyconfig repo.
-
+Each site will have their own configuration where they install their eb apps and location
+to easyconfig repo.
 
 The environment variables are used by buildtest to determine the path where to retrieve
 module files, easyconfigs, and yaml configs and write test scripts. You can also reference
 these variables in yaml configs to write custom build and run commands. The testscript can
 reference source directory via **BUILDTEST_SOURCEDIR** to find files of interest
 
-Setup Check
------------
+Verify buildtest configuration
+------------------------------
 
 You can check if you are configured properly by running the following
 
 .. code::
 
-   buildtest --check-config
+   buildtest --check-setup
 
 This will check if the system has the following set
     
@@ -84,13 +88,14 @@ This will check if the system has the following set
 
 .. program-output:: cat scripts/Setup/check_setup.txt
 
+
+Don't worry if BUILDTEST_TESTDIR failed, once you create a test $BUILDTEST_ROOT/testing will be
+created where all the tests will be stored. The check indicates the directory doesn't exist, 
+but buildtest will check this before creating the test.
+
 buildtest version
 -----------------
 
 You can check the current version of buildtest by running the following
 
 .. program-output:: cat scripts/Setup/version.txt
-
-
-
-

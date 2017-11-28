@@ -1,0 +1,4 @@
+[siddis14@amrndhl1157 buildtest-framework]$ cat template/job.lsf
+#BSUB -n 1
+#BSUB -q short
+#BSUB -W 00:02

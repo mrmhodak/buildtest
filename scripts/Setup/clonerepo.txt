@@ -4,5 +4,5 @@
 [hpcswadm@hpcv27 scripts]$ git clone git@github.com:HPC-buildtest/R-buildtest-config.git
 [hpcswadm@hpcv27 scripts]$ git clone git@github.com:HPC-buildtest/Python-buildtest-config.git
 [hpcswadm@hpcv27 scripts]$ git clone git@github.com:HPC-buildtest/Perl-buildtest-config.git
-[hpcswadm@hpcv27 scripts]$ git clone <easybuild-easyconfigs>.git
-
+[hpcswadm@hpcv27 scripts]$ git clone git@github.com:HPC-buildtest/Ruby-buildtest-config.git
+[hpcswadm@hpcv27 scripts]$ git clone git@github.com:HPC-buildtest/Tcl-buildtest-config.git
