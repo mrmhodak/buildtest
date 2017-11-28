@@ -1,9 +1,13 @@
 .. _How_to_use_BuildTest:
 
 
-
 How to use buildtest
 ====================
+
+
+.. contents::
+   :backlinks: none
+
 
 If you have not completed setup your environment please :ref:`checkout the  setup. <Setup>`
 

@@ -1,0 +1,5 @@
+[siddis14@amrndhl1157 buildtest-framework]$ cat /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/_usr_bin_firefox_--help.lsf
+#BSUB -n 1
+#BSUB -q short
+#BSUB -W 00:02
+sh /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/_usr_bin_firefox_--help.sh

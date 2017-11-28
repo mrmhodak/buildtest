@@ -1,26 +1,25 @@
 .. _Setup:
 
-Setup
-=====
+buildtest Setup
+===============
 
 
-**Requirements**
+.. contents::
+   :backlinks: none
 
----------------------------------------
 
+Requirements
+------------
 
- - Python
+ - Linux OS (Redhat or Centos)
+ - Python 2.6 or recent version of 2.x
  - argparse, PyYAML library
  - easyconfig repo
- - Lmod/Environment Modules
+ - A module tool environment - Lmod or EnvironmentModules
  - CMake >= 2.8
 
 
 Let's first get you setup with buildtest, so you can than start testing :)
-
-.. contents::
-   :depth: 2
-   :backlinks: none
 
 
 Installing buildtest
@@ -40,8 +39,8 @@ Once you clone the repos you should have the following layout
 buildtest Environment Variables
 -------------------------------
           
-There is a few buildtest environment variables that you should
-be aware of when using this framework.
+There are a few buildtest environment variables that you should
+be aware of when using buildtest
 
 
 .. include:: Setup/buildtest-environment.txt
@@ -73,8 +72,8 @@ module files, easyconfigs, and yaml configs and write test scripts. You can also
 these variables in yaml configs to write custom build and run commands. The testscript can
 reference source directory via **BUILDTEST_SOURCEDIR** to find files of interest
 
-Setup Check
------------
+Verify buildtest configuration
+------------------------------
 
 You can check if you are configured properly by running the following
 

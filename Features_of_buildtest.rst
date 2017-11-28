@@ -3,10 +3,17 @@
 Features of buildtest
 ---------------------
 
+
+.. contents::
+   :backlinks: none
+
+
 buildtest can comes with several features that includes
  - List software 
  - List easybuild toolchains
  - List Software Version Relationship
+ - Find YAML configuration
+ - Find test scripts
 
 List Software
 ~~~~~~~~~~~~~~

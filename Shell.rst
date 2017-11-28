@@ -3,6 +3,11 @@
 Buildtest supports different shell types
 ========================================
 
+
+.. contents::
+   :backlinks: none
+
+
 Currently, buildtest supports the following shell types
 
 - sh (default)
