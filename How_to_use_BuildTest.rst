@@ -44,8 +44,6 @@ Create a new directory for instance **build**, then do the following
 
 .. program-output:: cat scripts/How_to_use_buildtest/cmake-build.txt
 
-.. program-output:: cat scripts/How_to_use_buildtest/test-GCC-5.4.0-2.27.txt
-
 You can launch an interactive session to run the test. This can be done by running the following.
 
 
