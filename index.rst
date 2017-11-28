@@ -20,7 +20,7 @@ Introduction to buildtest
 
 .. toctree::
    :glob:
-   :maxdepth: 1
+   :maxdepth: 2
 
    What_is_buildtest
    Features_of_buildtest
@@ -31,7 +31,7 @@ Getting Started
 ---------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    Setup
    How_to_use_BuildTest
@@ -40,7 +40,7 @@ Writing YAML configuration
 --------------------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
 
    Writing_Test_In_YAML
@@ -52,7 +52,7 @@ Advanced Features
 -----------------
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    Shell
    Job_Template
