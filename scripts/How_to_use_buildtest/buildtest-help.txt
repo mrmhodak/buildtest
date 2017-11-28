@@ -45,6 +45,7 @@ optional arguments:
                         Select the type of test set to run (Python, R, Ruby,
                         Perl, Tcl, MPI)
   --runtest             Run the test interactively through runtest.py
+
   -V, --version         show program version number and exit
   --sysyaml SYSYAML     generate binary test YAML configuration for system
                         package
@@ -53,4 +54,3 @@ optional arguments:
   --job-template JOB_TEMPLATE
                         specify job template file to create job submission
                         script for the test to run with resource scheduler
-

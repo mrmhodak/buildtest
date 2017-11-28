@@ -41,13 +41,37 @@ Launching Testing
 buildtest will setup your environment with CTEST so you can build from out-of-source directory.
 Create a new directory for instance **build**, then do the following
 
+
 .. program-output:: cat scripts/How_to_use_buildtest/cmake-build.txt
 
+.. program-output:: cat scripts/How_to_use_buildtest/test-GCC-5.4.0-2.27.txt
+
+You can launch an interactive session to run the test. This can be done by running the following.
+
+
+.. code::
+
+   buildtest --runtest
+
+Follow instruction in the menu to run the test.
+
+
 Afterward run ``ctest .`` to run all the tests
+
 
 .. program-output:: cat scripts/How_to_use_buildtest/run-GCC-5.4.0-2.27.txt
 
 buildtest has an interactive session to run the test. This can be done by running
+
+buildtest can generate tests for system packages using the flag **--system**. 
+Currently, system package test only perform binary test. This means you need to 
+find the binaries associated with the package and add the executable and any 
+parameters in command.yaml.
+
+This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is 
+name of system package. At this moment, buildtest is using Redhat package 
+naming convention.
+
 
 .. code::
 

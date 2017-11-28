@@ -6,10 +6,10 @@
 buildtest Documentation
 =========================================
 
-Welcome to buildtest_ documentation. buildtest is a HPC Application Testing 
-Framework designed to build tests quickly and verify an entire HPC software stack  
+Welcome to buildtest_ documentation. buildtest is a HPC Application Testing
+Framework designed to build tests quickly and verify an entire HPC software stack
 
-This documentation was last rebuild on |today| and is intended for version |version|. 
+This documentation was last rebuild on |today| and is intended for version |version|.
 
 This project is in development and led by **Shahzeb Siddiqui**
 
@@ -32,7 +32,7 @@ Getting Started
 
 .. toctree::
    :maxdepth: 1
-   
+
    Setup
    How_to_use_BuildTest
 
@@ -41,14 +41,14 @@ Writing YAML configuration
 
 .. toctree::
    :maxdepth: 1
-   
+
 
    Writing_Test_In_YAML
    MPI_yaml
    OpenMP_yaml
    Generate_yaml_from_buildtest
 
-Advanced Features 
+Advanced Features
 -----------------
 
 .. toctree::

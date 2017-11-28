@@ -47,6 +47,7 @@ be aware of when using buildtest
 
 
 
+
 To setup the buildtest environment variable run ``source  setup.sh`` in your shell environment. 
 
 .. note:: 
@@ -65,7 +66,6 @@ Once you have sourced setup.sh you will need to specify the following environmen
 
 Each site will have their own configuration where they install their eb apps and location
 to easyconfig repo.
-
 
 The environment variables are used by buildtest to determine the path where to retrieve
 module files, easyconfigs, and yaml configs and write test scripts. You can also reference
@@ -88,10 +88,10 @@ This will check if the system has the following set
 
 .. program-output:: cat scripts/Setup/check_setup.txt
 
+
 Don't worry if BUILDTEST_TESTDIR failed, once you create a test $BUILDTEST_ROOT/testing will be
 created where all the tests will be stored. The check indicates the directory doesn't exist, 
 but buildtest will check this before creating the test.
-
 
 buildtest version
 -----------------
@@ -99,7 +99,3 @@ buildtest version
 You can check the current version of buildtest by running the following
 
 .. program-output:: cat scripts/Setup/version.txt
-
-
-
-

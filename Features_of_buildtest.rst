@@ -4,8 +4,10 @@ Features of buildtest
 ---------------------
 
 
+
 .. contents::
    :backlinks: none
+
 
 
 buildtest can comes with several features that includes
@@ -14,6 +16,7 @@ buildtest can comes with several features that includes
  - List Software Version Relationship
  - Find YAML configuration
  - Find test scripts
+
 
 List Software
 ~~~~~~~~~~~~~~
@@ -64,6 +67,7 @@ separately with a leading **.** followed by the version
 
 .. program-output:: cat scripts/Features_of_buildtest/software_version.txt
 
+
 Find YAML configs
 ~~~~~~~~~~~~~~~~~
 
@@ -107,3 +111,4 @@ If you are interested in seeing tests with **gcc** you can run ``buildtest -ft g
 will get you 
 
 .. program-output:: cat scripts/Features_of_buildtest/find_gcc_test.txt
+

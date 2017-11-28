@@ -3,6 +3,9 @@
 buildtest Architecture
 =======================
 
+This section will explain how the buildtest framework is designed in regards
+to
+
 
 .. contents::
    :backlinks: none
@@ -15,6 +18,7 @@ to
 * Testing Directory Structure
 * CTest configuration
 * Source Directory Structure
+
 
 Three Step Verification
 ------------------------
@@ -184,6 +188,7 @@ If you build R without testset it will build not build the tests for R packages
 that are stored in R-buildtest-config repo
 
 .. program-output:: cat scripts/Architecture/R-3.3.1_without_testset.txt
+
 
 
 If you run ``buildtest -s R/3.3.1 -t intel/2017.01`` without ``--testset R`` flag, buildtest

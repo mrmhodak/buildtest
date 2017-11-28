@@ -54,9 +54,11 @@ author = u'Shahzeb Siddiqui'
 # built documents.
 #
 # The short X.Y version.
+
 version = '1.2.0'
 # The full version, including alpha/beta/rc tags.
 release = '2017.11.24'
+
 
 
 html_title = project + " v" + version + " documentation (release " + release + ")"
