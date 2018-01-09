@@ -50,9 +50,6 @@ toolchain
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.27 --testset MPI
-   -bash: buildtest: command not found
-   [siddis14@amrndhl1157 buildtest-framework]$ source setup.sh
-   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.27 --testset MPI
    Checking for easyconfig file: OpenMPI-2.0.0-GCC-5.4.0-2.27.eb ... FOUND
    Checking easyconfig conditional checks ... SUCCESS
    [BINARYTEST]: Processing YAML file for  OpenMPI/2.0.0 GCC/5.4.0-2.27  at  /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/ebapps/OpenMPI/command.yaml
