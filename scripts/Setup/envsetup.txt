@@ -1,13 +1,13 @@
-[siddis14@amrndhl1295 buildtest-framework]$ source setup.sh
-[siddis14@amrndhl1295 buildtest-framework]$ env | grep BUILDTEST
-BUILDTEST_SOURCEDIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs
-BUILDTEST_PERL_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Perl-buildtest-config
-BUILDTEST_R_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/R-buildtest-config
-BUILDTEST_ROOT=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework
-BUILDTEST_RUBY_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Ruby-buildtest-config
-BUILDTEST_PYTHON_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Python-buildtest-config
+[siddis14@amrndhl1157 buildtest-framework]$ env | grep BUILDTEST
+BUILDTEST_SOURCEDIR=/lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs
+BUILDTEST_PERL_DIR=/lustre/workspace/home/siddis14/buildtest-framework/Perl-buildtest-config
+BUILDTEST_R_DIR=/lustre/workspace/home/siddis14/buildtest-framework/R-buildtest-config
+BUILDTEST_ROOT=/lustre/workspace/home/siddis14/buildtest-framework
+BUILDTEST_RUBY_DIR=/lustre/workspace/home/siddis14/buildtest-framework/Ruby-buildtest-config
+BUILDTEST_PYTHON_DIR=/lustre/workspace/home/siddis14/buildtest-framework/Python-buildtest-config
+BUILDTEST_EASYCONFIGDIR=/lustre/workspace/home/siddis14/easybuild-easyconfigs/easybuild/easyconfigs
 BUILDTEST_MODULE_NAMING_SCHEME=HMNS
-BUILDTEST_TESTDIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing
-BUILDTEST_TCL_DIR=/hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/Tcl-buildtest-config
-
+BUILDTEST_MODULE_EBROOT=/nfs/grid/software/RHEL7/easybuild/modules/all
+BUILDTEST_TESTDIR=/lustre/workspace/home/siddis14/buildtest-framework/testing
+BUILDTEST_TCL_DIR=/lustre/workspace/home/siddis14/buildtest-framework/Tcl-buildtest-config
 

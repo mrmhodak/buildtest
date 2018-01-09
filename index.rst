@@ -25,7 +25,6 @@ Introduction to buildtest
    What_is_buildtest
    Features_of_buildtest
    Architecture
-   Future_Work
 
 Getting Started
 ---------------
@@ -47,6 +46,16 @@ Writing YAML configuration
    MPI_yaml
    OpenMP_yaml
    Generate_yaml_from_buildtest
+   Jobscript_yaml_configuration
+
+Jobscript Features 
+------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   Automate_BatchJobs
+
 
 Advanced Features
 -----------------
