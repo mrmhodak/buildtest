@@ -1,2 +1,2 @@
 [siddis14@amrndhl1295 buildtest-framework]$ buildtest -V
-buildtest version: 1.2.0
+buildtest version: 1.2.1

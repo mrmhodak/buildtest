@@ -1,5 +1,5 @@
--bash-4.2$ cd buildtest-framework/
--bash-4.2$ ls
-buildtest          CONTRIBUTING.md  LICENSE.txt            Python-buildtest-config  README.rst             setup.py  Tcl-buildtest-config
-buildtest-configs  framework        Perl-buildtest-config  R-buildtest-config       Ruby-buildtest-config  setup.sh
+[siddis14@amrndhl1157 buildtest-framework]$ cd buildtest-framework
+[siddis14@amrndhl1157 buildtest-framework]$ ls
+buildtest          CONTRIBUTING.md  framework    option_test.sh         Python-buildtest-config  README.rst             setup.py  success_test.sh       template
+buildtest-configs  fail_test.sh     LICENSE.txt  Perl-buildtest-config  R-buildtest-config       Ruby-buildtest-config  setup.sh  Tcl-buildtest-config
 

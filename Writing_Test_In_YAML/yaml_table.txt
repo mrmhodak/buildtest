@@ -27,4 +27,6 @@ cuda          			|  enable cuda. Sets the compiler wrapper to nvcc. (Not impleme
 binaries      			list of binary command to execute in command.yaml                  
 threadrange			Specify range for OpenMP thread for buildtest to create a parameterized set of test scripts. Format: <start>,<end>,<interval>
 procrange			Specify range for MPI process (argument to -np) for buildtest to create a parameterized set of test scripts. Format: <start>,<end>, <interval>
+scheduler			Specify type of resource scheduler to create job script automatically. Valid options : [ LSF, SLURM, PBS ]. **PBS not implemented yet!**
+jobslots			Specify total job slots to use in jobscript.
 ================           	==============================================================================================================================================

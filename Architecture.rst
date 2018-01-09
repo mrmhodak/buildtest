@@ -3,9 +3,6 @@
 buildtest Architecture
 =======================
 
-This section will explain how the buildtest framework is designed in regards
-to
-
 
 .. contents::
    :backlinks: none
@@ -14,85 +11,190 @@ to
 This section will explain how the buildtest framework is designed in regards
 to
 
-* Module, Toolchain, easyconfig check
+* Software, Toolchain, easyconfig check
 * Testing Directory Structure
 * CTest configuration
 * Source Directory Structure
 
 
-Three Step Verification
-------------------------
+Software and Toolchain Check
+----------------------------
 
-BuildTest performs a three-step verification before creating any test case. This 
-is designed to prevent buildtest from creating testscripts that would fail 
-during execution.
+buildtest takes argument to build tests for software that can take argument from 
+**--software**. The argument to --software is autopopulated based on the 
+software modules found in module tree $BUILDTEST_MODULE_EBROOT.
+
+Similarly, **--toolchain** is autopopulated based on union of software modules
+present in $BUILDTEST_MODULE_EBROOT and the toolchain list. Every
+toolchain must be a software found in module tree $BUILDTEST_MODULE_EBROOT.
+
+The buildtest options menu pre-processes this information into a list that is 
+supplied as **choice** attribute in ``argparse.arg_argument``. For more detail
+on this check out ``framework.tools.menu``
 
 1. ModuleFile Verication
 2. Toolchain verfication
 3. Easyconfig Verification
 
-ModuleFile Verification
-~~~~~~~~~~~~~~~~~~~~~~~
+How modulefiles affect testing
+------------------------------
 
-**Module File Verification:** buildtest makes use of **$BUILDTEST_MODULE_EBROOT** 
-to find all the modules and stores the values in an array. Whenever an argument 
-is passed for **--software** and **--toolchain** it is checked with the module 
-array to make sure it exist. If there is no module found with the following 
-name, the program will terminate immediately. Module check is done for both software
-and toolchain since both are installed as modules in the system 
+modulefiles are used in test script to load the software environment to test
+the software's functionality. Typically the HPC software stack is installed in
+a cluster filesystem that is non-standard Linux path (i.e $PATH) so modules
+are used to load the environment properly. 
 
-.. code:: 
+Names of modulefiles depend on module naming scheme in Easybuild this is 
+controlled by ``eb --module-naming-scheme``. The default naming scheme is 
+Easybuild Module Naming Scheme (EasyBuildMNS) which is a flat naming scheme. 
+This naming scheme is simple, the complete  software module stack is present in
+one directory and names of module file tend to be long because they take the 
+format of ``<app>/<version>-<toolchain>``. 
 
-       [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t xzy/1.0
-        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
-        Checking Software: xzy/1.0 ... FAILED
-        Can't find software: xzy 1.0
-
-        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_09_57_28_08_2017.log
-
-
-Toolchain Verification
-~~~~~~~~~~~~~~~~~~~~~~
-
-Argument to **--toolchain** is checked with the toolchain list that stores
-all valid toolchains defined by **eb --list-toolchains**. If argument is not
-found in list then buildtest will terminate immediately.
-
-Argument to **--toolchain** needs to be explicit if module is hidden file or not.
-For instance, if GCCcore 5.4.0 is hidden module, buildtest will not find the module
-until it is specified as **-t GCCcore/.5.4.0**
+For instance loading OpenMPI 2.0.0 with GCC-5.4.0-2.27 will be 
 
 .. code::
 
-        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/5.4.0
-        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
-        Checking Software: GCCcore/5.4.0 ... FAILED
-        Can't find software: GCCcore 5.4.0
+   module load OpenMPI/2.0.0-GCC-5.4.0-2.27
 
-        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_02_28_08_2017.log
+Similarly, easybuild supports Hierarchical Module Naming Scheme (HMNS) that
+categorize software module stack in different trees that are loaded dynamically 
+based on your current module list. 
+
+With HMNS, the same module will be loaded in its regular form but from a tree
+GCC-5.4.0-2.27
+
+.. code::
+
+   module load OpenMPI/2.0.0
+
+In HMNS, the module specified with **--toolchain**  must be loaded first prior 
+to loading module specified by **--software**. This is due to the fact 
+$MODULEPATH is altered inside toolchain modules to load different module trees
+which allow users to load software modules. 
+
+In each test script you will see the following commands
+
+.. code::
+
+        module purge
+        module load <Toolchain>/<Toolchain-version>
+        module load <Software>/<Software-version>
 
 
-Specify GCCcore as hidden file will pass the toolchain check since GCCcore module is hidden.
+Easybuild automatically generates modules for all software installed by easybuild
+and each module is written in a way to load all dependent modules necessary, 
+therefore users don't need to worry about loading every dependent module in their
+environment.
+
+buildtest supports both EasyBuildMNS and HierarchicalMNS. buildtest takes
+argument from ``--software`` and ``--toolchain`` to figure out which modules
+need to be loaded at setup. 
+
+How buildtest gets the software module stack 
+--------------------------------------------
+
+As mentioned previously, buildtest makes use of environment variable 
+$BUILDTEST_MODULE_EBROOT (i.e root of module tree) to find all the software
+modules. Easybuild supports Tcl and Lua modules so buildtest attempts to find
+all files that are actual module files.
+
+buildtest ignores ``.version`` or ``.default`` files and accepts all other files
+in the module tree. This information is processed further by stripping full
+path to extract the module name depending if you specified BUILDTEST_MODULE_NAMING_SCHEME
+as Flat Naming Scheme (FNS) or Hierarchical Module Naming Scheme (HMNS). This 
+can be specified in the buildtest command line via
+
+.. code::
+
+   buildtest --module-naming-scheme
+
+The software module stack is used to populate the choice entries for --software
+and --toolchain. buildtest supports TAB completion for ease of use.
+
+To demonstrate this example see what happens when you type **lib** in --software
+with TAB completion
+
+.. code:: shell
+
+   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s lib
+   libdrm/.2.4.76                libharu/.2.3.0                libpthread-stubs/.0.3         libX11/.1.6.3                 libXext/.1.3.3                libXrender/.0.9.9
+   libffi/.3.2.1                 libICE/.1.0.9                 libreadline/.6.3              libXau/.1.0.8                 libXft/.2.3.2                 libXt/.1.1.5
+   libGLU/.9.0.0                 libjpeg-turbo/.1.5.0          libSM/.1.2.2                  libxcb/.1.11.1                libxml2/.2.9.4
+   libgtextutils/.0.7            libpng/.1.6.23                libtool/.2.4.6                libXdmcp/.1.1.2               libxml2/.2.9.4-Python-2.7.12
 
 
-Easyconfig Verification
-~~~~~~~~~~~~~~~~~~~~~~~
+The tab completion works for **--toolchain** to find all software modules that
+correspond to easybuild toolchain.
+
+To demonstrate this example, see the available toolchains in the system.
+
+.. code::
+
+   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -t
+   foss/.2016.03                        GCC/6.2.0-2.27                       gompi/.2016.09                       iimpi/.2017.01-GCC-5.4.0-2.27        iompi/2017.01
+   foss/.2016.09                        GCCcore/.5.4.0                       gompi/.2016b                         iimpic/.2017.01
+   foss/.2016b                          GCCcore/.6.2.0                       iccifort/.2017.1.132-GCC-5.4.0-2.27  intel/2017.01
+   GCC/5.4.0-2.27                       gompi/.2016.03                       iccifortcuda/.2017.01                intelcuda/2017.01
+
+buildtest takes a union of a list of predefined toolchains from ``eb --list-toolchains``
+that is defined in module ``framework.tools.easybuild.list_toolchain`` and 
+list of software module stack. For details on implementation check out ``framework.tools.software.get_software_stack`` 
+and ``framework.tools.software.get_toolchain_stack``
+
+How to determine if software is installed with easybuild
+---------------------------------------------------------
+
+You might wonder, how do we map software & toolchain from our software stack with 
+buildtest.
+
+From the previous two examples, we find that --software and --toolchain are 
+predefined list automatically generated from your software stack. Also note that
+the combination of --software and --toolchain will not determine the software
+is actually installed on the system. The only way to determine this is to see
+if a particular easyconfig was built using ``eb`` command. 
+
+You can run into an issue if the software and toolchain do not correspond to an 
+actual software installation. Since we have no way to determine the software is 
+actually installed by analyzing the file structure or querying 
+a rpm database, or a user command history of eb commands, buildtest takes a 
+different approach to solve this problem. 
+
+**buildtest assumes that easyconfig found in $BUILDTEST_EASYCONFIG_DIR was used
+in installing the software stack**. 
+
+.. Note:: $BUILDTEST_EASYCONFIG_DIR is path to your easybuild-easyconfig directory
+
+In easybuild, each easyconfig corresponds to a software module that makes up the 
+software stack. Even if the easyconfig is present in your easybuild-easyconfig repo but not 
+installed in the software stack the following deduction is valid.
+
+**Every software module in software stack must come from only 1 unique easyconfig
+file**. 
+
+This only applies that HPC site do not mix up easybuild software stack with custom
+software stack in their module tree.
+
+With that being said, buildtest conducts a easyconfig check to verify software
+is installed.
+
+ 
+easyconfig check
+----------------
+
+You might run into an issue when easyconfig check fails
 
 .. code:: 
 
         [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/.5.4.0
-        Checking Software: GCC/5.4.0-2.27  ... SUCCESS
-        Checking Software: GCCcore/.5.4.0  ... SUCCESS
-        Checking Toolchain: GCCcore/.5.4.0 ... SUCCESS
-        Checking easyconfig file ... FAILED
-        ERROR: Attempting to  find easyconfig file  GCC-5.4.0-2.27-GCCcore-5.4.0.eb
-        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_03_28_08_2017.log
+        ERROR: No such easyconfig file: /lustre/workspace/home/siddis14/easybuild-easyconfigs/easybuild/easyconfigs/g/GCC/GCC-5.4.0-2.27-GCCcore-5.4.0.eb
+
+        buildtest checks the easyconfig to ensure application is installed with easybuild
 
 
-.. Note:: 
+.. Note:: Modules that are hidden must be passed with a leading dot in --software and 
+   --toolchain option
 
-        Toolchain verification will happen after the module check, this assumes the system has a 
-        module file, but we need to determine if its a hidden module and whether it is a valid eb toolchain
 
 Every application is built with a particular toolchain in EasyBuild. 
 In order to make sure we are building for the correct test in the event
@@ -129,7 +231,7 @@ R/3.3.1 with foss/2016.09, the module file & toolchain verification will pass
 but it wouldn't pass the easyconfig verification if there is no easyconfig found.
 
 
-.. code-block:: bash
+.. code:: shell
 
         [siddis14@amrndhl1295 buildtest-framework]$ buildtest -s R/3.3.1 -t foss/.2016.09
         Checking Software: R/3.3.1  ... SUCCESS
@@ -143,7 +245,7 @@ but it wouldn't pass the easyconfig verification if there is no easyconfig found
 Testing Directory Structure
 -------------------------------
 
-BuildTest will write the test in the directory specified by **BUILDTEST_TESTDIR**. 
+buildtest will write the tests in the directory specified by **BUILDTEST_TESTDIR**. 
 By default the testing directory is set to **BUILDTEST_ROOT/testing**. Recall that 
 CTest is the Testing Framework that automatically generates Makefiles necessary 
 to build and run the test. CTest will utilize *CMakeLists.txt* that will invoke 

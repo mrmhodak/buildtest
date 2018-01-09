@@ -1,9 +1,12 @@
 [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27
-Checking Software: GCC/5.4.0-2.27  ... SUCCESS
-Checking Toolchain: dummy/dummy ... SUCCESS
+Creating Log directory:  /lustre/workspace/home/siddis14/buildtest-framework/log
 Checking for easyconfig file: GCC-5.4.0-2.27.eb ... FOUND
 Checking easyconfig conditional checks ... SUCCESS
+[BINARYTEST]: Processing YAML file for  GCC/5.4.0-2.27   at  /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/command.yaml
+
 Generating 10 binary tests for Application: GCC/5.4.0-2.27
-Binary Tests are written in /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/
-Generating 22 Source Tests
-Writing Log file:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/GCC/5.4.0-2.27/buildtest_17_23_24_11_2017.log
+Binary Tests are written in /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/
+[SOURCETEST]: Processing all YAML files in  /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/config
+Generating 4 Source Tests and writing at  /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/
+Writing Log file:  /lustre/workspace/home/siddis14/buildtest-framework/log/GCC/5.4.0-2.27/buildtest_13_06_08_01_2018.log
+
