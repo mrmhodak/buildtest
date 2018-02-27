@@ -14,6 +14,8 @@ This documentation was last rebuild on |today| and is intended for version |vers
 This project is in development and led by **Shahzeb Siddiqui**
 
 
+Checkout https://asciinema.org/a/163732?speed=2.0 for a buildtest ascicast
+
 
 Introduction to buildtest
 -------------------------
