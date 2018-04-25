@@ -17,7 +17,7 @@ Usage
 
 Let's start with the basics. 
 
-If you are unsure about buildtest see the help section for more information.
+If you are unsure about buildtest see the help section (``buildtest --help``) for more details.
 
 .. program-output:: cat scripts/How_to_use_buildtest/buildtest-help.txt
 
@@ -85,13 +85,14 @@ following.
 
 .. code::
 
-   [siddis14@amrndhl1228 buildtest-framework]$ buildtest -
-   --check-setup                -h                           -lt                          --software                   -t
-   --ebyaml                     --help                       --module-naming-scheme       --software-version-relation  --testset
-   -fc                          --job-template               --runtest                    --submitjob                  --toolchain
-   --findconfig                 --list-toolchain             -s                           -svr                         -V
-   --findtest                   --list-unique-software       --scantest                   --system                     --version
-   -ft                          -ls                          --shell                      --sysyaml
+        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -
+        --clean-logs                  --findconfig                  --list-toolchain              --runtest                     -svr                          -V
+        --clean-tests                 --findtest                    --list-unique-software        -s                            --system                      --version
+        --diff-trees                  -ft                           --logdir                      --scantest                    --sysyaml
+        --easyconfigs-in-moduletrees  -h                            -ls                           --shell                       -t
+        --ebyaml                      --help                        -lt                           --software                    --testdir
+        -ecmt                         --ignore-easybuild            -mns                          --software-version-relation   --testset
+        -fc                           --job-template                --module-naming-scheme        --submitjob                   --toolchain
 
 .. Note:: You will need to press the TAB key few times before it shows all the 
    args
@@ -104,7 +105,7 @@ TAB complete on --software
 
 
 TAB complete on --software will present all unique software found from module tree
-$BUILDTEST_MODULE_EBROOT
+`BUILDTEST_EBROOT`
 
 
 .. code::
@@ -252,32 +253,45 @@ as your package manager. This output is extracted by getting output of ``rpm -qa
 System Package Test
 -------------------
 
-buildtest can generate tests for system packages using the flag **--system**. 
+buildtest can generate tests for system packages using the option ``buildtest --system <package>``. 
 Currently, system package test only perform binary test. This means you need to 
 find the binaries associated with the package and add the executable and any 
-parameters in command.yaml.
+parameters in ``command.yaml``.
 
-This file will be $BUILDTEST_SOURCEDIR/system/$pkg/command.yaml where $pkg is 
+This file will be ``$BUILDTEST_CONFIGS_REPO/system/$pkg/command.yaml`` where $pkg is 
 name of system package. At this moment, buildtest is using Redhat package 
 naming convention.
 
-
-.. program-output:: cat scripts/How_to_use_buildtest/systempkg_gcc-c++.txt
-
-
-To run all system package test do the following
+For instance to build test for the system package ``gcc`` you can do the following
 
 .. code::
 
-   [siddis14@amrndhl1295 buildtest-framework]$  buildtest --system all
+   buildtest --system gcc
+
+
+To run all system package test you can do the following
+
+.. code::
+
+   buildtest --system all
 
 
 Log files
 ---------
 
-Log files are stored in $BUILDTEST_ROOT/log. Flags for building tests ebapps (**-s**) and system package (**--system**) will 
-create log files in $BUILDTEST_ROOT/log/ with directories **[system | ebapps]**. 
+All buildtest logs will be written in ``BUILDTEST_LOGDIR``. 
 
-For instance a GCC/5.4.0-2.27 build will be stored in **$BUILDTEST_ROOT/log/GCC/5.4.0-2.27/dummy/dummy/buildtest_HH_MM_DD_MM_YYYY.log**
+buildtest will store log files for ``buildtest -s app/app_ver`` in ``BUILDTEST_LOGDIR/app/app_ver``
+If toolchain option is specified for instance ``buildtest -s app/app_ver -t tc_name/tc_ver`` then buildtest will store the logs in
+``BUILDTEST_LOGDIR/app/app_ver/tc_name/tc_ver``.
+
+Similarly logs for system tests like ``buildtest --system <package>`` will be stored in ``BUILDTEST_LOGDIR/system/package``
+
+You may override BUILDTEST_LOGDIR option at command line via ``buildtest --logdir`` and you may even store individual buildtest runs in separate directories
+such as the following
+
+.. code::
+
+   buildtest -s OpenMPI/3.0.0-GCC-6.4.0-2.28 --logdir=/tmp
 
  

@@ -22,11 +22,11 @@ Software and Toolchain Check
 
 buildtest takes argument to build tests for software that can take argument from 
 **--software**. The argument to --software is autopopulated based on the 
-software modules found in module tree $BUILDTEST_MODULE_EBROOT.
+software modules found in module tree ``$BUILDTEST_EBROOT``.
 
 Similarly, **--toolchain** is autopopulated based on union of software modules
-present in $BUILDTEST_MODULE_EBROOT and the toolchain list. Every
-toolchain must be a software found in module tree $BUILDTEST_MODULE_EBROOT.
+present in ``$BUILDTEST_EBROOT`` and the toolchain list. Every
+toolchain must be a software found in module tree ``$BUILDTEST_EBROOT``.
 
 The buildtest options menu pre-processes this information into a list that is 
 supplied as **choice** attribute in ``argparse.arg_argument``. For more detail
@@ -36,66 +36,53 @@ on this check out ``framework.tools.menu``
 2. Toolchain verfication
 3. Easyconfig Verification
 
-How modulefiles affect testing
-------------------------------
+Module File Format and Module Naming Scheme
+-------------------------------------------
 
-modulefiles are used in test script to load the software environment to test
+Modulefiles are used in test script to load the software environment to test
 the software's functionality. Typically the HPC software stack is installed in
-a cluster filesystem that is non-standard Linux path (i.e $PATH) so modules
+a cluster filesystem in a non-standard Linux path so modules
 are used to load the environment properly. 
 
 Names of modulefiles depend on module naming scheme in Easybuild this is 
 controlled by ``eb --module-naming-scheme``. The default naming scheme is 
-Easybuild Module Naming Scheme (EasyBuildMNS) which is a flat naming scheme. 
-This naming scheme is simple, the complete  software module stack is present in
+**Easybuild Module Naming Scheme (EasyBuildMNS)** which is a flat naming scheme. 
+This naming scheme is simple because it presents the software stack in
 one directory and names of module file tend to be long because they take the 
 format of ``<app>/<version>-<toolchain>``. 
 
-For instance loading OpenMPI 2.0.0 with GCC-5.4.0-2.27 will be 
+For instance loading ``OpenMPI-2.0.0`` built with ``GCC-5.4.0-2.27`` will be 
 
 .. code::
 
    module load OpenMPI/2.0.0-GCC-5.4.0-2.27
 
-Similarly, easybuild supports Hierarchical Module Naming Scheme (HMNS) that
+Similarly, easybuild supports **Hierarchical Module Naming Scheme (HMNS)** that
 categorize software module stack in different trees that are loaded dynamically 
 based on your current module list. 
 
-With HMNS, the same module will be loaded in its regular form but from a tree
-GCC-5.4.0-2.27
+With HMNS, the the module format will be different. You will  be loading the toolchain module (``GCC``) 
+followed by the application module (``OpenMPI``). 
 
 .. code::
 
+   module load GCC/5.4.0-2.27
    module load OpenMPI/2.0.0
 
-In HMNS, the module specified with **--toolchain**  must be loaded first prior 
-to loading module specified by **--software**. This is due to the fact 
-$MODULEPATH is altered inside toolchain modules to load different module trees
-which allow users to load software modules. 
-
-In each test script you will see the following commands
-
-.. code::
-
-        module purge
-        module load <Toolchain>/<Toolchain-version>
-        module load <Software>/<Software-version>
-
+Modules in EasyBuildMNS will be unique so you will just  use ``buildtest -s`` and
+toolchain option ``--toolchain`` will be ignored. If you have a HMNS module tree defined
+in BUILDTEST_EBROOT then you will need to use both options ``buildtest -s <app> -t <toolchain>`` 
 
 Easybuild automatically generates modules for all software installed by easybuild
 and each module is written in a way to load all dependent modules necessary, 
 therefore users don't need to worry about loading every dependent module in their
 environment.
 
-buildtest supports both EasyBuildMNS and HierarchicalMNS. buildtest takes
-argument from ``--software`` and ``--toolchain`` to figure out which modules
-need to be loaded at setup. 
-
 How buildtest gets the software module stack 
 --------------------------------------------
 
 As mentioned previously, buildtest makes use of environment variable 
-$BUILDTEST_MODULE_EBROOT (i.e root of module tree) to find all the software
+``$BUILDTEST_EBROOT`` (i.e root of module tree) to find all the software
 modules. Easybuild supports Tcl and Lua modules so buildtest attempts to find
 all files that are actual module files.
 
@@ -103,14 +90,11 @@ buildtest ignores ``.version`` or ``.default`` files and accepts all other files
 in the module tree. This information is processed further by stripping full
 path to extract the module name depending if you specified BUILDTEST_MODULE_NAMING_SCHEME
 as Flat Naming Scheme (FNS) or Hierarchical Module Naming Scheme (HMNS). This 
-can be specified in the buildtest command line via
+can be specified in the buildtest command line ``buildtest --module-naming-scheme`` or 
+environment variable ``$BUILDTEST_MODULE_NAMING_SCHEME`` or in ``config.yaml``
 
-.. code::
-
-   buildtest --module-naming-scheme
-
-The software module stack is used to populate the choice entries for --software
-and --toolchain. buildtest supports TAB completion for ease of use.
+The software module stack is used to populate the choice entries for ``--software``
+and ``--toolchain``. buildtest supports TAB completion for ease of use.
 
 To demonstrate this example see what happens when you type **lib** in --software
 with TAB completion
@@ -142,112 +126,51 @@ that is defined in module ``framework.tools.easybuild.list_toolchain`` and
 list of software module stack. For details on implementation check out ``framework.tools.software.get_software_stack`` 
 and ``framework.tools.software.get_toolchain_stack``
 
-How to determine if software is installed with easybuild
+Determine if software is installed with easybuild
 ---------------------------------------------------------
 
-You might wonder, how do we map software & toolchain from our software stack with 
-buildtest.
+All easybuild software will have the variable ``local root`` in the modulefile that points 
+to the root of the software package. For instance ``Anaconda2-5.0.1`` module file has the following
+value 
 
-From the previous two examples, we find that --software and --toolchain are 
-predefined list automatically generated from your software stack. Also note that
-the combination of --software and --toolchain will not determine the software
-is actually installed on the system. The only way to determine this is to see
-if a particular easyconfig was built using ``eb`` command. 
+.. code::
 
-You can run into an issue if the software and toolchain do not correspond to an 
-actual software installation. Since we have no way to determine the software is 
-actually installed by analyzing the file structure or querying 
-a rpm database, or a user command history of eb commands, buildtest takes a 
-different approach to solve this problem. 
+        local root = "/nfs/grid/software/easybuild/commons/software/Anaconda2/5.1.0"
 
-**buildtest assumes that easyconfig found in $BUILDTEST_EASYCONFIG_DIR was used
-in installing the software stack**. 
+We use this value to check if there is a directory ``easybuild`` which eb should generate
+to store log file, patches, easyconfigs, etc... In buildtest we check if there is an
+easyconfig file in the ``easybuild`` directory and if it exists then we assume the application
+is an easybuild software otherwise it is not.
 
-.. Note:: $BUILDTEST_EASYCONFIG_DIR is path to your easybuild-easyconfig directory
+For more details on implementation see ``framework.tools.easybuild.is_easybuild_app``
 
-In easybuild, each easyconfig corresponds to a software module that makes up the 
-software stack. Even if the easyconfig is present in your easybuild-easyconfig repo but not 
-installed in the software stack the following deduction is valid.
+If you plan to mix easybuild module trees with non-easybuild module trees by defining 
+them in ``BUILDTEST_EBROOT`` then extra care must be taken.
 
-**Every software module in software stack must come from only 1 unique easyconfig
-file**. 
+If you are building tests for an application not built with easybuild you may run into the following issue
 
-This only applies that HPC site do not mix up easybuild software stack with custom
-software stack in their module tree.
+.. code::
 
-With that being said, buildtest conducts a easyconfig check to verify software
-is installed.
+   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s ruby/2.2.4
+   Application: ruby/2.2.4  is not built from Easybuild, cannot find easyconfig file in installation directory
+
+By default easybuild will check if the software is an easybuild app and will exit immediately. If you want to
+ignore the easybuild check you may use the option ``buildtest --ignore-easybuild`` to bypass this error. This also 
+assumes you have the module tree defined in ``MODULEPATH`` so ``module load ruby/2.2.4`` will work for the tests. 
+If there are multiple counts of same application version module across module trees you will need to fix that in
+your environment or modify which module trees are exposed in ``BUILDTEST_EBROOT``
 
  
-easyconfig check
-----------------
-
-You might run into an issue when easyconfig check fails
-
-.. code:: 
-
-        [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCC/5.4.0-2.27 -t GCCcore/.5.4.0
-        ERROR: No such easyconfig file: /lustre/workspace/home/siddis14/easybuild-easyconfigs/easybuild/easyconfigs/g/GCC/GCC-5.4.0-2.27-GCCcore-5.4.0.eb
-
-        buildtest checks the easyconfig to ensure application is installed with easybuild
-
-
-.. Note:: Modules that are hidden must be passed with a leading dot in --software and 
-   --toolchain option
-
-
-Every application is built with a particular toolchain in EasyBuild. 
-In order to make sure we are building for the correct test in the event
-of multiple packages are installed with different toolchain we need a 
-way to classify which package to use. For instance if **flex/2.6.0** is 
-installed with **GCCcore/5.4.0**, **GCCcore/6.2.0**, and **dummy** toolchain 
-then we have three instances of this package. In 
-**Hierarchical Module Naming Scheme (HMNS)**  these 3 instances could be in 
-different module trees. We can perform this test by searching all the easyconfig 
-files with the directory name **flex** and search for the tag 
-**toolchain = { name='toolchain-name', version='toolchain-version' }**
-
-
-The easyconfig verification will pass if all of the conditions are met:
-
-   1. software,version argument specified to buildtest matches 
-      **name**, **version** tag in easyconfig
-
-   2. toolchain argument from buildtest matches 
-      **toolchain-name**, **toolchain-version** tag in easyconfig
-
-   3. **versionsuffix** from eb file name matches the module file. 
-
-   4. For **Hierarchical Module Naming Scheme (HMNS)** 
-      modulefile: <version>-<version-suffix>.lua 
-
-   5. For **Flat Naming Scheme (FNS)** 
-      modulefile: <version>-<toolchain>-<version-suffix>.lua
-
-Module File Check is not sufficient for checking modules in the event when there
-is a match for a software package but there is a toolchain mismatch. For instance 
-if R/3.3.1 is built with intel/2017.01 toolchain and the user request to build 
-R/3.3.1 with foss/2016.09, the module file & toolchain verification will pass 
-but it wouldn't pass the easyconfig verification if there is no easyconfig found.
-
-
-.. code:: shell
-
-        [siddis14@amrndhl1295 buildtest-framework]$ buildtest -s R/3.3.1 -t foss/.2016.09
-        Checking Software: R/3.3.1  ... SUCCESS
-        Checking Software: foss/.2016.09  ... SUCCESS
-        Checking Toolchain: foss/.2016.09 ... SUCCESS
-        Checking easyconfig file ... FAILED
-        ERROR: Attempting to  find easyconfig file  R-3.3.1-foss-2016.09.eb
-        Writing Logfile:  /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/log/buildtest_10_32_28_08_2017.log
-
-
 Testing Directory Structure
 -------------------------------
 
-buildtest will write the tests in the directory specified by **BUILDTEST_TESTDIR**. 
-By default the testing directory is set to **BUILDTEST_ROOT/testing**. Recall that 
-CTest is the Testing Framework that automatically generates Makefiles necessary 
+buildtest will write the tests in the directory specified by **BUILDTEST_TESTDIR**. This value
+can be specified in ``config.yaml``, or environment variable ``$BUILDTEST_TESTDIR`` or command line
+``buildtest --testdir <path>``. 
+
+
+
+Recall that CTest is the Testing Framework that automatically generates Makefiles necessary 
 to build and run the test. CTest will utilize *CMakeLists.txt* that will invoke 
 CTest api to run the the test.  
 
@@ -287,25 +210,159 @@ tests for CTest to avoid name conflict
 
 
 If you build R without testset it will build not build the tests for R packages 
-that are stored in R-buildtest-config repo
+that are stored in ``R-buildtest-config`` repo
 
-.. program-output:: cat scripts/Architecture/R-3.3.1_without_testset.txt
+.. code:: 
+ 
+         [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s R/3.3.1 -t intel/2017.01 --ignore-easybuild
+         [BINARYTEST]: Processing YAML file for  R/3.3.1 intel/2017.01  at  /lustre/workspace/home/siddis14/buildtest-configs/ebapps/R/command.yaml
+
+         Generating 2 binary tests for Application: R/3.3.1
+         Binary Tests are written in /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+         [SOURCETEST]: Processing all YAML files in  /lustre/workspace/home/siddis14/buildtest-configs/ebapps/R/config
+         Generating 1 Source Tests and writing at  /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+         Writing Log file:  /tmp/buildtest/R/3.3.1/intel/2017.01/buildtest_19_37_24_04_2018.log
+
+         [siddis14@amrndhl1157 buildtest-framework]$ ls -l /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+         total 16
+         -rw-r--r-- 1 siddis14 amer 266 Apr 24 19:37 CMakeLists.txt
+         -rw-r--r-- 1 siddis14 amer 150 Apr 24 19:37 hello.R.sh
+         -rw-r--r-- 1 siddis14 amer  87 Apr 24 19:37 Rscript_--version.sh
+         -rw-r--r-- 1 siddis14 amer  81 Apr 24 19:37 R_--version.sh
 
 
 
 If you run ``buildtest -s R/3.3.1 -t intel/2017.01`` without ``--testset R`` flag, buildtest
-will only build tests from YAML files in $BUILDTEST_SOURCE. If ``--testset R`` was enabled 
+will only build tests from YAML files in $BUILDTEST_CONFIGS_REPO. If ``--testset R`` was enabled 
 buildtest will also build tests from $BUILDTEST_R_DIR. To illustrate this see what happens
 when enabling ``--testset R``
 
-.. program-output:: cat scripts/Architecture/R-3.3.1_with_testset.txt
+.. code::
+
+   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s R/3.3.1 -t intel/2017.01 --ignore-easybuild --testset R
+   [BINARYTEST]: Processing YAML file for  R/3.3.1 intel/2017.01  at  /lustre/workspace/home/siddis14/buildtest-configs/ebapps/R/command.yaml
+
+   Generating 2 binary tests for Application: R/3.3.1
+   Binary Tests are written in /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+   [SOURCETEST]: Processing all YAML files in  /lustre/workspace/home/siddis14/buildtest-configs/ebapps/R/config
+   Generating 1 Source Tests and writing at  /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+   Generating  3 tests for  fastcluster
+   Generating  1 tests for  bitops
+   Generating  3 tests for  gbm
+   Generating  1 tests for  bnlearn
+   Generating  14 tests for  adabag
+   Generating  1 tests for  forecast
+   Generating  54 tests for  timeDate
+   Generating  1 tests for  fpc
+   Generating  1 tests for  bio3d
+   Generating  1 tests for  subplex
+   Generating  1 tests for  fma
+   Generating  14 tests for  BatchJobs
+   Generating  1 tests for  futile.logger
+   Generating  49 tests for  tm
+   Generating  1 tests for  FactoMineR
+   Generating  1 tests for  EasyABC
+   Generating  1 tests for  flashClust
+   Generating  1 tests for  tensor
+   Generating  1 tests for  bootstrap
+   Generating  14 tests for  geepack
+   Generating  11 tests for  akima
+   Generating  1 tests for  TeachingDemos
+   Generating  15 tests for  gdalUtils
+   Generating  1 tests for  calibrate
+   Generating  1 tests for  fdrtool
+   Generating  1 tests for  fpp
+   Generating  1 tests for  Cairo
+   Generating  12 tests for  cgdsr
+   Generating  1 tests for  SuperLearner
+   Generating  1 tests for  futile.options
+   Generating  72 tests for  adegenet
+   Generating  1 tests for  Brobdingnag
+   Generating  33 tests for  geiger
+   Generating  20 tests for  testthat
+   Generating  1 tests for  boot
+   Generating  1 tests for  fossil
+   Generating  25 tests for  arm
+   Generating  1 tests for  trimcluster
+   Generating  1 tests for  ADGofTest
+   Generating  1 tests for  FNN
+   Generating  1 tests for  car
+   Generating  1 tests for  SuppDists
+   Generating  5 tests for  abind
+   Generating  13 tests for  gclus
+   Generating  35 tests for  base
+   Generating  1 tests for  stringr
+   Generating  1 tests for  ffbase
+   Generating  1 tests for  fail
+   Generating  1 tests for  foreign
+   Generating  1 tests for  fastmatch
+   Generating  12 tests for  unbalanced
+   Generating  1 tests for  filehash
+   Generating  1 tests for  expm
+   Generating  1 tests for  ellipse
+   Generating  1 tests for  bigmemory
+   Generating  9 tests for  gamlss.data
+   Generating  1 tests for  fastICA
+   Generating  1 tests for  evaluate
+   Generating  1 tests for  strucchange
+   Generating  1 tests for  stringi
+   Generating  9 tests for  tibble
+   Generating  22 tests for  tripack
+   Generating  1 tests for  Formula
+   Generating  8 tests for  tseriesChaos
+   Generating  285 tests for  ade4
+   Generating  1 tests for  backports
+   Generating  1 tests for  fracdiff
+   Generating  1 tests for  tkrplot
+   Generating  136 tests for  ape
+   Generating  1 tests for  bit
+   Generating  12 tests for  chron
+   Generating  1 tests for  brglm
+   Generating  11 tests for  gam
+   Generating  42 tests for  gdata
+   Generating  1 tests for  fields
+   Generating  25 tests for  adephylo
+   Generating  2 tests for  base64
+   Generating  4 tests for  TH.data
+   Generating  27 tests for  tseries
+   Generating  11 tests for  assertthat
+   Generating  1 tests for  beanplot
+   Generating  1 tests for  tensorA
+   Generating  1 tests for  survival
+   Generating  1 tests for  formatR
+   Generating  1 tests for  taxize
+   Generating  1 tests for  flexmix
+   Generating  1 tests for  tcltk
+   Generating  8 tests for  abc
+   Generating  2 tests for  acepack
+   Generating  1 tests for  FME
+   Generating  10 tests for  gamlss.dist
+   Generating  36 tests for  TTR
+   Generating  1 tests for  flexclust
+   Generating  70 tests for  TraMineR
+   Generating  4 tests for  AlgDesign
+   Generating  8 tests for  AUC
+   Generating  51 tests for  checkmate
+   Generating  8 tests for  animation
+   Generating  1 tests for  statmod
+   Generating  1 tests for  caret
+   Generating  1 tests for  survivalROC
+   Generating  3 tests for  extrafont
+   Generating  1 tests for  foreach
+   Generating  14 tests for  tidyr
+   Generating  10 tests for  tree
+   Generating  34 tests for  cluster
+   Generating  1 tests for  caTools
+   Generating  91 tests for  ff
+   Writing tests to  /tmp/buildtest-tests/ebapp/R/3.3.1/intel/2017.01
+   Writing Log file:  /tmp/buildtest/R/3.3.1/intel/2017.01/buildtest_19_39_24_04_2018.log
 
 
 
 Source Code Layout
 --------------------
 
-The source directory **BUILDTEST_SOURCEDIR** contains all the source code that 
+The source directory **BUILDTEST_CONFIGS_REPO** contains all the source code that 
 will be used for generating the test. Here, you will find config scripts used 
 for generating scripts. buildtest processes these config scripts inorder to 
 generate the test.
@@ -314,12 +371,12 @@ generate the test.
 +----------------------------------------------------+--------------------------------------------------------------------------+
 |                     File                           |                                Description                               |  
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/$software/command.yaml        |       A list of binary executables and parameters to test                |  
+| $BUILDTEST_CONFIGS_REPO/$software/command.yaml     |       A list of binary executables and parameters to test                |  
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/$software/config/             |       Contains the yaml config files used for building test from source  |
+| $BUILDTEST_CONFIGS_REPO/$software/config/          |       Contains the yaml config files used for building test from source  |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/$software/code/               |       Directory Containing the source code, which is referenced          |
+| $BUILDTEST_CONFIGS_REPO/$software/code/            |       Directory Containing the source code, which is referenced          |
 |                                                    |       by the testscript and yaml files                                   |
 +----------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_SOURCEDIR/system/command.yaml           |       A list of binary executables and parameters to for system packages |
+| $BUILDTEST_CONFIGS_REPO/system/command.yaml        |       A list of binary executables and parameters to for system packages |
 +----------------------------------------------------+--------------------------------------------------------------------------+

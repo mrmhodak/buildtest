@@ -102,5 +102,5 @@ The project is divided into several repos.
 - https://github.com/HPC-buildtest/Perl-buildtest-config - This repo contains all Perl code for each perl module used by **--testset Perl** for generating tests for each Perl module
 - https://github.com/HPC-buildtest/Tcl-buildtest-config - This repo contains all TCL code for each TCL package used by **--testset TCL** for generating tests for each TCL package
 - https://github.com/HPC-buildtest/Ruby-buildtest-config - This repo contains all Ruby code for each Ruby package used by **--testset Ruby** for generating tests for each Ruby packages
-- https://github.com/HPC-buildtest/buildtest-configs - This repo is used to host the documentation found at http://buildtestdocs.readthedocs.io/en/latest/
+- https://github.com/HPC-buildtest/buildtest - This repo is used to host the documentation found at http://buildtestdocs.readthedocs.io/en/latest/
 

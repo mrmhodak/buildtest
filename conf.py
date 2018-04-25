@@ -55,9 +55,9 @@ author = u'Shahzeb Siddiqui'
 #
 # The short X.Y version.
 
-version = '1.2.1'
+version = '0.19'
 # The full version, including alpha/beta/rc tags.
-release = '2018.01.08'
+release = '2018.04.24'
 
 
 
