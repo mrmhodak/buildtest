@@ -25,7 +25,6 @@ Introduction to buildtest
    :maxdepth: 2
 
    What_is_buildtest
-   Find_Operations
    Architecture
 
 Getting Started
@@ -36,6 +35,8 @@ Getting Started
 
    Setup
    How_to_use_BuildTest
+   Find_Operations
+   Show_Configuration
    
 
 Writing YAML configuration

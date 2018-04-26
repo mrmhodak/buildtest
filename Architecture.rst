@@ -11,10 +11,11 @@ buildtest Architecture
 This section will explain how the buildtest framework is designed in regards
 to
 
-* Software, Toolchain, easyconfig check
-* Testing Directory Structure
-* CTest configuration
-* Source Directory Structure
+* Software and Toolchain Check in buildtest
+* How buildtest deals with Flat Naming Scheme and Hierarchical Module Naming Scheme and module format
+* How buildtest determines a software is from easybuild
+* Test Directory Structure (``$BUILDTEST_TESTDIR``)
+* Source Directory Structure (``BUILDTEST_CONFIGS_REPO``)
 
 
 Software and Toolchain Check
@@ -22,11 +23,11 @@ Software and Toolchain Check
 
 buildtest takes argument to build tests for software that can take argument from 
 **--software**. The argument to --software is autopopulated based on the 
-software modules found in module tree ``$BUILDTEST_EBROOT``.
+software modules found in module tree ``$BUILDTEST_MODULE_ROOT``.
 
 Similarly, **--toolchain** is autopopulated based on union of software modules
-present in ``$BUILDTEST_EBROOT`` and the toolchain list. Every
-toolchain must be a software found in module tree ``$BUILDTEST_EBROOT``.
+present in ``$BUILDTEST_MODULE_ROOT`` and the toolchain list. Every
+toolchain must be a software found in module tree ``$BUILDTEST_MODULE_ROOT``.
 
 The buildtest options menu pre-processes this information into a list that is 
 supplied as **choice** attribute in ``argparse.arg_argument``. For more detail
@@ -71,7 +72,7 @@ followed by the application module (``OpenMPI``).
 
 Modules in EasyBuildMNS will be unique so you will just  use ``buildtest -s`` and
 toolchain option ``--toolchain`` will be ignored. If you have a HMNS module tree defined
-in BUILDTEST_EBROOT then you will need to use both options ``buildtest -s <app> -t <toolchain>`` 
+in BUILDTEST_MODULE_ROOT then you will need to use both options ``buildtest -s <app> -t <toolchain>`` 
 
 Easybuild automatically generates modules for all software installed by easybuild
 and each module is written in a way to load all dependent modules necessary, 
@@ -82,7 +83,7 @@ How buildtest gets the software module stack
 --------------------------------------------
 
 As mentioned previously, buildtest makes use of environment variable 
-``$BUILDTEST_EBROOT`` (i.e root of module tree) to find all the software
+``$BUILDTEST_MODULE_ROOT`` (i.e root of module tree) to find all the software
 modules. Easybuild supports Tcl and Lua modules so buildtest attempts to find
 all files that are actual module files.
 
@@ -145,7 +146,7 @@ is an easybuild software otherwise it is not.
 For more details on implementation see ``framework.tools.easybuild.is_easybuild_app``
 
 If you plan to mix easybuild module trees with non-easybuild module trees by defining 
-them in ``BUILDTEST_EBROOT`` then extra care must be taken.
+them in ``BUILDTEST_MODULE_ROOT`` then extra care must be taken.
 
 If you are building tests for an application not built with easybuild you may run into the following issue
 
@@ -158,7 +159,7 @@ By default easybuild will check if the software is an easybuild app and will exi
 ignore the easybuild check you may use the option ``buildtest --ignore-easybuild`` to bypass this error. This also 
 assumes you have the module tree defined in ``MODULEPATH`` so ``module load ruby/2.2.4`` will work for the tests. 
 If there are multiple counts of same application version module across module trees you will need to fix that in
-your environment or modify which module trees are exposed in ``BUILDTEST_EBROOT``
+your environment or modify which module trees are exposed in ``BUILDTEST_MODULE_ROOT``
 
  
 Testing Directory Structure
@@ -188,7 +189,7 @@ CMake Configuration
 -------------------
 
 CMakeLists.txt for $BUILDTEST_TESTDIR/ebapps/GCC/CMakeLists.txt would like
-this for GCC-5.4.0-2.27 and GCC-6.2.0-2.27 test
+this for ``GCC-5.4.0-2.27`` and ``GCC-6.2.0-2.27`` test
 
 .. program-output:: cat scripts/Architecture/GCC/CMakeLists.txt
 

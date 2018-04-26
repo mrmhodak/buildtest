@@ -13,7 +13,7 @@ so buildtest has this implemented in the framework.
 
 Since there is no universal test case for evaluating each binary we leave it up to the users to determine how they want to perform binary test.
 
-.. note:: The user need needs to verify the YAML configuration after buidltest creats YAML file
+.. note:: The user needs to verify the YAML configuration after buidltest creates YAML file
 
 Binary Test for System package
 ------------------------------

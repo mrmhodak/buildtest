@@ -6,9 +6,8 @@ optional arguments:
   -V, --version         show program version number and exit
   --logdir LOGDIR       Path to write buildtest logs. Override configuration BUILDTEST_LOGDIR
   --testdir TESTDIR     Path to write buildtest tests. Overrides configuration BUILDTEST_TESTDIR
-  --diff-trees DIFF_TREES
-                        Show difference between module trees
   --ignore-easybuild    ignore if application is not built with easybuild
+  --show                show buildtest environment configuration
 
 Basic Options:
   buildtest basic options
@@ -26,7 +25,7 @@ Find Options:
   -lt, --list-toolchain
                         retrieve a list of easybuild toolchain used for --toolchain option
   -ls, --list-unique-software
-                        retrieve all unique software found in your module tree specified by BUILDTEST_EBROOT
+                        retrieve all unique software found in your module tree specified by BUILDTEST_MODULE_ROOT
   -svr, --software-version-relation
                         retrieve a relationship between software and version found in module files
   -fc FINDCONFIG, --findconfig FINDCONFIG
@@ -37,6 +36,8 @@ Find Options:
                         scripts use -ft all
   -ecmt, --easyconfigs-in-moduletrees
                         Return a list of easyconfigs from a easybuild module tree
+  --diff-trees DIFF_TREES
+                        Show difference between two module trees
 
 Test Options:
   Options for building tests with buildtest

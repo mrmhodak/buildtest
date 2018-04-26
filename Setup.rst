@@ -61,7 +61,7 @@ Shown below is value of ``$BUILDTEST_ROOT`` after running ``source setup.sh``
 
 
 Each site will have to customize their buildtest configuration to reflect the root of the module trees. 
-You may specify multiple module trees  in ``config.yaml`` for variable ``BUILDTEST_EBROOT``. 
+You may specify multiple module trees  in ``config.yaml`` for variable ``BUILDTEST_MODULE_ROOT``. 
 For more detail refer to ``config.example.yaml``.
 
 You may specify any of the ``BUILDTEST_*`` variables with exception of ``BUILDTEST_ROOT`` using environment variables which will
@@ -73,8 +73,8 @@ these variables in yaml configs to write custom build and run commands. The test
 reference source directory via **BUILDTEST_CONFIGS_REPO** to find files of interest
 
 
-buildtest version
------------------
+buildtest version (``buildtest -V``)
+------------------------------------
 
 You can check the current version of buildtest by running the following
 
