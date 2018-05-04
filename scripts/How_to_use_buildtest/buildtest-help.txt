@@ -1,4 +1,3 @@
-[siddis14@amrndhl1157 buildtest-framework]$ buildtest --help
 usage: buildtest [options]
 
 optional arguments:
@@ -58,11 +57,13 @@ YAML Options:
 
   --sysyaml INSTALLED-SYSTEM-PACKAGE
                         generate binary test YAML configuration for system package
-  --ebyaml EBYAML       generate binary test YAML configuration for easybuild package (Not Implemented)
+  --ebyaml YAML-APP-CHOICES
+                        generate binary test YAML configuration for easybuild package (Not Implemented)
 
 Job Scheduler Options:
   Options for interacting with Job Scheduler
 
+  --enable-job          enable job script generation with buildtest
   --job-template JOB_TEMPLATE
                         specify job template file to create job submission script for the test to run with resource
                         scheduler
@@ -73,4 +74,3 @@ Miscellaneous Options:
   rest of buildtest options
 
   --runtest             Run the test interactively through runtest.py
-

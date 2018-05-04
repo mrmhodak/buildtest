@@ -47,18 +47,10 @@ By default job scripts will be created in the test directory. The example above
 are part of MPI testset so we will build the tests with OpenMPI and GCC as the
 toolchain
 
-.. code::
 
-   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.27 --testset MPI
-   Checking for easyconfig file: OpenMPI-2.0.0-GCC-5.4.0-2.27.eb ... FOUND
-   Checking easyconfig conditional checks ... SUCCESS
-   [BINARYTEST]: Processing YAML file for  OpenMPI/2.0.0 GCC/5.4.0-2.27  at  /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/ebapps/OpenMPI/command.yaml
+If you run ``buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.27 --testset MPI --enable-job`` 
 
-   Generating 22 binary tests for Application: OpenMPI/2.0.0
-   Binary Tests are written in /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27
-   [SOURCETEST]: Processing all YAML files in  /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/mpi/config
-   Generating 21 Source Tests and writing at  /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27
-   Writing Log file:  /lustre/workspace/home/siddis14/buildtest-framework/log/OpenMPI/2.0.0/GCC/5.4.0-2.27/buildtest_10_36_09_01_2018.log
+.. program-output:: cat scripts/Jobscript_yaml_configuration/slurm-example.txt
 
 buildtest will create job scripts with the following extensions
 

@@ -1,7 +1,7 @@
 .. _Automate_BatchJobs:
 
-Automate Batch Job submission
-=============================
+Automate Batch Job submission (``buildtest --submitjob``)
+=========================================================
 
 buildtest can even automate batch job submission once you have created the 
 jobscripts via buildtest. To do this you need to use ``buildtest --submitjob``

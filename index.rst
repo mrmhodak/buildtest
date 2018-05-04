@@ -58,6 +58,7 @@ Jobscript Features
 .. toctree::
    :maxdepth: 2
 
+   Job_Template
    Automate_BatchJobs
 
 
@@ -68,7 +69,6 @@ Advanced Features
    :maxdepth: 2
 
    Shell
-   Job_Template
 
 
 Useful Links

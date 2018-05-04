@@ -14,33 +14,28 @@ Currently, buildtest supports the following shell types
 - bash
 - csh
 
-To create tests for different shell types use ``buildtest --shell <shell-type>`` 
-
-Let's build GCC test with csh and bash to see the difference. 
-
-CSH
----
-.. code::
-
-        buildtest -s GCC/5.4.0-2.27 --shell csh
+To create tests for different shell types use ``buildtest --shell <shell-type>``.
+You may set the environment variable ``BUILDTEST_SHELL`` or set this in your
+``config.yaml``
 
 
-.. program-output:: cat scripts/Shell/GCC-5.4.0-2.27_csh.txt
+Let's build test for ``GCC/6.4.0-2.28`` by running the following ``buildtest -s GCC/6.4.0-2.28 --shell csh``
 
-Let's check the files 
 
-.. program-output:: cat scripts/Shell/GCC-5.4.0-2.27_csh_listing.txt
+.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_csh.txt
 
-BASH
-----
+Now let's check the files 
 
-Let's rerun this with bash.
+.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_csh_listing.txt
 
-.. program-output:: cat scripts/Shell/GCC-5.4.0-2.27_bash.txt
 
-Let's check the files
+Let's rerun this with bash: ``buildtest -s GCC/6.4.0-2.28 --shell bash``
 
-.. program-output:: cat scripts/Shell/GCC-5.4.0-2.27_bash_listing.txt
+
+.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_bash.txt
+
+
+.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_bash_listing.txt
 
 
 You will notice the same tests are written with different shell extension. buildtest

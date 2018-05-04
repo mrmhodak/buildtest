@@ -1,7 +1,7 @@
 .. _Job_Template:
 
-Job Template
-============
+Job Template (``buildtest --job-template <template>``)
+======================================================
 
 
 
@@ -15,7 +15,7 @@ LSF Job template
 buildtest provides a default job template for LSF to generate test scripts for LSF. This template is for creating LSF job submission scripts that can be run 
 via ``bsub``. The templates can be found at ``$BUILDTEST_ROOT/template/``
 
-.. program-output:: cat scripts/Job_Template/template.txt
+.. program-output:: cat scripts/Job_Template/job.lsf
 
 Feel free to change or bring or specify your own job template. buildtest will
 use job template and create job script for each test script with the same template 
@@ -26,72 +26,36 @@ further configuration is needed
 Generate Job scripts via buildtest
 ----------------------------------
 
-.. program-output:: cat scripts/Job_Template/template_example.txt
+buildtest can automatically generate job scripts with a template job script specified
+by ``--job-template`` option or with variable ``BUILDTEST_JOB_TEMPLATE``
 
-
-buildtest will generate job scripts with **.lsf** extension in the same 
-directory as the test script.
-
-Let's take a look at the LSF test script
+Let's run the following ``buildtest --system firefox --job-template template/job.lsf --enable-job`` to
+build LSF job scripts 
 
 
 .. program-output:: cat scripts/Job_Template/firefox_jobscript.txt
 
 
-For instance, if you build GCC with job template, you will get a job template 
-for each script.
-
-.. code:: 
-
-   buildtest -s GCC/5.4.0-2.27 --job-template template/job.lsf
-
-.. code::
-
-   [siddis14@amrndhl1157 buildtest-framework]$ ls /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/*.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/arglist.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/cpp_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/c++_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcc-ar_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcc-nm_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcc-ranlib_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcc_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcov-tool_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gcov_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/gfortran_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/g++_--version.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/hello.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/hello.cpp.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/hello.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_dotprod_openmp.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_dotprod_openmp.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_dotprod_serial.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_dotprod_serial.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_getEnvInfo.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_getEnvInfo.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_hello.c_nthread_5.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_hello.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_2.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_mm.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_orphan.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_orphan.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_reduction.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_reduction.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_workshare1.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_workshare1.f.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_workshare2.c.lsf
-   /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_workshare2.f.lsf
+Job templates work with option ``--system`` and ``--software``. Let's try another example 
+building job scripts with a software package ``GCC/6.4.0-2.28`` with lsf job template
 
 
-Job Template with --testset
------------------------------
+``buildtest -s GCC/6.4.0-2.28 --job-template template/job.lsf --enable-job``
 
-Job templates work with --testset as well and creates job scripts for each package test.
+.. program-output:: cat scripts/Job_Template/GCC-6.4.0-2.28_lsf_job.txt
+
+
+
+Job Template with ``--testset``
+-------------------------------
+
+Job templates work with ``--testset`` option as well and creates job scripts for each package test.
 
 To demonstrate this example we run job template with Perl.
 
 .. code::
 
-   buildtest -s Perl/5.22.1 -t foss/.2016.03 --testset Perl --job-template template/job.lsf
+   buildtest -s Perl/5.22.1 -t foss/.2016.03 --testset Perl --job-template template/job.lsf --enable-job
 
 After running this, we see the LSF job scripts have been created.
 

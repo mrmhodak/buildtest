@@ -1,0 +1,15 @@
+Detecting Software:  GCC/6.4.0-2.28
+--------------------------------------------
+[STAGE 1]: Building Binary Tests
+--------------------------------------------
+Detecting Test Type: Software
+Processing Binary YAML configuration:  /home/siddis14/github/buildtest/scripts/buildtest-configs/ebapps/gcc/command.yaml
+
+Generating 10 binary tests
+Binary Tests are written in /home/siddis14/github/buildtest/scripts/buildtest-framework/tests/ebapp/GCC/6.4.0-2.28/
+--------------------------------------------
+[STAGE 2]: Building Source Tests
+--------------------------------------------
+Processing all YAML files in directory: /home/siddis14/github/buildtest/scripts/buildtest-configs/ebapps/gcc/config
+Generating 22 Source Tests and writing at  /home/siddis14/github/buildtest/scripts/buildtest-framework/tests/ebapp/GCC/6.4.0-2.28/
+Writing Log file:  /home/siddis14/github/buildtest/scripts/buildtest-framework/logs/GCC/6.4.0-2.28/buildtest_17_05_04_05_2018.log

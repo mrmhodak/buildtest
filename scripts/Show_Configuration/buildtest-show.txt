@@ -1,0 +1,19 @@
+
+	 buildtest configuration summary
+	 (C): Configuration File,  (E): Environment Variable
+
+BUILDTEST_ROOT                                     (E): /home/siddis14/github/buildtest/scripts/buildtest-framework
+BUILDTEST_CONFIGS_REPO                             (E) = /home/siddis14/github/buildtest/scripts/buildtest-configs
+BUILDTEST_ENABLE_JOB                               (C) = False
+BUILDTEST_IGNORE_EASYBUILD                         (C) = False
+BUILDTEST_JOB_TEMPLATE                             (C) = template/job.slurm
+BUILDTEST_LOGDIR                                   (E) = /home/siddis14/github/buildtest/scripts/buildtest-framework/logs
+BUILDTEST_MODULE_NAMING_SCHEME                     (C) = HMNS
+BUILDTEST_MODULE_ROOT                              (C) = /nfs/grid/software/RHEL6/general:/nfs/grid/software/RHEL6/chemistry:/nfs/grid/software/RHEL7/non-easybuild/modules/all:/nfs/grid/software/easybuild/IvyBridge/redhat/7.3/modules/all:/nfs/grid/software/easybuild/commons/modules/all:/nfs/grid/software/RHEL7/medsci/modules/all:/nfs/grid/software/RHEL7/easybuild/modules/all
+BUILDTEST_PERL_REPO                                (E) = /home/siddis14/github/buildtest/scripts/Perl-buildtest-config
+BUILDTEST_PYTHON_REPO                              (E) = /home/siddis14/github/buildtest/scripts/Python-buildtest-config
+BUILDTEST_RUBY_REPO                                (E) = /home/siddis14/github/buildtest/scripts/Ruby-buildtest-config
+BUILDTEST_R_REPO                                   (E) = /home/siddis14/github/buildtest/scripts/R-buildtest-config
+BUILDTEST_SHELL                                    (C) = sh
+BUILDTEST_TCL_REPO                                 (E) = /home/siddis14/github/buildtest/scripts/Tcl-buildtest-config
+BUILDTEST_TESTDIR                                  (E) = /home/siddis14/github/buildtest/scripts/buildtest-framework/tests

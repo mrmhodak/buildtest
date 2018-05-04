@@ -1,5 +1,9 @@
-[siddis14@amrndhl1157 buildtest-framework]$ cat /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/_usr_bin_firefox_--help.lsf
-#BSUB -n 1
-#BSUB -q short
-#BSUB -W 00:02
-sh /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/system/firefox/_usr_bin_firefox_--help.sh
+--------------------------------------------
+[STAGE 1]: Building Binary Tests
+--------------------------------------------
+Detecting Test Type: System Package
+Processing Binary YAML configuration:  /home/siddis14/github/buildtest/scripts/buildtest-configs/system/firefox/command.yaml
+
+Generating 1 binary tests
+Binary Tests are written in /home/siddis14/github/buildtest/scripts/buildtest-framework/tests/system/firefox
+Writing Log file to: /home/siddis14/github/buildtest/scripts/buildtest-framework/logs/system/firefox/buildtest_17_05_04_05_2018.log

@@ -34,8 +34,8 @@ buildtest configuration
 
 
 
-buildtest Variables
---------------------
+buildtest Configuration Variables
+---------------------------------
           
 There are a few buildtest variables that you should
 be aware of when using buildtest. 
@@ -55,9 +55,6 @@ Shown below is value of ``$BUILDTEST_ROOT`` after running ``source setup.sh``
 
    [siddis14@amrndhl1157 buildtest-framework]$ env | grep BUILDTEST
    BUILDTEST_ROOT=/home/siddis14/github/buildtest-framework
-   [siddis14@amrndhl1157 buildtest-framework]$ ls $BUILDTEST_ROOT
-   buildtest       config.example.yaml  CONTRIBUTING.md        fail_test.sh  LICENSE.txt     README.rst  setup.sh         template
-   CMakeLists.txt  config.yaml          DartConfiguration.tcl  framework     option_test.sh  setup.py    success_test.sh
 
 
 Each site will have to customize their buildtest configuration to reflect the root of the module trees. 
@@ -81,5 +78,5 @@ You can check the current version of buildtest by running the following
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ buildtest -V
-   buildtest version: 0.1.9
+   buildtest version: 0.2.0
 

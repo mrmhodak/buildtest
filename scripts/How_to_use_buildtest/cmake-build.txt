@@ -1,6 +1,3 @@
-[siddis14@amrndhl1157 buildtest-framework]$ mkdir build
-[siddis14@amrndhl1157 buildtest-framework]$ cd build
-[siddis14@amrndhl1157 build]$ cmake ..
 -- The C compiler identification is GNU 4.8.5
 -- The CXX compiler identification is GNU 4.8.5
 -- Check for working C compiler: /bin/cc
@@ -13,6 +10,4 @@
 -- Detecting CXX compiler ABI info - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/build
-
-
+-- Build files have been written to: /home/siddis14/github/buildtest/scripts/buildtest-framework/build

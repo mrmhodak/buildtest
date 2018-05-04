@@ -1,0 +1,45 @@
+Test project /home/siddis14/github/buildtest/scripts/buildtest-framework/build
+      Start  1: GCC-6.4.0-2.28-c++_--version.sh
+ 1/20 Test  #1: GCC-6.4.0-2.28-c++_--version.sh ............   Passed    0.18 sec
+      Start  2: GCC-6.4.0-2.28-cpp_--version.sh
+ 2/20 Test  #2: GCC-6.4.0-2.28-cpp_--version.sh ............   Passed    0.17 sec
+      Start  3: GCC-6.4.0-2.28-g++_--version.sh
+ 3/20 Test  #3: GCC-6.4.0-2.28-g++_--version.sh ............   Passed    0.18 sec
+      Start  4: GCC-6.4.0-2.28-gcc_--version.sh
+ 4/20 Test  #4: GCC-6.4.0-2.28-gcc_--version.sh ............   Passed    0.17 sec
+      Start  5: GCC-6.4.0-2.28-gcc-ar_--version.sh
+ 5/20 Test  #5: GCC-6.4.0-2.28-gcc-ar_--version.sh .........   Passed    0.18 sec
+      Start  6: GCC-6.4.0-2.28-gcc-nm_--version.sh
+ 6/20 Test  #6: GCC-6.4.0-2.28-gcc-nm_--version.sh .........   Passed    0.18 sec
+      Start  7: GCC-6.4.0-2.28-gcc-ranlib_--version.sh
+ 7/20 Test  #7: GCC-6.4.0-2.28-gcc-ranlib_--version.sh .....   Passed    0.17 sec
+      Start  8: GCC-6.4.0-2.28-gcov_--version.sh
+ 8/20 Test  #8: GCC-6.4.0-2.28-gcov_--version.sh ...........   Passed    0.18 sec
+      Start  9: GCC-6.4.0-2.28-gcov-tool_--version.sh
+ 9/20 Test  #9: GCC-6.4.0-2.28-gcov-tool_--version.sh ......   Passed    0.17 sec
+      Start 10: GCC-6.4.0-2.28-gfortran_--version.sh
+10/20 Test #10: GCC-6.4.0-2.28-gfortran_--version.sh .......   Passed    0.17 sec
+      Start 11: GCC-6.4.0-2.28-omp_hello.c_nthread_9.sh
+11/20 Test #11: GCC-6.4.0-2.28-omp_hello.c_nthread_9.sh ....   Passed    0.24 sec
+      Start 12: GCC-6.4.0-2.28-omp_hello.c_nthread_13.sh
+12/20 Test #12: GCC-6.4.0-2.28-omp_hello.c_nthread_13.sh ...   Passed    0.23 sec
+      Start 13: GCC-6.4.0-2.28-omp_hello.c_nthread_17.sh
+13/20 Test #13: GCC-6.4.0-2.28-omp_hello.c_nthread_17.sh ...   Passed    0.23 sec
+      Start 14: GCC-6.4.0-2.28-omp_mm.c_nthread_4.sh
+14/20 Test #14: GCC-6.4.0-2.28-omp_mm.c_nthread_4.sh .......   Passed    0.26 sec
+      Start 15: GCC-6.4.0-2.28-omp_mm.c_nthread_6.sh
+15/20 Test #15: GCC-6.4.0-2.28-omp_mm.c_nthread_6.sh .......   Passed    0.26 sec
+      Start 16: GCC-6.4.0-2.28-omp_mm.c_nthread_8.sh
+16/20 Test #16: GCC-6.4.0-2.28-omp_mm.c_nthread_8.sh .......   Passed    0.26 sec
+      Start 17: GCC-6.4.0-2.28-omp_mm.c_nthread_10.sh
+17/20 Test #17: GCC-6.4.0-2.28-omp_mm.c_nthread_10.sh ......   Passed    0.27 sec
+      Start 18: GCC-6.4.0-2.28-omp_mm.c_nthread_12.sh
+18/20 Test #18: GCC-6.4.0-2.28-omp_mm.c_nthread_12.sh ......   Passed    0.27 sec
+      Start 19: GCC-6.4.0-2.28-omp_mm.c_nthread_14.sh
+19/20 Test #19: GCC-6.4.0-2.28-omp_mm.c_nthread_14.sh ......   Passed    0.26 sec
+      Start 20: GCC-6.4.0-2.28-omp_mm.c_nthread_16.sh
+20/20 Test #20: GCC-6.4.0-2.28-omp_mm.c_nthread_16.sh ......   Passed    0.27 sec
+
+100% tests passed, 0 tests failed out of 20
+
+Total Test time (real) =   4.32 sec

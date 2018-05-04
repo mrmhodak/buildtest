@@ -11,9 +11,9 @@ BUILDTEST_SHELL			 	shell type to use when generating tests
 BUILDTEST_IGNORE_EASYBUILD	 	ignore easybuild checks for an application
 BUILDTEST_JOB_TEMPLATE		 	path to job template 
 BUILDTEST_CONFIGS_REPO	 	 	root of buildtest-configs repo
-BUILDTEST_PYTHON_DIR	 	 	root of Python-buildtest-config repo
-BUILDTEST_PERL_DIR		 	root of Perl-buildtest-config repo
-BUILDTEST_R_DIR 		 	root of R-buildtest-config repo
-BUILDTEST_TCL_DIR 		 	root of Tcl-buildtest-config repo
-BUILDTEST_RUBY_DIR 		 	root of Ruby-buildtest-config repo
+BUILDTEST_PYTHON_REPO	 	 	root of Python-buildtest-config repo
+BUILDTEST_PERL_REPO		 	root of Perl-buildtest-config repo
+BUILDTEST_R_REPO 		 	root of R-buildtest-config repo
+BUILDTEST_TCL_REPO 		 	root of Tcl-buildtest-config repo
+BUILDTEST_RUBY_REPO 		 	root of Ruby-buildtest-config repo
 ===========================            ==================================================
