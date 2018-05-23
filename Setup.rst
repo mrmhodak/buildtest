@@ -11,15 +11,30 @@ buildtest Setup
 Requirements
 ------------
 
- - Linux OS (Redhat or Centos)
- - Python 2.6 or recent version of 2.x
- - argparse, PyYAML library
- - easyconfig repo
- - A module tool environment - Lmod or EnvironmentModules
- - CMake >= 2.8
+buildtest is currently compatible with RHEL/Centos 
+ 
+ You need Python 2.6 or higher on your system. To install python in RHEL/Centos please run 
+
+.. code:: 
+
+   yum install python
+ 
+ 
+You will need a few packages including ``argparse``, ``pyyaml`` ``argcomplete`` in your python environment. Please run the following
+ 
+.. code::
+ 
+   pip install argparse
+   pip install pyyaml
+   pip install argcomplete
+   
+You will need a module tool environment. If you want to install Lmod please run ``yum install Lmod`` or if you want
+to build Lmod manually please see http://lmod.readthedocs.io/en/latest/030_installing.html. If you want to install environment
+modules instead of Lmod please https://modules.readthedocs.io/en/stable/INSTALL.html
+
+buildtest will need ``cmake`` and ``ctest`` utility that can be installed by running ``yum install cmake``
 
 
-Let's first get you setup with buildtest, so you can than start testing :)
 
 
 Installing buildtest
