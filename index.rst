@@ -37,6 +37,7 @@ Getting Started
    How_to_use_BuildTest
    Find_Operations
    Show_Configuration
+   module_load_test
    
 
 Writing YAML configuration
