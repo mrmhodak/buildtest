@@ -1,13 +1,16 @@
--- The C compiler identification is GNU 4.8.5
--- The CXX compiler identification is GNU 4.8.5
--- Check for working C compiler: /bin/cc
--- Check for working C compiler: /bin/cc -- works
+(buildtest) [siddis14@amrndhl1157 tmp]$ mkdir -p /tmp/build
+(buildtest) [siddis14@amrndhl1157 tmp]$ cd /tmp/build
+(buildtest) [siddis14@amrndhl1157 build]$ cmake ..
+-- The C compiler identification is GNU 6.4.0
+-- The CXX compiler identification is GNU 6.4.0
+-- Check for working C compiler: /nfs/grid/software/easybuild/IvyBridge/redhat/7.3/software/GCCcore/6.4.0/bin/cc
+-- Check for working C compiler: /nfs/grid/software/easybuild/IvyBridge/redhat/7.3/software/GCCcore/6.4.0/bin/cc -- works
 -- Detecting C compiler ABI info
 -- Detecting C compiler ABI info - done
--- Check for working CXX compiler: /bin/c++
--- Check for working CXX compiler: /bin/c++ -- works
+-- Check for working CXX compiler: /nfs/grid/software/easybuild/IvyBridge/redhat/7.3/software/GCCcore/6.4.0/bin/c++
+-- Check for working CXX compiler: /nfs/grid/software/easybuild/IvyBridge/redhat/7.3/software/GCCcore/6.4.0/bin/c++ -- works
 -- Detecting CXX compiler ABI info
 -- Detecting CXX compiler ABI info - done
 -- Configuring done
 -- Generating done
--- Build files have been written to: /home/siddis14/github/buildtest/scripts/buildtest-framework/build
+-- Build files have been written to: /tmp/build

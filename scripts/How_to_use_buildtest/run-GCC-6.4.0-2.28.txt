@@ -1,45 +1,44 @@
-Test project /home/siddis14/github/buildtest/scripts/buildtest-framework/build
-      Start  1: GCC-6.4.0-2.28-c++_--version.sh
- 1/20 Test  #1: GCC-6.4.0-2.28-c++_--version.sh ............   Passed    0.18 sec
-      Start  2: GCC-6.4.0-2.28-cpp_--version.sh
- 2/20 Test  #2: GCC-6.4.0-2.28-cpp_--version.sh ............   Passed    0.17 sec
-      Start  3: GCC-6.4.0-2.28-g++_--version.sh
- 3/20 Test  #3: GCC-6.4.0-2.28-g++_--version.sh ............   Passed    0.18 sec
-      Start  4: GCC-6.4.0-2.28-gcc_--version.sh
- 4/20 Test  #4: GCC-6.4.0-2.28-gcc_--version.sh ............   Passed    0.17 sec
-      Start  5: GCC-6.4.0-2.28-gcc-ar_--version.sh
- 5/20 Test  #5: GCC-6.4.0-2.28-gcc-ar_--version.sh .........   Passed    0.18 sec
-      Start  6: GCC-6.4.0-2.28-gcc-nm_--version.sh
- 6/20 Test  #6: GCC-6.4.0-2.28-gcc-nm_--version.sh .........   Passed    0.18 sec
-      Start  7: GCC-6.4.0-2.28-gcc-ranlib_--version.sh
- 7/20 Test  #7: GCC-6.4.0-2.28-gcc-ranlib_--version.sh .....   Passed    0.17 sec
-      Start  8: GCC-6.4.0-2.28-gcov_--version.sh
- 8/20 Test  #8: GCC-6.4.0-2.28-gcov_--version.sh ...........   Passed    0.18 sec
-      Start  9: GCC-6.4.0-2.28-gcov-tool_--version.sh
- 9/20 Test  #9: GCC-6.4.0-2.28-gcov-tool_--version.sh ......   Passed    0.17 sec
-      Start 10: GCC-6.4.0-2.28-gfortran_--version.sh
-10/20 Test #10: GCC-6.4.0-2.28-gfortran_--version.sh .......   Passed    0.17 sec
-      Start 11: GCC-6.4.0-2.28-omp_hello.c_nthread_9.sh
-11/20 Test #11: GCC-6.4.0-2.28-omp_hello.c_nthread_9.sh ....   Passed    0.24 sec
-      Start 12: GCC-6.4.0-2.28-omp_hello.c_nthread_13.sh
-12/20 Test #12: GCC-6.4.0-2.28-omp_hello.c_nthread_13.sh ...   Passed    0.23 sec
-      Start 13: GCC-6.4.0-2.28-omp_hello.c_nthread_17.sh
-13/20 Test #13: GCC-6.4.0-2.28-omp_hello.c_nthread_17.sh ...   Passed    0.23 sec
-      Start 14: GCC-6.4.0-2.28-omp_mm.c_nthread_4.sh
-14/20 Test #14: GCC-6.4.0-2.28-omp_mm.c_nthread_4.sh .......   Passed    0.26 sec
-      Start 15: GCC-6.4.0-2.28-omp_mm.c_nthread_6.sh
-15/20 Test #15: GCC-6.4.0-2.28-omp_mm.c_nthread_6.sh .......   Passed    0.26 sec
-      Start 16: GCC-6.4.0-2.28-omp_mm.c_nthread_8.sh
-16/20 Test #16: GCC-6.4.0-2.28-omp_mm.c_nthread_8.sh .......   Passed    0.26 sec
-      Start 17: GCC-6.4.0-2.28-omp_mm.c_nthread_10.sh
-17/20 Test #17: GCC-6.4.0-2.28-omp_mm.c_nthread_10.sh ......   Passed    0.27 sec
-      Start 18: GCC-6.4.0-2.28-omp_mm.c_nthread_12.sh
-18/20 Test #18: GCC-6.4.0-2.28-omp_mm.c_nthread_12.sh ......   Passed    0.27 sec
-      Start 19: GCC-6.4.0-2.28-omp_mm.c_nthread_14.sh
-19/20 Test #19: GCC-6.4.0-2.28-omp_mm.c_nthread_14.sh ......   Passed    0.26 sec
-      Start 20: GCC-6.4.0-2.28-omp_mm.c_nthread_16.sh
-20/20 Test #20: GCC-6.4.0-2.28-omp_mm.c_nthread_16.sh ......   Passed    0.27 sec
+(buildtest) [siddis14@amrndhl1157 build]$ ctest .
+Test project /tmp/build
+      Start  1: GCCcore-6.4.0-gcc_--version.sh
+ 1/19 Test  #1: GCCcore-6.4.0-gcc_--version.sh .............................   Passed    0.54 sec
+      Start  2: GCCcore-6.4.0-gcc-nm_-V.sh
+ 2/19 Test  #2: GCCcore-6.4.0-gcc-nm_-V.sh .................................   Passed    0.29 sec
+      Start  3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh
+ 3/19 Test  #3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh .........   Passed    0.29 sec
+      Start  4: GCCcore-6.4.0-cpp_--version.sh
+ 4/19 Test  #4: GCCcore-6.4.0-cpp_--version.sh .............................   Passed    0.27 sec
+      Start  5: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh
+ 5/19 Test  #5: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh ....   Passed    0.27 sec
+      Start  6: GCCcore-6.4.0-gcov_--version.sh
+ 6/19 Test  #6: GCCcore-6.4.0-gcov_--version.sh ............................   Passed    0.28 sec
+      Start  7: GCCcore-6.4.0-gcov-dump_-V.sh
+ 7/19 Test  #7: GCCcore-6.4.0-gcov-dump_-V.sh ..............................   Passed    0.27 sec
+      Start  8: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc_--version.sh
+ 8/19 Test  #8: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc_--version.sh .........   Passed    0.27 sec
+      Start  9: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh
+ 9/19 Test  #9: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh .........   Passed    0.27 sec
+      Start 10: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-nm_-V.sh
+10/19 Test #10: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-nm_-V.sh .............   Passed    0.27 sec
+      Start 11: GCCcore-6.4.0-g++_--version.sh
+11/19 Test #11: GCCcore-6.4.0-g++_--version.sh .............................   Passed    0.26 sec
+      Start 12: GCCcore-6.4.0-gfortran_--version.sh
+12/19 Test #12: GCCcore-6.4.0-gfortran_--version.sh ........................   Passed    0.26 sec
+      Start 13: GCCcore-6.4.0-c++_--version.sh
+13/19 Test #13: GCCcore-6.4.0-c++_--version.sh .............................   Passed    0.26 sec
+      Start 14: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-6.4.0_--version.sh
+14/19 Test #14: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-6.4.0_--version.sh ...   Passed    0.26 sec
+      Start 15: GCCcore-6.4.0-gcc-ar_-V.sh
+15/19 Test #15: GCCcore-6.4.0-gcc-ar_-V.sh .................................   Passed    0.26 sec
+      Start 16: GCCcore-6.4.0-gcov-tool_--version.sh
+16/19 Test #16: GCCcore-6.4.0-gcov-tool_--version.sh .......................   Passed    0.26 sec
+      Start 17: GCCcore-6.4.0-x86_64-pc-linux-gnu-c++_--version.sh
+17/19 Test #17: GCCcore-6.4.0-x86_64-pc-linux-gnu-c++_--version.sh .........   Passed    0.27 sec
+      Start 18: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ar_-V.sh
+18/19 Test #18: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ar_-V.sh .............   Passed    0.28 sec
+      Start 19: GCCcore-6.4.0-gcc-ranlib_-V.sh
+19/19 Test #19: GCCcore-6.4.0-gcc-ranlib_-V.sh .............................   Passed    0.27 sec
 
-100% tests passed, 0 tests failed out of 20
+100% tests passed, 0 tests failed out of 19
 
-Total Test time (real) =   4.32 sec
+Total Test time (real) =   5.40 sec

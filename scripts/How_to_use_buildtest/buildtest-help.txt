@@ -1,3 +1,4 @@
+(buildtest) [siddis14@amrndhl1157 buildtest-framework]$ buildtest --help
 usage: buildtest [options]
 
 optional arguments:
@@ -7,6 +8,7 @@ optional arguments:
   --testdir TESTDIR     Path to write buildtest tests. Overrides configuration BUILDTEST_TESTDIR
   --ignore-easybuild    ignore if application is not built with easybuild
   --show                show buildtest environment configuration
+  --clean-build         delete software test directory before writing test scripts
 
 Basic Options:
   buildtest basic options
@@ -15,8 +17,8 @@ Basic Options:
                         Specify module naming scheme for easybuild apps
   --scantest            Report all tests that can be built with buildtest by checking all available apps found in eb
                         stack and system packages
-  --clean-logs          delete buildtest logs
-  --clean-tests         delete testing directory
+  --clean-logs          delete buildtest log directory ($BUILDTEST_LOGDIR)
+  --clean-tests         delete testing directory ($BUILDTEST_TESTDIR)
 
 Find Options:
   buildtest options for finding software, toolchains, tests, yaml files
@@ -51,14 +53,15 @@ Test Options:
                         Build test for system packages To build all system package test use --system all
   --testset {Python,R,Ruby,Perl,Tcl,MPI}
                         Select the type of test set to run (Python, R, Ruby, Perl, Tcl, MPI)
+  --module-load-test    conduct module load test for all modules defined in BUILDTEST_MODULE_ROOT
 
 YAML Options:
   Options for YAML configuration
 
   --sysyaml INSTALLED-SYSTEM-PACKAGE
-                        generate binary test YAML configuration for system package
+                        generate YAML configuration for binary test for system package
   --ebyaml YAML-APP-CHOICES
-                        generate binary test YAML configuration for easybuild package (Not Implemented)
+                        generate YAML configuration for binary test for software package
 
 Job Scheduler Options:
   Options for interacting with Job Scheduler

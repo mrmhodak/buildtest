@@ -1,7 +1,0 @@
-[siddis14@amrndhl1157 buildtest-framework]$ cat /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/testing/ebapp/GCC/5.4.0-2.27/omp_hello.f.csh
-#!/bin/csh
-module purge
-module load GCC/5.4.0-2.27
-setenv OMP_NUM_THREADS 2
-gfortran -o omp_hello.f.exe /hpc/grid/hpcws/hpcengineers/siddis14/buildtest-framework/buildtest-configs/ebapps/GCC/code/omp_hello.f -O2 -fopenmp
-./omp_hello.f.exe
