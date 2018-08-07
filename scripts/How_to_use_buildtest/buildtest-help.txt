@@ -1,4 +1,4 @@
-(buildtest) [siddis14@amrndhl1157 buildtest-framework]$ buildtest --help
+-bash-4.2$ _buildtest --help
 usage: buildtest [options]
 
 optional arguments:
@@ -9,6 +9,7 @@ optional arguments:
   --ignore-easybuild    ignore if application is not built with easybuild
   --show                show buildtest environment configuration
   --clean-build         delete software test directory before writing test scripts
+  --show-keys           display yaml key description
 
 Basic Options:
   buildtest basic options
@@ -51,9 +52,15 @@ Test Options:
                         Select the type of shell when running test
   --system SYSTEM-PACKAGE
                         Build test for system packages To build all system package test use --system all
-  --testset {Python,R,Ruby,Perl,Tcl,MPI}
-                        Select the type of test set to run (Python, R, Ruby, Perl, Tcl, MPI)
   --module-load-test    conduct module load test for all modules defined in BUILDTEST_MODULE_ROOT
+  --python-package PYTHON-PACKAGES
+                        build test for Python packages
+  --r-package R-PACKAGES
+                        build test for R packages
+  --ruby-package RUBY-PACKAGES
+                        build test for Ruby packages
+  --perl-package PERL-PACKAGES
+                        build test for Perl packages
 
 YAML Options:
   Options for YAML configuration

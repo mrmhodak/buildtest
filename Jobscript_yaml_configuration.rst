@@ -4,8 +4,8 @@
 Configuring Job scripts from yaml configuration
 ===============================================
 
-buildtest can generate job scripts for the test script from the same yaml 
-configuration. This feature may be useful for users interested in testing 
+buildtest can generate job scripts for the test script from the same yaml
+configuration. This feature may be useful for users interested in testing
 their application in a parallel environment.
 
 Configuring LSF job script
@@ -41,60 +41,114 @@ In SLURM, the scheduler and jobslots value will convert to **#SBATCH -N <JobSlot
    jobslots: 4
 
 
-In the future, there will be more yaml key options to tweak job parameters. 
+In the future, there will be more yaml key options to tweak job parameters.
 
-By default job scripts will be created in the test directory. The example above
-are part of MPI testset so we will build the tests with OpenMPI and GCC as the
-toolchain
-
-
-If you run ``buildtest -s OpenMPI/2.0.0 -t GCC/5.4.0-2.27 --testset MPI --enable-job`` 
-
-.. program-output:: cat scripts/Jobscript_yaml_configuration/slurm-example.txt
-
-buildtest will create job scripts with the following extensions
-
-* LSF job scripts will have extension **.lsf** 
-* SLURM job scripts will have extension **.slurm**
-
-Now lets check the test directory for the newly created job scripts.
+By default job scripts will be created in the test directory. Shown below is an
+example for building slurm job script using option ``--enable-job``
 
 .. code::
 
-   [siddis14@amrndhl1157 buildtest-framework]$ ls -l /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27/*.lsf
-   -rw-rw-r-- 1 siddis14 amer 228 Jan  9 10:36 /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27/mpi_mm.c.lsf
+    [siddis14@prometheus buildtest-framework]$ _buildtest -s icc/2018.1.163-GCC-6.4.0-2.28 --enable-job
+    Detecting Software:  icc/2018.1.163-GCC-6.4.0-2.28
+    --------------------------------------------
+    [STAGE 1]: Building Binary Tests
+    --------------------------------------------
+    Detecting Test Type: Software
+    Processing Binary YAML configuration:  /home/siddis14/github/buildtest-configs/buildtest/ebapps/icc/2018.1.163/command.yaml
 
-        
-   [siddis14@amrndhl1157 buildtest-framework]$ ls -l /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27/*.slurm
-   -rw-rw-r-- 1 siddis14 amer 232 Jan  9 10:36 /lustre/workspace/home/siddis14/buildtest-framework/testing/ebapp/OpenMPI/2.0.0/GCC/5.4.0-2.27/mpi_mm.f.slurm
+    Generating 24 binary tests
+    Binary Tests are written in /tmp/buildtest-tests/ebapp/icc/2018.1.163-GCC-6.4.0-2.28/
+    Writing Log file:  /tmp/buildtest/icc/2018.1.163-GCC-6.4.0-2.28/buildtest_11_11_07_08_2018.log
+
+If you look at the directory you will see a **.slurm** job script for each test that
+was created
+
+
+.. code::
+
+    [siddis14@prometheus buildtest-framework]$ ls -l /tmp/buildtest-tests/ebapp/icc/2018.1.163-GCC-6.4.0-2.28/
+    total 196
+    -rw-r--r-- 1 siddis14 amer 3500 Aug  7 11:11 CMakeLists.txt
+    -rw-r--r-- 1 siddis14 amer   72 Aug  7 11:11 icc_-V.sh
+    -rw-r--r-- 1 siddis14 amer  120 Aug  7 11:11 icc_-V.slurm
+    -rw-r--r-- 1 siddis14 amer   73 Aug  7 11:11 icpc_-V.sh
+    -rw-r--r-- 1 siddis14 amer  121 Aug  7 11:11 icpc_-V.slurm
+    -rw-r--r-- 1 siddis14 amer   81 Aug  7 11:11 profmerge_-help.sh
+    -rw-r--r-- 1 siddis14 amer  129 Aug  7 11:11 profmerge_-help.slurm
+    -rw-r--r-- 1 siddis14 amer   79 Aug  7 11:11 which_codecov.sh
+    -rw-r--r-- 1 siddis14 amer  127 Aug  7 11:11 which_codecov.slurm
+    -rw-r--r-- 1 siddis14 amer   79 Aug  7 11:11 which_dbmerge.sh
+    -rw-r--r-- 1 siddis14 amer  127 Aug  7 11:11 which_dbmerge.slurm
+    -rw-r--r-- 1 siddis14 amer   85 Aug  7 11:11 which_gfx_sys_check.sh
+    -rw-r--r-- 1 siddis14 amer  133 Aug  7 11:11 which_gfx_sys_check.slurm
+    -rw-r--r-- 1 siddis14 amer   79 Aug  7 11:11 which_icc.cfg.sh
+    -rw-r--r-- 1 siddis14 amer  127 Aug  7 11:11 which_icc.cfg.slurm
+    -rw-r--r-- 1 siddis14 amer   80 Aug  7 11:11 which_icpc.cfg.sh
+    -rw-r--r-- 1 siddis14 amer  128 Aug  7 11:11 which_icpc.cfg.slurm
+    -rw-r--r-- 1 siddis14 amer   87 Aug  7 11:11 which_libcilkrts.so.5.sh
+    -rw-r--r-- 1 siddis14 amer  135 Aug  7 11:11 which_libcilkrts.so.5.slurm
+    -rw-r--r-- 1 siddis14 amer   92 Aug  7 11:11 which_libintelremotemon.so.sh
+    -rw-r--r-- 1 siddis14 amer  140 Aug  7 11:11 which_libintelremotemon.so.slurm
+    -rw-r--r-- 1 siddis14 amer   93 Aug  7 11:11 which_loopprofileviewer.csh.sh
+    -rw-r--r-- 1 siddis14 amer  141 Aug  7 11:11 which_loopprofileviewer.csh.slurm
+    -rw-r--r-- 1 siddis14 amer   92 Aug  7 11:11 which_loopprofileviewer.sh.sh
+    -rw-r--r-- 1 siddis14 amer  140 Aug  7 11:11 which_loopprofileviewer.sh.slurm
+    -rw-r--r-- 1 siddis14 amer   80 Aug  7 11:11 which_map_opts.sh
+    -rw-r--r-- 1 siddis14 amer  128 Aug  7 11:11 which_map_opts.slurm
+    -rw-r--r-- 1 siddis14 amer   78 Aug  7 11:11 which_mcpcom.sh
+    -rw-r--r-- 1 siddis14 amer  126 Aug  7 11:11 which_mcpcom.slurm
+    -rw-r--r-- 1 siddis14 amer   87 Aug  7 11:11 which_offload_extract.sh
+    -rw-r--r-- 1 siddis14 amer  135 Aug  7 11:11 which_offload_extract.slurm
+    -rw-r--r-- 1 siddis14 amer   79 Aug  7 11:11 which_profdcg.sh
+    -rw-r--r-- 1 siddis14 amer  127 Aug  7 11:11 which_profdcg.slurm
+    -rw-r--r-- 1 siddis14 amer   89 Aug  7 11:11 which_profmergesampling.sh
+    -rw-r--r-- 1 siddis14 amer  137 Aug  7 11:11 which_profmergesampling.slurm
+    -rw-r--r-- 1 siddis14 amer   81 Aug  7 11:11 which_proforder.sh
+    -rw-r--r-- 1 siddis14 amer  129 Aug  7 11:11 which_proforder.slurm
+    -rw-r--r-- 1 siddis14 amer   79 Aug  7 11:11 which_tselect.sh
+    -rw-r--r-- 1 siddis14 amer  127 Aug  7 11:11 which_tselect.slurm
+    -rw-r--r-- 1 siddis14 amer   88 Aug  7 11:11 which_x86_64-linux.env.sh
+    -rw-r--r-- 1 siddis14 amer  136 Aug  7 11:11 which_x86_64-linux.env.slurm
+    -rw-r--r-- 1 siddis14 amer   80 Aug  7 11:11 which_xiar.cfg.sh
+    -rw-r--r-- 1 siddis14 amer  128 Aug  7 11:11 which_xiar.cfg.slurm
+    -rw-r--r-- 1 siddis14 amer   80 Aug  7 11:11 which_xild.cfg.sh
+    -rw-r--r-- 1 siddis14 amer  128 Aug  7 11:11 which_xild.cfg.slurm
+    -rw-r--r-- 1 siddis14 amer   73 Aug  7 11:11 xiar_-V.sh
+    -rw-r--r-- 1 siddis14 amer  121 Aug  7 11:11 xiar_-V.slurm
+    -rw-r--r-- 1 siddis14 amer   80 Aug  7 11:11 xild_--version.sh
+    -rw-r--r-- 1 siddis14 amer  128 Aug  7 11:11 xild_--version.slurm
+
+buildtest will create job scripts with the following extensions
+
+* LSF job scripts will have extension **.lsf**
+* SLURM job scripts will have extension **.slurm**
 
 
 
-Let's take a look into the job scripts.
-
-
-Generated LSF Job
------------------
-
-.. code:: shell
-
-   #!/bin/sh
-   #BSUB -n 4
-   module purge
-   module load GCC/5.4.0-2.27
-   module load OpenMPI/2.0.0
-   mpicc -o mpi_mm.c.exe /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/mpi/code/mpi_mm.c -O2
-   mpirun -np 4 ./mpi_mm.c.exe
-
-Generated SLURM Job 
+Generated SLURM Job
 -------------------
 
 .. code:: shell
 
-   #!/bin/sh
-   #SBATCH -N 4
-   module purge
-   module load GCC/5.4.0-2.27
-   module load OpenMPI/2.0.0
-   mpifort -o mpi_mm.f.exe /lustre/workspace/home/siddis14/buildtest-framework/buildtest-configs/mpi/code/mpi_mm.f -O2
-   mpirun -np 4 ./mpi_mm.f.exe
+    #!/bin/sh
+    #SBATCH -N 1
+    #SBATCH -q short
+    #SBATCH -t 00:02
+    module purge
+    module load icc/2018.1.163-GCC-6.4.0-2.28
+    icc -V
+
+
+    Shown below is a generated LSF job script
+
+Generated LSF Job
+-----------------------
+.. code:: shell
+
+    #!/bin/sh
+    #BSUB -n 1
+    #BSUB -q short
+    #BSUB -W 00:02
+    module purge
+    module load icc/2018.1.163-GCC-6.4.0-2.28
+    icc -V

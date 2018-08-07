@@ -1,0 +1,22 @@
+-bash-4.2$ ctest .
+Test project /tmp/build2
+      Start  1: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh
+ 1/14 Test  #1: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh ...   Passed    0.99 sec
+      Start  2: GCCcore-6.4.0-gcc-nm_-V.sh
+ 2/14 Test  #2: GCCcore-6.4.0-gcc-nm_-V.sh ................................   Passed    0.26 sec
+      Start  3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh
+ 3/14 Test  #3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh ........   Passed    0.27 sec
+      Start  4: GCCcore-6.4.0-gcc_--version.sh
+ 4/14 Test  #4: GCCcore-6.4.0-gcc_--version.sh ............................   Passed    0.23 sec
+      Start  5: GCCcore-6.4.0-gcov-tool_--version.sh
+ 5/14 Test  #5: GCCcore-6.4.0-gcov-tool_--version.sh ......................   Passed    0.19 sec
+      Start  6: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh
+ 6/14 Test  #6: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh ........   Passed    0.19 sec
+      Start  7: GCCcore-6.4.0-gcc-ar_-V.sh
+ 7/14 Test  #7: GCCcore-6.4.0-gcc-ar_-V.sh ................................   Passed    0.18 sec
+      Start  8: GCCcore-6.4.0-cpp_--version.sh
+ 8/14 Test  #8: GCCcore-6.4.0-cpp_--version.sh ............................   Passed    0.22 sec
+      Start  9: GCCcore-6.4.0-gcov_--version.sh
+ 9/14 Test  #9: GCCcore-6.4.0-gcov_--version.sh ...........................   Passed    0.20 sec
+      Start 10: GCCcore-6.4.0-gcov-dump_-V.sh
+10/14 Test #10: GCCcore-6.4.0-gcov-dump_-V.sh .............................   Passed    0.21 sec

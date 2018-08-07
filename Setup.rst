@@ -11,34 +11,60 @@ buildtest Setup
 Requirements
 ------------
 
-buildtest is currently compatible with RHEL/Centos 
- 
- You need Python 2.6 or higher on your system. To install python in RHEL/Centos please run 
+buildtest is compatible with RHEL/Centos
 
-.. code:: 
+You need the following packages to get started.
 
-   yum install python
- 
- 
-You will need a few packages including ``argparse``, ``pyyaml`` ``argcomplete`` in your python environment. Please run the following
- 
+- Python > 2.6 or higher ``yum install python``
+
+- Lmod ``yum install Lmod`` or environment-modules ``yum install environment-modules``
+
+- CMake ``yum install cmake``
+
+- Python libraries ``argparse``, ``pyyaml``, ``argcomplete``
+    - ``pip install argparse pyyaml argcomplete``
+
+
+If you want to build Lmod or environment-modules manually please see http://lmod.readthedocs.io/en/latest/030_installing.html
+or https://modules.readthedocs.io/en/stable/INSTALL.html for more details
+
+Installing buildtest via pip
+----------------------------
+
+If you want to install buildtest you can use ``pip`` to install all the buildtest
+packages.
+
+Run the following assuming you have pip
+
 .. code::
- 
-   pip install argparse
-   pip install pyyaml
-   pip install argcomplete
-   
-You will need a module tool environment. If you want to install Lmod please run ``yum install Lmod`` or if you want
-to build Lmod manually please see http://lmod.readthedocs.io/en/latest/030_installing.html. If you want to install environment
-modules instead of Lmod please https://modules.readthedocs.io/en/stable/INSTALL.html
 
-buildtest will need ``cmake`` and ``ctest`` utility that can be installed by running ``yum install cmake``
+    pip install buildtest-framework --user
 
+Make sure your $PATH has ``$HOME/.local/bin`` in its path to pick up buildtest
+automatically
 
+Installing buildtest via conda
+------------------------------
 
+If you have Anaconda you may install buildtest via ``conda`` to ensure your
+python environment is setup properly.
 
-Installing buildtest
---------------------
+First install python > 2.6 or higher in your conda environment
+
+.. code::
+
+    conda create -n buildtest python=2.7
+
+Next, get in to your conda environment
+
+.. code::
+
+    source activate buildtest
+
+Now you want to install ``buildtest`` inside your conda environment via pip
+
+Installing buildtest via git
+----------------------------
 
 To get started just clone all the repos related to buildtest in your filesystem
 
@@ -51,47 +77,46 @@ buildtest configuration
 
 buildtest Configuration Variables
 ---------------------------------
-          
-There are a few buildtest variables that you should
-be aware of when using buildtest. 
 
+There are a few buildtest variables that you should be aware of when using buildtest.
 
 .. include:: Setup/buildtest-environment.txt
 
-To get started run the following script  ``source setup.sh`` in your shell and edit
-the file ``$BUILDTEST_ROOT/config.yaml`` accordingly.  
 
-The ``setup.sh`` will define variable ``BUILDTEST_ROOT`` that can be used in ``config.yaml`` 
-for specifying other paths relative to ``$BUILDTEST_ROOT``
-
-Shown below is value of ``$BUILDTEST_ROOT`` after running ``source setup.sh`` 
-
-.. code::
-
-   [siddis14@amrndhl1157 buildtest-framework]$ env | grep BUILDTEST
-   BUILDTEST_ROOT=/home/siddis14/github/buildtest-framework
+Take a look at file ``$BUILDTEST_ROOT/config.dummy.yaml`` and copy this file to
+``$HOME/.local/buildtest/config.yaml`` and edit the file accordingly. You can refer
+to ``config.example.yaml`` for more details
 
 
-Each site will have to customize their buildtest configuration to reflect the root of the module trees. 
-You may specify multiple module trees  in ``config.yaml`` for variable ``BUILDTEST_MODULE_ROOT``. 
-For more detail refer to ``config.example.yaml``.
+Each site will have to customize their buildtest configuration to reflect the root of the module trees.
+You may specify multiple module trees  in ``config.yaml`` for variable ``BUILDTEST_MODULE_ROOT``.
 
-You may specify any of the ``BUILDTEST_*`` variables with exception of ``BUILDTEST_ROOT`` using environment variables which will
-override values specified in  ``config.yaml``. 
+You may specify any of the ``BUILDTEST_*`` variables with exception of ``BUILDTEST_ROOT``
+using environment variables which will override values specified in  ``config.yaml``.
 
 The environment variables are used by buildtest to determine the path where to retrieve
 module files, yaml configs and write test scripts. You can also reference
 these variables in yaml configs to write custom build and run commands. The testscript can
 reference source directory via **BUILDTEST_CONFIGS_REPO** to find files of interest
 
+Setting up auto-complete on buildtest arguments
+-----------------------------------------------
 
-buildtest version (``buildtest -V``)
-------------------------------------
+Before you start using buildtest please run the following in your shell
+
+.. code::
+
+    eval "$(register-python-argcomplete _buildtest)"
+
+This will setup auto-complete on buildtest arguments which will be useful when
+building tests.
+
+buildtest version (``_buildtest -V``)
+-------------------------------------
 
 You can check the current version of buildtest by running the following
 
 .. code::
 
-   [siddis14@amrndhl1157 buildtest-framework]$ buildtest -V
-   buildtest version: 0.2.0
-
+   [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -V
+   buildtest version: 0.3.0

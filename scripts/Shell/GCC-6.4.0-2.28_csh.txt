@@ -1,4 +1,4 @@
-(buildtest) [siddis14@amrndhl1157 buildtest-framework]$ buildtest -s GCCcore/6.4.0 --shell csh
+(buildtest) [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -s GCCcore/6.4.0 --shell csh
 Detecting Software:  GCCcore/6.4.0
 --------------------------------------------
 [STAGE 1]: Building Binary Tests

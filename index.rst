@@ -37,8 +37,13 @@ Getting Started
    How_to_use_BuildTest
    Find_Operations
    Show_Configuration
+   scan_test
    module_load_test
-   
+   r_package_testing
+   python_package_testing
+   perl_package_testing
+   ruby_package_testing
+
 
 Writing YAML configuration
 --------------------------
@@ -46,14 +51,15 @@ Writing YAML configuration
 .. toctree::
    :maxdepth: 2
 
-
+   show_yaml_keys
    Writing_Test_In_YAML
    MPI_yaml
    OpenMP_yaml
    Generate_yaml_from_buildtest
    Jobscript_yaml_configuration
 
-Jobscript Features 
+
+Jobscript Features
 ------------------
 
 .. toctree::

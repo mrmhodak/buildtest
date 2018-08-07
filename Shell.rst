@@ -14,7 +14,7 @@ Currently, buildtest supports the following shell types
 - bash
 - csh
 
-To create tests for different shell types use ``buildtest --shell <shell-type>``.
+To create tests for different shell types use ``_buildtest --shell <shell-type>``.
 You may set the environment variable ``BUILDTEST_SHELL`` or set this in your
 ``config.yaml``
 
@@ -29,7 +29,7 @@ Now let's check the test files
 .. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_csh_listing.txt
 
 
-Let's rerun this with bash: ``buildtest -s GCCcore/6.4.0 --shell bash``
+Let's rerun this with bash: ``_buildtest -s GCCcore/6.4.0 --shell bash``
 
 
 .. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_bash.txt
@@ -68,7 +68,7 @@ You will notice the key ``envvars`` will declare the environment variable accord
 used for generating the test. For ``bash`` and ``sh`` the keyword ``export`` is used whereas for ``csh``
 the keyword is ``setenv``
 
-If you run ``buildtest -s GCC/6.4.0-2.28 --shell bash`` to build the following test and look at generated test ``omp_hello_f.bash`` you
+If you run ``_buildtest -s GCC/6.4.0-2.28 --shell bash`` to build the following test and look at generated test ``omp_hello_f.bash`` you
 will see the environment variable is set using keyword ``export``
 
 .. code::

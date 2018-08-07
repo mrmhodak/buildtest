@@ -3,33 +3,39 @@
 Generate test configuration for binary testing with buildtest
 =============================================================
 
-buildtest can be used for writing YAML files for binary testing (``command.yaml``). This feature was added to streamline binary
-testing for Software and System Packages.
+buildtest can be used for writing YAML files for binary testing
+(``command.yaml``). This feature was added to streamline binary testing for
+Software and System Packages.
 
-Binary Test for Software package(``--ebyaml``)
------------------------------------------------
+Binary Test for Software package(``_buildtest --ebyaml``)
+----------------------------------------------------------
 
-In order to test binaries for software packages in HPC environment, buildtest will assume there is a
-modulefile for the software package in a module tree that is defined in ``MODULEPATH`` and ``BUILDTEST_MODULE_ROOT``.
-It is important that the environment variable ``MODULEPATH`` defines  the directory for moduletree that is defined in BUILDTEST_MODULE_ROOT because
-buildtest will run the following command, where ``<module>`` is name of module that is passed to ``--ebyaml``
+In order to test binaries for software packages in HPC environment, buildtest
+will assume there is a modulefile present and accessible via ``module`` command.
+This implies the module tree is defined in ``MODULEPATH`` and ``BUILDTEST_MODULE_ROOT``.
+
+When buildtest takes argument ``_buildtest --ebyaml <module>`` it will run the
+following command
 
 .. code::
 
     module show <module>
 
-buildtest will run the above command to figure out root of the software directory, in particular it searches for
-``prepend_path("PATH"`` string in module to figure out the directory where binary will reside. buildtest will search
-for all files in all directories defined by ``$PATH`` in module file.
+buildtest will use the output of the above command to figure out root of the
+software directory, in particular it searches for ``prepend_path("PATH"``
+string to figure out the directory where binaries will reside. buildtest will
+search for all files in all directories defined by ``$PATH`` in module file
 
-buildtest will only add files, not directories, and only add files with unique sha256 sum to avoid adding unncessary commands. buildtest will
-ignore symlinks as well.
+buildtest will only add files, not directories, and only add files with unique
+sha256 sum to avoid adding unncessary commands. buildtest will ignore symlinks
+as well.
 
 To demonstrate an example lets see the following example
 
-``buildtest --ebyaml GCCcore/6.4.0``
+``_buildtest --ebyaml GCCcore/6.4.0``
 
-buildtest will search for $PATH in module file, lets assume the content of module file is the following
+buildtest will search for $PATH in module file, lets assume the content of
+module file is the following
 
 
 .. code::
@@ -112,7 +118,7 @@ buildtest will write the content in ``command.yaml`` which must be checked for f
 
 .. code::
 
-    (buildtest) [siddis14@amrndhl1157 buildtest-framework]$ buildtest --ebyaml GCCcore/6.4.0
+    (buildtest) [siddis14@amrndhl1157 buildtest-framework]$ _buildtest --ebyaml GCCcore/6.4.0
     YAML file already exists, please check:  /lustre/workspace/home/siddis14/buildtest-configs/ebapps/gcccore/6.4.0/command.yaml
     (buildtest) [siddis14@amrndhl1157 buildtest-framework]$ buildtest --ebyaml GCCcore/6.4.0
     Please check YAML file /lustre/workspace/home/siddis14/buildtest-configs/ebapps/gcccore/6.4.0/command.yaml  and fix test accordingly
@@ -134,23 +140,28 @@ If we look at the content we will see following binaries have been added
     - gcov
     - gcov-dump
 
-The last step is to add any options (if applicable) required to run the binary command. 
+The last step is to add any options (if applicable) required to run the binary command.
 
 
-Binary Test for System package (``--sysyaml``)
-----------------------------------------------
+Binary Test for System package (``_buildtest --sysyaml``)
+----------------------------------------------------------
 
-For system packages, typically you need to find all the binaries provided by the system package. Let's assume for our discussion we are
-in Redhat, you would need to get output of ``rpm -ql <package>`` and go through each file and determine what is a binary. Once you get the
-binary run the binary with any options like ``--help``, ``-h``, ``--version`` or ``-V`` for a help or version check. This process can be tedious
-so buildtest has this implemented in the framework.
+For system packages, typically you need to find all the binaries provided by the
+system package. Let's assume for our discussion we are in Redhat, you would need
+to get output of ``rpm -ql <package>`` and go through each file and determine
+what is a binary. Once you get the binary run the binary with any options like
+``--help``, ``-h``, ``--version`` or ``-V`` for a help or version check. This
+process can be tedious so buildtest has this implemented in the framework.
 
-Since there is no universal test case for evaluating each binary we leave it up to the users to determine how they want to perform binary test.
+Since there is no universal test case for evaluating each binary we leave it up
+to the users to determine how they want to perform binary test.
 
 .. note:: The user needs to verify the YAML configuration after buidltest creates YAML file
 
-To create a binary test for a system package, first check ``$BUILDTEST_SOURCEDIR/system/<package>`` to see which system package are already provided. If there is
-no directory then it makes sense to create a the system package binary test using ``buildtest --sysyaml``
+To create a binary test for a system package, first check
+``$BUILDTEST_CONFIGS_REPO/buildtest/system/<package>`` to see which system
+package are already provided. If there is no directory then it makes sense to
+create a the system package binary test using ``_buildtest --sysyaml``
 
 For this example we will generate the YAML configuration for  **firefox** package.
 
@@ -170,12 +181,15 @@ Looking at the content of yaml file we see the following
 .. program-output:: cat scripts/Generate_yaml_from_buildtest/firefox_command.yaml
 
 
-When you run **firefox** in your shell, this will launch the browser, this is not good for testing purpose since we will be running these tests in batch mode. So specify a
-command that is going to terminate by running something like ``firefox --help``. This same command will be injected in your test script.
+When you run **firefox** in your shell, this will launch the browser, this is
+not good for testing purpose since we will be running these tests in batch mode.
+So specify a command that is going to terminate by running something like
+``firefox --help``. This same command will be injected in your test script.
 
 .. note:: Each item in **binaries** key will generate a separate test script and a new entry in CMakeList.txt
 
-In this example we modified firefox YAML configuration to use ``--help`` with firefox to display the help command to verify the firefox binary is working
+In this example we modified firefox YAML configuration to use ``--help`` with
+firefox to display the help command to verify the firefox binary is working
 
 .. program-output:: cat scripts/Generate_yaml_from_buildtest/firefox-system-test.txt
 

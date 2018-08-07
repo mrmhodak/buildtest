@@ -1,0 +1,11 @@
+-bash-4.2$ _buildtest -s GCCcore/6.4.0
+Detecting Software:  GCCcore/6.4.0
+--------------------------------------------
+[STAGE 1]: Building Binary Tests
+--------------------------------------------
+Detecting Test Type: Software
+Processing Binary YAML configuration:  /home/siddis14/github/buildtest-configs/buildtest/ebapps/gcccore/6.4.0/command.yaml
+
+Generating 10 binary tests
+Binary Tests are written in /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/
+Writing Log file:  /tmp/buildtest/GCCcore/6.4.0/buildtest_15_50_06_08_2018.log
