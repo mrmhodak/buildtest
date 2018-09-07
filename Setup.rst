@@ -15,15 +15,11 @@ buildtest is compatible with RHEL/Centos
 
 You need the following packages to get started.
 
-- Python > 2.6 or higher ``yum install python``
+- Python > 3.6 or higher
 
 - Lmod ``yum install Lmod`` or environment-modules ``yum install environment-modules``
 
 - CMake ``yum install cmake``
-
-- Python libraries ``argparse``, ``pyyaml``, ``argcomplete``
-    - ``pip install argparse pyyaml argcomplete``
-
 
 If you want to build Lmod or environment-modules manually please see http://lmod.readthedocs.io/en/latest/030_installing.html
 or https://modules.readthedocs.io/en/stable/INSTALL.html for more details
@@ -49,11 +45,11 @@ Installing buildtest via conda
 If you have Anaconda you may install buildtest via ``conda`` to ensure your
 python environment is setup properly.
 
-First install python > 2.6 or higher in your conda environment
+First install python > 3.6 or higher in your conda environment
 
 .. code::
 
-    conda create -n buildtest python=2.7
+    conda create -n buildtest python>=3.6
 
 Next, get in to your conda environment
 
@@ -61,7 +57,7 @@ Next, get in to your conda environment
 
     source activate buildtest
 
-Now you want to install ``buildtest`` inside your conda environment via pip
+Next you will  install ``buildtest`` inside your conda environment via ``pip install buildtest-framework --user``
 
 Installing buildtest via git
 ----------------------------
@@ -87,6 +83,7 @@ Take a look at file ``$BUILDTEST_ROOT/config.dummy.yaml`` and copy this file to
 ``$HOME/.local/buildtest/config.yaml`` and edit the file accordingly. You can refer
 to ``config.example.yaml`` for more details
 
+.. Note:: Failure to copy config.yaml to $HOME/.local/buildtest/config.yaml will result in  an error
 
 Each site will have to customize their buildtest configuration to reflect the root of the module trees.
 You may specify multiple module trees  in ``config.yaml`` for variable ``BUILDTEST_MODULE_ROOT``.
@@ -119,4 +116,4 @@ You can check the current version of buildtest by running the following
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -V
-   buildtest version: 0.3.0
+   buildtest version: 0.4.0

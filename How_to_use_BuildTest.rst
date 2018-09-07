@@ -87,8 +87,8 @@ TAB completion works for choice parameters like ``--shell``, ``--software``,
 ``--toolchain``, ``--system``, ``--sysyaml``, ``--ebyaml``, ``--python-package``,
 ``--perl-package``, ``--r-package``, ``--ruby-package``
 
-TAB complete on --software
-~~~~~~~~~~~~~~~~~~~~~~~~~~
+TAB complete on ``--software``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 
 TAB complete on ``--software`` option will present all unique software found in module tree
@@ -109,8 +109,8 @@ defined by ``BUILDTEST_MODULE_ROOT``
    Automake/.1.15                                     gompi/.2016.03                                     netCDF/4.4.1
    --More--
 
-TAB complete on --toolchain
-~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TAB complete on ``--toolchain``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TAB completion on ``--toolchain`` will present all easybuild toolchains installed
 in the software stack
@@ -124,8 +124,8 @@ in the software stack
    GCC/5.4.0-2.27                       gompi/.2016.09                       iimpic/.2017.01
    GCC/6.2.0-2.27                       gompi/.2016b                         intel/2017.01
 
-TAB complete on --system
-~~~~~~~~~~~~~~~~~~~~~~~~
+TAB complete on ``--system``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TAB completion on ``--system`` will display all the system package that have a yaml
 file typically found in directory ``$BUILDTEST_CONFIGS_REPO/system`` directory.
@@ -139,8 +139,8 @@ file typically found in directory ``$BUILDTEST_CONFIGS_REPO/system`` directory.
         CentrifyDC-openssh  file                git                 ncurses             procps-ng           strace              which
         chrony              firefox             htop                numactl             python              systemd             xz
 
-TAB complete on --sysyaml
-~~~~~~~~~~~~~~~~~~~~~~~~~
+TAB complete on ``--sysyaml``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 TAB completion ``--sysyaml`` will present all system package available on your
 system. If you are using Centos, RHEL, or Fedora then you will be using yum
@@ -163,7 +163,7 @@ as your package manager. This output is extracted by getting output of ``rpm -qa
         --More--
 
 TAB completion on ``--ebyaml``
-------------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Tab completion on ``--ebyaml`` will show which software packages you can generate yaml configuration
 for binary test. The options are auto-populated based on modules found in BUILDTEST_MODULE_ROOT. Whenever you

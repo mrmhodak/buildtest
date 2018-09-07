@@ -3,19 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-buildtest Documentation
+buildtest - Software Testing Framework
 =========================================
 
 Welcome to buildtest_ documentation. buildtest is a HPC Application Testing
 Framework designed to build tests quickly and verify an entire HPC software stack
 
 This documentation was last rebuild on |today| and is intended for version |version|.
-
-This project is in development and led by **Shahzeb Siddiqui**
-
-
-Checkout https://asciinema.org/a/163732?speed=2.0 for a buildtest ascicast
-
 
 Introduction to buildtest
 -------------------------
