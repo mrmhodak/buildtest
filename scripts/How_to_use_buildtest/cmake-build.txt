@@ -1,6 +1,3 @@
--bash-4.2$ mkdir -p /tmp/build
--bash-4.2$ cd /tmp/build
--bash-4.2$ cmake ..
 -- The C compiler identification is GNU 4.8.5
 -- The CXX compiler identification is GNU 4.8.5
 -- Check for working C compiler: /bin/cc

@@ -29,15 +29,33 @@ Getting Started
 
    Setup
    How_to_use_BuildTest
-   Find_Operations
    Show_Configuration
    scan_test
-   module_load_test
+   List_Subcommand
+   Find_Operations
+   diff_trees
+
+Building tests
+-----------------
+
+.. toctree::
+   :maxdepth: 2
+
+   Build_Subcommand
+   Shell
    r_package_testing
    python_package_testing
    perl_package_testing
    ruby_package_testing
 
+Running tests
+--------------
+
+.. toctree::
+   :maxdepth: 2
+
+   Run_Subcommand
+   module_load_test
 
 Writing YAML configuration
 --------------------------
@@ -63,13 +81,7 @@ Jobscript Features
    Automate_BatchJobs
 
 
-Advanced Features
------------------
 
-.. toctree::
-   :maxdepth: 2
-
-   Shell
 
 
 Useful Links

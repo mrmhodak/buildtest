@@ -99,11 +99,20 @@ reference source directory via **BUILDTEST_CONFIGS_REPO** to find files of inter
 Setting up auto-complete on buildtest arguments
 -----------------------------------------------
 
-Before you start using buildtest please run the following in your shell
+Before you start using buildtest you may want to setup autocomplete feature in your shell by running
 
-.. code::
+::
 
     eval "$(register-python-argcomplete _buildtest)"
+
+This command works for ``bash`` or  ``sh`` shell, if you are using ``tcsh`` you
+can run
+
+::
+
+    eval `register-python-argcomplete --shell tcsh _buildtest`
+
+For more details on argcomplete please visit https://pypi.org/project/argcomplete/
 
 This will setup auto-complete on buildtest arguments which will be useful when
 building tests.
@@ -116,4 +125,4 @@ You can check the current version of buildtest by running the following
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -V
-   buildtest version: 0.4.0
+   buildtest version: 0.5.0

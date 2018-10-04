@@ -1,22 +1,277 @@
--bash-4.2$ ctest .
-Test project /tmp/build2
-      Start  1: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh
- 1/14 Test  #1: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh ...   Passed    0.99 sec
-      Start  2: GCCcore-6.4.0-gcc-nm_-V.sh
- 2/14 Test  #2: GCCcore-6.4.0-gcc-nm_-V.sh ................................   Passed    0.26 sec
-      Start  3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh
- 3/14 Test  #3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh ........   Passed    0.27 sec
-      Start  4: GCCcore-6.4.0-gcc_--version.sh
- 4/14 Test  #4: GCCcore-6.4.0-gcc_--version.sh ............................   Passed    0.23 sec
-      Start  5: GCCcore-6.4.0-gcov-tool_--version.sh
- 5/14 Test  #5: GCCcore-6.4.0-gcov-tool_--version.sh ......................   Passed    0.19 sec
-      Start  6: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh
- 6/14 Test  #6: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh ........   Passed    0.19 sec
-      Start  7: GCCcore-6.4.0-gcc-ar_-V.sh
- 7/14 Test  #7: GCCcore-6.4.0-gcc-ar_-V.sh ................................   Passed    0.18 sec
-      Start  8: GCCcore-6.4.0-cpp_--version.sh
- 8/14 Test  #8: GCCcore-6.4.0-cpp_--version.sh ............................   Passed    0.22 sec
-      Start  9: GCCcore-6.4.0-gcov_--version.sh
- 9/14 Test  #9: GCCcore-6.4.0-gcov_--version.sh ...........................   Passed    0.20 sec
-      Start 10: GCCcore-6.4.0-gcov-dump_-V.sh
-10/14 Test #10: GCCcore-6.4.0-gcov-dump_-V.sh .............................   Passed    0.21 sec
+Test project /tmp/build
+        Start   1: GCCcore-6.4.0-gcc_--version.sh
+  1/136 Test   #1: GCCcore-6.4.0-gcc_--version.sh ..............................   Passed    0.27 sec
+        Start   2: GCCcore-6.4.0-gcc-nm_-V.sh
+  2/136 Test   #2: GCCcore-6.4.0-gcc-nm_-V.sh ..................................   Passed    0.16 sec
+        Start   3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh
+  3/136 Test   #3: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh ..........   Passed    0.16 sec
+        Start   4: GCCcore-6.4.0-cpp_--version.sh
+  4/136 Test   #4: GCCcore-6.4.0-cpp_--version.sh ..............................   Passed    0.16 sec
+        Start   5: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh
+  5/136 Test   #5: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh .....   Passed    0.16 sec
+        Start   6: GCCcore-6.4.0-gcov_--version.sh
+  6/136 Test   #6: GCCcore-6.4.0-gcov_--version.sh .............................   Passed    0.16 sec
+        Start   7: GCCcore-6.4.0-gcov-dump_-V.sh
+  7/136 Test   #7: GCCcore-6.4.0-gcov-dump_-V.sh ...............................   Passed    0.16 sec
+        Start   8: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh
+  8/136 Test   #8: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh ..........   Passed    0.16 sec
+        Start   9: GCCcore-6.4.0-gcc-ar_-V.sh
+  9/136 Test   #9: GCCcore-6.4.0-gcc-ar_-V.sh ..................................   Passed    0.16 sec
+        Start  10: GCCcore-6.4.0-gcov-tool_--version.sh
+ 10/136 Test  #10: GCCcore-6.4.0-gcov-tool_--version.sh ........................   Passed    0.16 sec
+        Start  11: GCCcore-6.4.0-omp_hello.f.sh
+ 11/136 Test  #11: GCCcore-6.4.0-omp_hello.f.sh ................................   Passed    0.21 sec
+        Start  12: GCCcore-6.4.0-hello.c.sh
+ 12/136 Test  #12: GCCcore-6.4.0-hello.c.sh ....................................   Passed    0.20 sec
+        Start  13: GCCcore-6.4.0-hello.f.sh
+ 13/136 Test  #13: GCCcore-6.4.0-hello.f.sh ....................................   Passed    0.20 sec
+        Start  14: GCCcore-6.4.0-omp_getEnvInfo.f.sh
+ 14/136 Test  #14: GCCcore-6.4.0-omp_getEnvInfo.f.sh ...........................   Passed    0.23 sec
+        Start  15: GCCcore-6.4.0-omp_workshare1.f.sh
+ 15/136 Test  #15: GCCcore-6.4.0-omp_workshare1.f.sh ...........................   Passed    0.21 sec
+        Start  16: GCCcore-6.4.0-omp_dotprod_serial.c.sh
+ 16/136 Test  #16: GCCcore-6.4.0-omp_dotprod_serial.c.sh .......................   Passed    0.21 sec
+        Start  17: GCCcore-6.4.0-omp_hello.c_nthread_5.sh
+ 17/136 Test  #17: GCCcore-6.4.0-omp_hello.c_nthread_5.sh ......................   Passed    0.20 sec
+        Start  18: GCCcore-6.4.0-omp_hello.c_nthread_9.sh
+ 18/136 Test  #18: GCCcore-6.4.0-omp_hello.c_nthread_9.sh ......................   Passed    0.21 sec
+        Start  19: GCCcore-6.4.0-omp_hello.c_nthread_13.sh
+ 19/136 Test  #19: GCCcore-6.4.0-omp_hello.c_nthread_13.sh .....................   Passed    0.21 sec
+        Start  20: GCCcore-6.4.0-omp_hello.c_nthread_17.sh
+ 20/136 Test  #20: GCCcore-6.4.0-omp_hello.c_nthread_17.sh .....................   Passed    0.20 sec
+        Start  21: GCCcore-6.4.0-omp_getEnvInfo.c.sh
+ 21/136 Test  #21: GCCcore-6.4.0-omp_getEnvInfo.c.sh ...........................   Passed    0.21 sec
+        Start  22: GCCcore-6.4.0-omp_workshare2.c.sh
+ 22/136 Test  #22: GCCcore-6.4.0-omp_workshare2.c.sh ...........................   Passed    0.21 sec
+        Start  23: GCCcore-6.4.0-omp_workshare2.f.sh
+ 23/136 Test  #23: GCCcore-6.4.0-omp_workshare2.f.sh ...........................   Passed    0.22 sec
+        Start  24: GCCcore-6.4.0-omp_orphan.c.sh
+ 24/136 Test  #24: GCCcore-6.4.0-omp_orphan.c.sh ...............................   Passed    0.21 sec
+        Start  25: GCCcore-6.4.0-omp_dotprod_openmp.c.sh
+ 25/136 Test  #25: GCCcore-6.4.0-omp_dotprod_openmp.c.sh .......................   Passed    0.21 sec
+        Start  26: GCCcore-6.4.0-omp_reduction.f.sh
+ 26/136 Test  #26: GCCcore-6.4.0-omp_reduction.f.sh ............................   Passed    0.21 sec
+        Start  27: GCCcore-6.4.0-omp_workshare1.c.sh
+ 27/136 Test  #27: GCCcore-6.4.0-omp_workshare1.c.sh ...........................   Passed    0.21 sec
+        Start  28: GCCcore-6.4.0-omp_mm.f.sh
+ 28/136 Test  #28: GCCcore-6.4.0-omp_mm.f.sh ...................................   Passed    0.25 sec
+        Start  29: GCCcore-6.4.0-hello.cpp.sh
+ 29/136 Test  #29: GCCcore-6.4.0-hello.cpp.sh ..................................   Passed    0.51 sec
+        Start  30: GCCcore-6.4.0-omp_reduction.c.sh
+ 30/136 Test  #30: GCCcore-6.4.0-omp_reduction.c.sh ............................   Passed    0.22 sec
+        Start  31: GCCcore-6.4.0-arglist.c.sh
+ 31/136 Test  #31: GCCcore-6.4.0-arglist.c.sh ..................................   Passed    0.19 sec
+        Start  32: GCCcore-6.4.0-omp_mm.c_nthread_2.sh
+ 32/136 Test  #32: GCCcore-6.4.0-omp_mm.c_nthread_2.sh .........................   Passed    0.24 sec
+        Start  33: GCCcore-6.4.0-omp_mm.c_nthread_4.sh
+ 33/136 Test  #33: GCCcore-6.4.0-omp_mm.c_nthread_4.sh .........................   Passed    0.23 sec
+        Start  34: GCCcore-6.4.0-omp_mm.c_nthread_6.sh
+ 34/136 Test  #34: GCCcore-6.4.0-omp_mm.c_nthread_6.sh .........................   Passed    0.24 sec
+        Start  35: GCCcore-6.4.0-omp_mm.c_nthread_8.sh
+ 35/136 Test  #35: GCCcore-6.4.0-omp_mm.c_nthread_8.sh .........................   Passed    0.23 sec
+        Start  36: GCCcore-6.4.0-omp_mm.c_nthread_10.sh
+ 36/136 Test  #36: GCCcore-6.4.0-omp_mm.c_nthread_10.sh ........................   Passed    0.23 sec
+        Start  37: GCCcore-6.4.0-omp_mm.c_nthread_12.sh
+ 37/136 Test  #37: GCCcore-6.4.0-omp_mm.c_nthread_12.sh ........................   Passed    0.23 sec
+        Start  38: GCCcore-6.4.0-omp_mm.c_nthread_14.sh
+ 38/136 Test  #38: GCCcore-6.4.0-omp_mm.c_nthread_14.sh ........................   Passed    0.23 sec
+        Start  39: GCCcore-6.4.0-omp_mm.c_nthread_16.sh
+ 39/136 Test  #39: GCCcore-6.4.0-omp_mm.c_nthread_16.sh ........................   Passed    0.24 sec
+        Start  40: GCCcore-6.4.0-omp_dotprod_openmp.f.sh
+ 40/136 Test  #40: GCCcore-6.4.0-omp_dotprod_openmp.f.sh .......................   Passed    0.21 sec
+        Start  41: GCCcore-6.4.0-omp_orphan.f.sh
+ 41/136 Test  #41: GCCcore-6.4.0-omp_orphan.f.sh ...............................   Passed    0.21 sec
+        Start  42: GCCcore-6.4.0-omp_dotprod_serial.f.sh
+ 42/136 Test  #42: GCCcore-6.4.0-omp_dotprod_serial.f.sh .......................   Passed    0.20 sec
+        Start  43: GCCcore-6.4.0-gcc_--version.csh
+ 43/136 Test  #43: GCCcore-6.4.0-gcc_--version.csh .............................   Passed    0.92 sec
+        Start  44: GCCcore-6.4.0-gcc-nm_-V.csh
+ 44/136 Test  #44: GCCcore-6.4.0-gcc-nm_-V.csh .................................   Passed    0.91 sec
+        Start  45: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.csh
+ 45/136 Test  #45: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.csh .........   Passed    0.91 sec
+        Start  46: GCCcore-6.4.0-cpp_--version.csh
+ 46/136 Test  #46: GCCcore-6.4.0-cpp_--version.csh .............................   Passed    0.99 sec
+        Start  47: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.csh
+ 47/136 Test  #47: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.csh ....   Passed    0.92 sec
+        Start  48: GCCcore-6.4.0-gcov_--version.csh
+ 48/136 Test  #48: GCCcore-6.4.0-gcov_--version.csh ............................   Passed    0.91 sec
+        Start  49: GCCcore-6.4.0-gcov-dump_-V.csh
+ 49/136 Test  #49: GCCcore-6.4.0-gcov-dump_-V.csh ..............................   Passed    0.92 sec
+        Start  50: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.csh
+ 50/136 Test  #50: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.csh .........   Passed    0.91 sec
+        Start  51: GCCcore-6.4.0-gcc-ar_-V.csh
+ 51/136 Test  #51: GCCcore-6.4.0-gcc-ar_-V.csh .................................   Passed    0.92 sec
+        Start  52: GCCcore-6.4.0-gcov-tool_--version.csh
+ 52/136 Test  #52: GCCcore-6.4.0-gcov-tool_--version.csh .......................   Passed    0.91 sec
+        Start  53: GCCcore-6.4.0-omp_hello.f.csh
+ 53/136 Test  #53: GCCcore-6.4.0-omp_hello.f.csh ...............................   Passed    0.95 sec
+        Start  54: GCCcore-6.4.0-hello.c.csh
+ 54/136 Test  #54: GCCcore-6.4.0-hello.c.csh ...................................   Passed    1.03 sec
+        Start  55: GCCcore-6.4.0-hello.f.csh
+ 55/136 Test  #55: GCCcore-6.4.0-hello.f.csh ...................................   Passed    0.95 sec
+        Start  56: GCCcore-6.4.0-omp_getEnvInfo.f.csh
+ 56/136 Test  #56: GCCcore-6.4.0-omp_getEnvInfo.f.csh ..........................   Passed    0.96 sec
+        Start  57: GCCcore-6.4.0-omp_workshare1.f.csh
+ 57/136 Test  #57: GCCcore-6.4.0-omp_workshare1.f.csh ..........................   Passed    0.97 sec
+        Start  58: GCCcore-6.4.0-omp_dotprod_serial.c.csh
+ 58/136 Test  #58: GCCcore-6.4.0-omp_dotprod_serial.c.csh ......................   Passed    0.96 sec
+        Start  59: GCCcore-6.4.0-omp_hello.c_nthread_5.csh
+ 59/136 Test  #59: GCCcore-6.4.0-omp_hello.c_nthread_5.csh .....................   Passed    0.96 sec
+        Start  60: GCCcore-6.4.0-omp_hello.c_nthread_9.csh
+ 60/136 Test  #60: GCCcore-6.4.0-omp_hello.c_nthread_9.csh .....................   Passed    0.96 sec
+        Start  61: GCCcore-6.4.0-omp_hello.c_nthread_13.csh
+ 61/136 Test  #61: GCCcore-6.4.0-omp_hello.c_nthread_13.csh ....................   Passed    0.96 sec
+        Start  62: GCCcore-6.4.0-omp_hello.c_nthread_17.csh
+ 62/136 Test  #62: GCCcore-6.4.0-omp_hello.c_nthread_17.csh ....................   Passed    0.95 sec
+        Start  63: GCCcore-6.4.0-omp_getEnvInfo.c.csh
+ 63/136 Test  #63: GCCcore-6.4.0-omp_getEnvInfo.c.csh ..........................   Passed    0.96 sec
+        Start  64: GCCcore-6.4.0-omp_workshare2.c.csh
+ 64/136 Test  #64: GCCcore-6.4.0-omp_workshare2.c.csh ..........................   Passed    0.98 sec
+        Start  65: GCCcore-6.4.0-omp_workshare2.f.csh
+ 65/136 Test  #65: GCCcore-6.4.0-omp_workshare2.f.csh ..........................   Passed    0.96 sec
+        Start  66: GCCcore-6.4.0-omp_orphan.c.csh
+ 66/136 Test  #66: GCCcore-6.4.0-omp_orphan.c.csh ..............................   Passed    0.95 sec
+        Start  67: GCCcore-6.4.0-omp_dotprod_openmp.c.csh
+ 67/136 Test  #67: GCCcore-6.4.0-omp_dotprod_openmp.c.csh ......................   Passed    0.98 sec
+        Start  68: GCCcore-6.4.0-omp_reduction.f.csh
+ 68/136 Test  #68: GCCcore-6.4.0-omp_reduction.f.csh ...........................   Passed    0.96 sec
+        Start  69: GCCcore-6.4.0-omp_workshare1.c.csh
+ 69/136 Test  #69: GCCcore-6.4.0-omp_workshare1.c.csh ..........................   Passed    1.00 sec
+        Start  70: GCCcore-6.4.0-omp_mm.f.csh
+ 70/136 Test  #70: GCCcore-6.4.0-omp_mm.f.csh ..................................   Passed    1.00 sec
+        Start  71: GCCcore-6.4.0-hello.cpp.csh
+ 71/136 Test  #71: GCCcore-6.4.0-hello.cpp.csh .................................   Passed    1.24 sec
+        Start  72: GCCcore-6.4.0-omp_reduction.c.csh
+ 72/136 Test  #72: GCCcore-6.4.0-omp_reduction.c.csh ...........................   Passed    0.97 sec
+        Start  73: GCCcore-6.4.0-arglist.c.csh
+ 73/136 Test  #73: GCCcore-6.4.0-arglist.c.csh .................................   Passed    0.95 sec
+        Start  74: GCCcore-6.4.0-omp_mm.c_nthread_2.csh
+ 74/136 Test  #74: GCCcore-6.4.0-omp_mm.c_nthread_2.csh ........................   Passed    1.01 sec
+        Start  75: GCCcore-6.4.0-omp_mm.c_nthread_4.csh
+ 75/136 Test  #75: GCCcore-6.4.0-omp_mm.c_nthread_4.csh ........................   Passed    0.99 sec
+        Start  76: GCCcore-6.4.0-omp_mm.c_nthread_6.csh
+ 76/136 Test  #76: GCCcore-6.4.0-omp_mm.c_nthread_6.csh ........................   Passed    1.04 sec
+        Start  77: GCCcore-6.4.0-omp_mm.c_nthread_8.csh
+ 77/136 Test  #77: GCCcore-6.4.0-omp_mm.c_nthread_8.csh ........................   Passed    0.98 sec
+        Start  78: GCCcore-6.4.0-omp_mm.c_nthread_10.csh
+ 78/136 Test  #78: GCCcore-6.4.0-omp_mm.c_nthread_10.csh .......................   Passed    1.00 sec
+        Start  79: GCCcore-6.4.0-omp_mm.c_nthread_12.csh
+ 79/136 Test  #79: GCCcore-6.4.0-omp_mm.c_nthread_12.csh .......................   Passed    0.99 sec
+        Start  80: GCCcore-6.4.0-omp_mm.c_nthread_14.csh
+ 80/136 Test  #80: GCCcore-6.4.0-omp_mm.c_nthread_14.csh .......................   Passed    0.99 sec
+        Start  81: GCCcore-6.4.0-omp_mm.c_nthread_16.csh
+ 81/136 Test  #81: GCCcore-6.4.0-omp_mm.c_nthread_16.csh .......................   Passed    0.98 sec
+        Start  82: GCCcore-6.4.0-omp_dotprod_openmp.f.csh
+ 82/136 Test  #82: GCCcore-6.4.0-omp_dotprod_openmp.f.csh ......................   Passed    0.96 sec
+        Start  83: GCCcore-6.4.0-omp_orphan.f.csh
+ 83/136 Test  #83: GCCcore-6.4.0-omp_orphan.f.csh ..............................   Passed    0.97 sec
+        Start  84: GCCcore-6.4.0-omp_dotprod_serial.f.csh
+ 84/136 Test  #84: GCCcore-6.4.0-omp_dotprod_serial.f.csh ......................   Passed    0.96 sec
+        Start  85: GCCcore-6.4.0-gcc_--version.bash
+ 85/136 Test  #85: GCCcore-6.4.0-gcc_--version.bash ............................   Passed    0.16 sec
+        Start  86: GCCcore-6.4.0-gcc-nm_-V.bash
+ 86/136 Test  #86: GCCcore-6.4.0-gcc-nm_-V.bash ................................   Passed    0.16 sec
+        Start  87: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.bash
+ 87/136 Test  #87: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.bash ........   Passed    0.16 sec
+        Start  88: GCCcore-6.4.0-cpp_--version.bash
+ 88/136 Test  #88: GCCcore-6.4.0-cpp_--version.bash ............................   Passed    0.16 sec
+        Start  89: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.bash
+ 89/136 Test  #89: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.bash ...   Passed    0.16 sec
+        Start  90: GCCcore-6.4.0-gcov_--version.bash
+ 90/136 Test  #90: GCCcore-6.4.0-gcov_--version.bash ...........................   Passed    0.16 sec
+        Start  91: GCCcore-6.4.0-gcov-dump_-V.bash
+ 91/136 Test  #91: GCCcore-6.4.0-gcov-dump_-V.bash .............................   Passed    0.16 sec
+        Start  92: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.bash
+ 92/136 Test  #92: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.bash ........   Passed    0.16 sec
+        Start  93: GCCcore-6.4.0-gcc-ar_-V.bash
+ 93/136 Test  #93: GCCcore-6.4.0-gcc-ar_-V.bash ................................   Passed    0.16 sec
+        Start  94: GCCcore-6.4.0-gcov-tool_--version.bash
+ 94/136 Test  #94: GCCcore-6.4.0-gcov-tool_--version.bash ......................   Passed    0.16 sec
+        Start  95: GCCcore-6.4.0-omp_hello.f.bash
+ 95/136 Test  #95: GCCcore-6.4.0-omp_hello.f.bash ..............................   Passed    0.20 sec
+        Start  96: GCCcore-6.4.0-hello.c.bash
+ 96/136 Test  #96: GCCcore-6.4.0-hello.c.bash ..................................   Passed    0.20 sec
+        Start  97: GCCcore-6.4.0-hello.f.bash
+ 97/136 Test  #97: GCCcore-6.4.0-hello.f.bash ..................................   Passed    0.20 sec
+        Start  98: GCCcore-6.4.0-omp_getEnvInfo.f.bash
+ 98/136 Test  #98: GCCcore-6.4.0-omp_getEnvInfo.f.bash .........................   Passed    0.21 sec
+        Start  99: GCCcore-6.4.0-omp_workshare1.f.bash
+ 99/136 Test  #99: GCCcore-6.4.0-omp_workshare1.f.bash .........................   Passed    0.21 sec
+        Start 100: GCCcore-6.4.0-omp_dotprod_serial.c.bash
+100/136 Test #100: GCCcore-6.4.0-omp_dotprod_serial.c.bash .....................   Passed    0.20 sec
+        Start 101: GCCcore-6.4.0-omp_hello.c_nthread_5.bash
+101/136 Test #101: GCCcore-6.4.0-omp_hello.c_nthread_5.bash ....................   Passed    0.20 sec
+        Start 102: GCCcore-6.4.0-omp_hello.c_nthread_9.bash
+102/136 Test #102: GCCcore-6.4.0-omp_hello.c_nthread_9.bash ....................   Passed    0.21 sec
+        Start 103: GCCcore-6.4.0-omp_hello.c_nthread_13.bash
+103/136 Test #103: GCCcore-6.4.0-omp_hello.c_nthread_13.bash ...................   Passed    0.21 sec
+        Start 104: GCCcore-6.4.0-omp_hello.c_nthread_17.bash
+104/136 Test #104: GCCcore-6.4.0-omp_hello.c_nthread_17.bash ...................   Passed    0.20 sec
+        Start 105: GCCcore-6.4.0-omp_getEnvInfo.c.bash
+105/136 Test #105: GCCcore-6.4.0-omp_getEnvInfo.c.bash .........................   Passed    0.21 sec
+        Start 106: GCCcore-6.4.0-omp_workshare2.c.bash
+106/136 Test #106: GCCcore-6.4.0-omp_workshare2.c.bash .........................   Passed    0.22 sec
+        Start 107: GCCcore-6.4.0-omp_workshare2.f.bash
+107/136 Test #107: GCCcore-6.4.0-omp_workshare2.f.bash .........................   Passed    0.22 sec
+        Start 108: GCCcore-6.4.0-omp_orphan.c.bash
+108/136 Test #108: GCCcore-6.4.0-omp_orphan.c.bash .............................   Passed    0.21 sec
+        Start 109: GCCcore-6.4.0-omp_dotprod_openmp.c.bash
+109/136 Test #109: GCCcore-6.4.0-omp_dotprod_openmp.c.bash .....................   Passed    0.21 sec
+        Start 110: GCCcore-6.4.0-omp_reduction.f.bash
+110/136 Test #110: GCCcore-6.4.0-omp_reduction.f.bash ..........................   Passed    0.21 sec
+        Start 111: GCCcore-6.4.0-omp_workshare1.c.bash
+111/136 Test #111: GCCcore-6.4.0-omp_workshare1.c.bash .........................   Passed    0.22 sec
+        Start 112: GCCcore-6.4.0-omp_mm.f.bash
+112/136 Test #112: GCCcore-6.4.0-omp_mm.f.bash .................................   Passed    0.25 sec
+        Start 113: GCCcore-6.4.0-hello.cpp.bash
+113/136 Test #113: GCCcore-6.4.0-hello.cpp.bash ................................   Passed    0.49 sec
+        Start 114: GCCcore-6.4.0-omp_reduction.c.bash
+114/136 Test #114: GCCcore-6.4.0-omp_reduction.c.bash ..........................   Passed    0.21 sec
+        Start 115: GCCcore-6.4.0-arglist.c.bash
+115/136 Test #115: GCCcore-6.4.0-arglist.c.bash ................................   Passed    0.20 sec
+        Start 116: GCCcore-6.4.0-omp_mm.c_nthread_2.bash
+116/136 Test #116: GCCcore-6.4.0-omp_mm.c_nthread_2.bash .......................   Passed    0.24 sec
+        Start 117: GCCcore-6.4.0-omp_mm.c_nthread_4.bash
+117/136 Test #117: GCCcore-6.4.0-omp_mm.c_nthread_4.bash .......................   Passed    0.24 sec
+        Start 118: GCCcore-6.4.0-omp_mm.c_nthread_6.bash
+118/136 Test #118: GCCcore-6.4.0-omp_mm.c_nthread_6.bash .......................   Passed    0.23 sec
+        Start 119: GCCcore-6.4.0-omp_mm.c_nthread_8.bash
+119/136 Test #119: GCCcore-6.4.0-omp_mm.c_nthread_8.bash .......................   Passed    0.24 sec
+        Start 120: GCCcore-6.4.0-omp_mm.c_nthread_10.bash
+120/136 Test #120: GCCcore-6.4.0-omp_mm.c_nthread_10.bash ......................   Passed    0.23 sec
+        Start 121: GCCcore-6.4.0-omp_mm.c_nthread_12.bash
+121/136 Test #121: GCCcore-6.4.0-omp_mm.c_nthread_12.bash ......................   Passed    0.24 sec
+        Start 122: GCCcore-6.4.0-omp_mm.c_nthread_14.bash
+122/136 Test #122: GCCcore-6.4.0-omp_mm.c_nthread_14.bash ......................   Passed    0.24 sec
+        Start 123: GCCcore-6.4.0-omp_mm.c_nthread_16.bash
+123/136 Test #123: GCCcore-6.4.0-omp_mm.c_nthread_16.bash ......................   Passed    0.24 sec
+        Start 124: GCCcore-6.4.0-omp_dotprod_openmp.f.bash
+124/136 Test #124: GCCcore-6.4.0-omp_dotprod_openmp.f.bash .....................   Passed    0.22 sec
+        Start 125: GCCcore-6.4.0-omp_orphan.f.bash
+125/136 Test #125: GCCcore-6.4.0-omp_orphan.f.bash .............................   Passed    0.21 sec
+        Start 126: GCCcore-6.4.0-omp_dotprod_serial.f.bash
+126/136 Test #126: GCCcore-6.4.0-omp_dotprod_serial.f.bash .....................   Passed    0.20 sec
+        Start 127: Perl-5.26.0-GCCcore-6.4.0-hello.pl.sh
+127/136 Test #127: Perl-5.26.0-GCCcore-6.4.0-hello.pl.sh .......................   Passed    0.17 sec
+        Start 128: Perl-5.26.0-GCCcore-6.4.0-AnyData-AnyData.sh
+128/136 Test #128: Perl-5.26.0-GCCcore-6.4.0-AnyData-AnyData.sh ................   Passed    0.23 sec
+        Start 129: system-firefox-_usr_bin_firefox_--help.sh
+129/136 Test #129: system-firefox-_usr_bin_firefox_--help.sh ...................   Passed    0.15 sec
+        Start 130: system-gcc-_usr_bin_c89_--version.sh
+130/136 Test #130: system-gcc-_usr_bin_c89_--version.sh ........................   Passed    0.09 sec
+        Start 131: system-gcc-_usr_bin_c99_--version.sh
+131/136 Test #131: system-gcc-_usr_bin_c99_--version.sh ........................   Passed    0.06 sec
+        Start 132: system-gcc-_usr_bin_gcc_--version.sh
+132/136 Test #132: system-gcc-_usr_bin_gcc_--version.sh ........................   Passed    0.06 sec
+        Start 133: system-gcc-_usr_bin_gcc-ar_--version.sh
+133/136 Test #133: system-gcc-_usr_bin_gcc-ar_--version.sh .....................   Passed    0.06 sec
+        Start 134: system-gcc-_usr_bin_gcc-nm_--version.sh
+134/136 Test #134: system-gcc-_usr_bin_gcc-nm_--version.sh .....................   Passed    0.06 sec
+        Start 135: system-gcc-_usr_bin_gcc-ranlib_--version.sh
+135/136 Test #135: system-gcc-_usr_bin_gcc-ranlib_--version.sh .................   Passed    0.06 sec
+        Start 136: system-gcc-_usr_bin_gcov_--version.sh
+136/136 Test #136: system-gcc-_usr_bin_gcov_--version.sh .......................   Passed    0.06 sec
+
+100% tests passed, 0 tests failed out of 136
+
+Total Test time (real) =  59.51 sec

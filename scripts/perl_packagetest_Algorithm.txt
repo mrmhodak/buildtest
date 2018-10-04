@@ -1,0 +1,8 @@
+Detecting Software:  Perl/5.26.0-GCCcore-6.4.0
+Cannot find command file:/home/siddis14/buildtest-configs/buildtest/ebapps/perl/5.26.0/command.yaml
+--------------------------------------------
+[STAGE 2]: Building Source Tests
+--------------------------------------------
+Processing all YAML files in directory:  /home/siddis14/buildtest-configs/buildtest/ebapps/perl/config
+Generating 1  Source Tests and writing at  /tmp/buildtest-tests/ebapp/Perl/5.26.0-GCCcore-6.4.0/
+Algorithm  is not installed in software  Perl/5.26.0-GCCcore-6.4.0

@@ -1,0 +1,32 @@
+usage: buildtest [options] build [-h] [-s INSTALLED-EASYBUILD-APPS] [-t INSTALLED-EASYBUILD-TOOLCHAINS]
+                                 [--shell {sh,bash,csh}] [--system SYSTEM-PACKAGE] [--python-package PYTHON-PACKAGES]
+                                 [--r-package R-PACKAGES] [--ruby-package RUBY-PACKAGES]
+                                 [--perl-package PERL-PACKAGES] [--clean-tests] [--testdir TESTDIR] [--clean-build]
+                                 [--ignore-easybuild] [--enable-job] [--job-template JOB_TEMPLATE]
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -s INSTALLED-EASYBUILD-APPS, --software INSTALLED-EASYBUILD-APPS
+                        Specify software package to test
+  -t INSTALLED-EASYBUILD-TOOLCHAINS, --toolchain INSTALLED-EASYBUILD-TOOLCHAINS
+                        Specify toolchain for the software package
+  --shell {sh,bash,csh}
+                        Select the type of shell when running test
+  --system SYSTEM-PACKAGE
+                        Build test for system packages
+  --python-package PYTHON-PACKAGES
+                        build test for Python packages
+  --r-package R-PACKAGES
+                        build test for R packages
+  --ruby-package RUBY-PACKAGES
+                        build test for Ruby packages
+  --perl-package PERL-PACKAGES
+                        build test for Perl packages
+  --clean-tests         delete testing directory ($BUILDTEST_TESTDIR)
+  --testdir TESTDIR     Path to write buildtest tests. Overrides configuration BUILDTEST_TESTDIR
+  --clean-build         delete software test directory before writing test scripts
+  --ignore-easybuild    ignore if application is not built with easybuild
+  --enable-job          enable job script generation with buildtest
+  --job-template JOB_TEMPLATE
+                        specify job template file to create job submission script for the test to run with resource
+                        scheduler

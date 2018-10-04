@@ -37,9 +37,9 @@ build LSF job scripts
 
 
 Job templates work with option ``--system`` and ``--software``. Let's try another example
-building job scripts with a software package ``GCC/6.4.0-2.28`` with lsf job template
+building job scripts with a software package ``GCCcore/6.4.0`` with lsf job template
 
 
-``_buildtest -s GCC/6.4.0-2.28 --job-template template/job.lsf --enable-job``
+``_buildtest build -s GCCcore/6.4.0 --job-template template/job.lsf --enable-job``
 
-.. program-output:: cat scripts/Job_Template/GCC-6.4.0-2.28_lsf_job.txt
+.. program-output:: cat scripts/Job_Template/GCCcore-6.4.0_lsf_job.txt

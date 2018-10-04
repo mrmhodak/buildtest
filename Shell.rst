@@ -22,22 +22,22 @@ You may set the environment variable ``BUILDTEST_SHELL`` or set this in your
 Let's build test for ``GCCcore/6.4.0`` with ``csh`` support
 
 
-.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_csh.txt
+.. program-output:: cat scripts/Shell/GCCcore-6.4.0_csh.txt
 
 Now let's check the test files
 
-.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_csh_listing.txt
+.. program-output:: cat scripts/Shell/GCCcore-6.4.0_csh_listing.txt
 
 
 Let's rerun this with bash: ``_buildtest -s GCCcore/6.4.0 --shell bash``
 
 
-.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_bash.txt
+.. program-output:: cat scripts/Shell/GCCcore-6.4.0_bash.txt
 
 You will notice the test scripts for ``csh`` and ``bash`` are indicated with shell extension to avoid name conflict. Let's take a look
 at the ``CMakeList.txt`` file which contains the test parameter required to run tests via ``ctest``
 
-.. program-output:: cat scripts/Shell/GCC-6.4.0-2.28_bash_listing.txt
+.. program-output:: cat scripts/Shell/GCCcore-6.4.0_bash_listing.txt
 
 
 You will notice the same tests are written with different shell extension. buildtest

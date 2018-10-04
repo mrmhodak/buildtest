@@ -50,11 +50,11 @@ Afterward run ``ctest .`` to run all the tests.
 
 .. program-output:: cat scripts/How_to_use_buildtest/run-GCCcore-6.4.0.txt
 
-buildtest Interactive Testing (``buildtest --runtest``)
--------------------------------------------------------
+buildtest Interactive Testing (``_buildtest run --interactive``)
+------------------------------------------------------------------
 
 buildtest comes with a menu driven test that can be used
-as an alternate method to ``ctest``. Just run ``buildtest --runtest``
+as an alternate method to ``ctest``. Just run ``_buildtest run --interactive``
 after you created a few tests and follow the prompt to navigate to
 the appropriate test
 
@@ -66,26 +66,23 @@ TAB Argument Completion
 buildtest use the argcomplete python module to autocomplete buildtest argument.
 Just press TAB key on the keyboard to fill in the arguments.
 
-For instance if you just type ``buildtest`` followed by TAB you should see the
+For instance if you just type ``_buildtest`` followed by TAB you should see the
 following.
 
-.. code::
+::
 
-        [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -
-        --clean-logs                  --findconfig                  --list-toolchain              --runtest                     -svr                          -V
-        --clean-tests                 --findtest                    --list-unique-software        -s                            --system                      --version
-        --diff-trees                  -ft                           --logdir                      --scantest                    --sysyaml
-        --easyconfigs-in-moduletrees  -h                            -ls                           --shell                       -t
-        --ebyaml                      --help                        -lt                           --software                    --testdir
-        -ecmt                         --ignore-easybuild            -mns                          --software-version-relation   --testset
-        -fc                           --job-template                --module-naming-scheme        --submitjob                   --toolchain
+    buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest
+    build                   --ebyaml                --findtest              --help                  -mns                    run                     --show-keys             -V
+    --clean-logs            -fc                     -ft                     list                    --module-load-test      --scantest              --submitjob             --version
+    --diff-trees            --findconfig            -h                      --logdir                --module-naming-scheme  --show                  --sysyaml
 
 .. Note:: You will need to press the TAB key few times before it shows all the
    args
 
-TAB completion works for choice parameters like ``--shell``, ``--software``,
+TAB completion works for choice parameters on options: ``--shell``, ``--software``,
 ``--toolchain``, ``--system``, ``--sysyaml``, ``--ebyaml``, ``--python-package``,
-``--perl-package``, ``--r-package``, ``--ruby-package``
+``--perl-package``, ``--r-package``, ``--ruby-package``, ``--testname``, ``--app``,
+``--systempkg``
 
 TAB complete on ``--software``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -95,18 +92,16 @@ TAB complete on ``--software`` option will present all unique software found in 
 defined by ``BUILDTEST_MODULE_ROOT``
 
 
-.. code::
+::
 
-   [siddis14@amrndhl1228 buildtest-framework]$ _buildtest --software
-   Display all 193 possibilities? (y or n)
-   ACTC/.1.1                                          Ghostscript/.9.19                                  M4/.1.4.17
-   Advisor/2017_update1                               git/2.10.2                                         Mako/.1.0.6-Python-2.7.12
-   Amber/14-AmberTools-15-patchlevel-13-13            git-lfs/1.1.1                                      Mesa/17.0.2
-   Anaconda2/4.2.0                                    GLib/.2.49.5                                       motif/.2.3.5
-   Anaconda3/4.2.0                                    GLPK/4.60                                          NAMD/2.12-mpi
-   Aspera-Connect/3.6.1                               GMP/6.1.1                                          NASM/.2.12.02
-   Autoconf/.2.69                                     Go/1.9                                             ncurses/.6.0
-   Automake/.1.15                                     gompi/.2016.03                                     netCDF/4.4.1
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --software
+    Display all 125 possibilities? (y or n)
+    Autoconf/2.69-GCCcore-6.4.0                                 GROMACS/2016.5-intel-2018a                                  ncurses/6.0
+    Automake/1.15.1-GCCcore-6.4.0                               GSL/2.4-GCCcore-6.4.0                                       ncurses/6.0-GCCcore-6.4.0
+    Autotools/20170619-GCCcore-6.4.0                            Guile/1.8.8-GCCcore-6.4.0                                   netCDF/4.5.0-intel-2018a
+    BamTools/2.5.1-intel-2018a                                  HDF5/1.10.1-intel-2018a                                     netCDF-Fortran/4.4.4-intel-2018a
+    BEDTools/2.27.1-intel-2018a                                 help2man/1.47.4                                             nettle/3.3-GCCcore-6.4.0
+    binutils/2.28                                               help2man/1.47.4-GCCcore-6.4.0                               NLopt/2.4.2-intel-2018a
    --More--
 
 TAB complete on ``--toolchain``
@@ -115,14 +110,12 @@ TAB complete on ``--toolchain``
 TAB completion on ``--toolchain`` will present all easybuild toolchains installed
 in the software stack
 
-.. code::
+::
 
-   [siddis14@amrndhl1228 buildtest-framework]$ _buildtest --toolchain
-   foss/.2016.03                        GCCcore/.5.4.0                       iccifort/.2017.1.132-GCC-5.4.0-2.27  intelcuda/2017.01
-   foss/.2016.09                        GCCcore/.6.2.0                       iccifortcuda/.2017.01                iompi/2017.01
-   foss/.2016b                          gompi/.2016.03                       iimpi/.2017.01-GCC-5.4.0-2.27
-   GCC/5.4.0-2.27                       gompi/.2016.09                       iimpic/.2017.01
-   GCC/6.2.0-2.27                       gompi/.2016b                         intel/2017.01
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --toolchain
+    foss/2018a                          GCCcore/6.4.0                       iccifort/2018.1.163-GCC-6.4.0-2.28  intel/2018a
+    GCC/6.4.0-2.28                      gompi/2018a                         iimpi/2018a
+
 
 TAB complete on ``--system``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -130,14 +123,16 @@ TAB complete on ``--system``
 TAB completion on ``--system`` will display all the system package that have a yaml
 file typically found in directory ``$BUILDTEST_CONFIGS_REPO/system`` directory.
 
-.. code::
+::
 
-        [siddis14@amrndhl1228 buildtest-framework]$ _buildtest --system
-        acl                 coreutils           gcc                 hwloc               perl                rpm                 time                yum
-        all                 curl                gcc-c++             iptables            pinfo               ruby                util-linux          zip
-        binutils            diffstat            gcc-gfortran        ltrace              powertop            sed                 wget
-        CentrifyDC-openssh  file                git                 ncurses             procps-ng           strace              which
-        chrony              firefox             htop                numactl             python              systemd             xz
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --system
+    acl                  CentrifyDC-openssh   file                 git                  ncurses              powertop             sed                  util-linux           zip
+    at                   chrony               firefox              htop                 numactl              procps-ng            singularity-runtime  wget
+    atop                 coreutils            gcc                  hwloc                openssh-clients      python               strace               which
+    binutils             curl                 gcc-c++              iptables             perl                 rpm                  systemd              xz
+    bzip2                diffstat             gcc-gfortran         ltrace               pinfo                ruby                 time                 yum
+
+
 
 TAB complete on ``--sysyaml``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -178,10 +173,56 @@ will remove this entry from the list of choices to avoid buildtest from overwrit
     libffi/3.2.1-GCCcore-6.4.0         libjpeg-turbo/1.5.2-GCCcore-6.4.0  libreadline/7.0-GCCcore-6.4.0      libunistring/0.9.7-GCCcore-6.4.0   libxsmm/1.8.3-intel-2018a
     libGLU/9.0.0-intel-2018a           libmatheval/1.1.11-GCCcore-6.4.0   libsndfile/1.0.28-GCCcore-6.4.0    libxc/3.0.1-intel-2018a
 
+TAB completion on ``--testname``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+You can run individual test via buildtest using ``--testname`` option and this supports
+tab completion.
+
+::
+
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --testname /tmp/buildtest-tests/
+    Display all 296 possibilities? (y or n)
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/arglist.c.csh                                 /tmp/buildtest-tests/ebapp/Ruby/2.5.0-intel-2018a/tilt_--help.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/arglist.c.sh                                  /tmp/buildtest-tests/ebapp/Ruby/2.5.0-intel-2018a/which_htmldiff_--version.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/cpp_--version.sh                              /tmp/buildtest-tests/system/acl/_usr_bin_chacl_-l__.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/gcc-ar_-V.csh                                 /tmp/buildtest-tests/system/acl/_usr_bin_getfacl_-v.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/gcc-ar_-V.sh                                  /tmp/buildtest-tests/system/acl/_usr_bin_setfacl_-v.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/gcc-nm_-V.csh                                 /tmp/buildtest-tests/system/at/find__usr_bin_batch.sh
+    /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/gcc-nm_-V.sh                                  /tmp/buildtest-tests/system/at/find__usr_sbin_atd.sh
+
+    --More--
+
+TAB completion on ``--app``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TAB completion works on ``--app`` which return a list of software you can run tests that
+were generated by ``_buildtest build -s <module>``
+
+::
+
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --app
+    GCCcore/6.4.0                     Perl/5.26.0-GCCcore-6.4.0         Python/2.7.14-GCCcore-6.4.0-bare  R/3.4.3-intel-2018a-X11-20171023
+    OpenMPI/3.0.0-GCC-6.4.0-2.28      Python/2.7.14-GCCcore-6.4.0       Python/2.7.14-intel-2018a         Ruby/2.5.0-intel-2018a
+
+
+
+TAB completion on ``--systempkg``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+TAB completion works on ``--systempkg`` which return a list of system package you can
+run tests that were generated by ``_buildtest build --system <package>``
+
+::
+
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --systempkg
+    acl        at         atop       binutils   bzip2      chrony     coreutils  curl       gcc        wget
+
+
 System Package Test
 -------------------
 
-buildtest can generate tests for system packages using the option ``_buildtest --system <package>``.
+buildtest can generate tests for system packages using the option ``_buildtest build --system <package>``.
 Currently, system package test only perform binary test. This means you need to
 find the binaries associated with the package and add the executable and any
 parameters in ``command.yaml``.
@@ -194,14 +235,7 @@ For instance to build test for the system package ``gcc`` you can do the followi
 
 .. code::
 
-   _buildtest --system gcc
-
-
-To run all system package test you can do the following
-
-.. code::
-
-   _buildtest --system all
+   _buildtest build --system gcc
 
 
 Log files
@@ -209,9 +243,9 @@ Log files
 
 All buildtest logs will be written in ``BUILDTEST_LOGDIR``.
 
-buildtest will store log files for ``_buildtest -s <app_name>/<app_ver>`` in
+buildtest will store log files for ``_buildtest build -s <app_name>/<app_ver>`` in
 ``BUILDTEST_LOGDIR/<app_name>/<app_ver>``. If toolchain option is specified for
-instance ``buildtest -s <app_name>/<app_ver> -t <tc_name>/<tc_ver>`` then
+instance ``_buildtest build -s <app_name>/<app_ver> -t <tc_name>/<tc_ver>`` then
 buildtest will store the logs in ``BUILDTEST_LOGDIR/<app_name>/<app_ver>/<tc_name>/<tc_ver>``.
 
 Similarly logs for system tests like ``_buildtest --system <package>`` will be stored in ``BUILDTEST_LOGDIR/system/<package>``
@@ -222,4 +256,4 @@ the following
 
 .. code::
 
-   buildtest -s OpenMPI/3.0.0-GCC-6.4.0-2.28 --logdir=/tmp
+   _buildtest build -s OpenMPI/3.0.0-GCC-6.4.0-2.28 --logdir=/tmp

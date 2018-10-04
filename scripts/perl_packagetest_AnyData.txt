@@ -1,0 +1,9 @@
+Detecting Software:  Perl/5.26.0-GCCcore-6.4.0
+Cannot find command file:/home/siddis14/buildtest-configs/buildtest/ebapps/perl/5.26.0/command.yaml
+--------------------------------------------
+[STAGE 2]: Building Source Tests
+--------------------------------------------
+Processing all YAML files in directory:  /home/siddis14/buildtest-configs/buildtest/ebapps/perl/config
+Generating 1  Source Tests and writing at  /tmp/buildtest-tests/ebapp/Perl/5.26.0-GCCcore-6.4.0/
+Generating 1  tests for  AnyData
+Writing Log file:  /tmp/buildtest/Perl/5.26.0-GCCcore-6.4.0/buildtest_15_35_04_10_2018.log

@@ -17,7 +17,7 @@ To illustrate the tab completion feature see command below
 
 .. code::
 
-    siddis14@prometheus buildtest-framework]$ _buildtest --perl-package
+    siddis14@prometheus buildtest-framework]$ _buildtest build --perl-package
     Algorithm  AnyData    AppConfig  Authen
 
 
@@ -25,17 +25,7 @@ To build perl package test you must specify a ``Perl`` module. buildtest will
 generate the binarytest along with any test from perl package specified by
 option ``--perl-package``.
 
-.. code::
-
-    [siddis14@prometheus buildtest-framework]$  _buildtest -s Perl/5.26.0-GCCcore-6.4.0 --perl-package AnyData
-    Detecting Software:  Perl/5.26.0-GCCcore-6.4.0
-    --------------------------------------------
-    [STAGE 2]: Building Source Tests
-    --------------------------------------------
-    Processing all YAML files in directory: /home/siddis14/github/buildtest-configs/buildtest/ebapps/perl/config
-    Generating 1 Source Tests and writing at  /tmp/buildtest-tests/ebapp/Perl/5.26.0-GCCcore-6.4.0/
-    Generating  1 tests for  AnyData
-    Writing Log file:  /tmp/buildtest/Perl/5.26.0-GCCcore-6.4.0/buildtest_19_38_06_08_2018.log
+.. program-output:: cat scripts/perl_packagetest_AnyData.txt
 
 Perl Package Check Validation
 -------------------------------
@@ -47,17 +37,7 @@ missing package.
 To illustrate see the following example where we try building test for perl package
 ``Algorithm``
 
-.. code::
-
-    [siddis14@prometheus buildtest-framework]$  _buildtest -s Perl/5.26.0-GCCcore-6.4.0 --perl-package Algorithm
-    Detecting Software:  Perl/5.26.0-GCCcore-6.4.0
-    --------------------------------------------
-    [STAGE 2]: Building Source Tests
-    --------------------------------------------
-    Processing all YAML files in directory: /home/siddis14/github/buildtest-configs/buildtest/ebapps/perl/config
-    Generating 1 Source Tests and writing at  /tmp/buildtest-tests/ebapp/Perl/5.26.0-GCCcore-6.4.0/
-    Algorithm is not installed in software Perl/5.26.0-GCCcore-6.4.0
-
+.. program-output:: cat scripts/perl_packagetest_Algorithm.txt
 
 
 This option is compatible with ``--shell`` and ``--job-template`` if you want to build
