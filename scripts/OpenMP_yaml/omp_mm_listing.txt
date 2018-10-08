@@ -1,10 +1,8 @@
-[siddis14@amrndhl1157 buildtest-framework]$ ls -l testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_*
--rw-rw-r-- 1 siddis14 hpceng 225 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_10.csh
--rw-rw-r-- 1 siddis14 hpceng 225 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_12.csh
--rw-rw-r-- 1 siddis14 hpceng 225 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_14.csh
--rw-rw-r-- 1 siddis14 hpceng 225 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_16.csh
--rw-rw-r-- 1 siddis14 hpceng 224 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_2.csh
--rw-rw-r-- 1 siddis14 hpceng 224 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_4.csh
--rw-rw-r-- 1 siddis14 hpceng 224 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_6.csh
--rw-rw-r-- 1 siddis14 hpceng 224 Nov 24 18:05 testing/ebapp/GCC/5.4.0-2.27/omp_mm.c_nthread_8.csh
-
+-rwxr-xr-x 1 siddis14 amer 196 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_10.csh
+-rwxr-xr-x 1 siddis14 amer 196 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_12.csh
+-rwxr-xr-x 1 siddis14 amer 196 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_14.csh
+-rwxr-xr-x 1 siddis14 amer 196 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_16.csh
+-rwxr-xr-x 1 siddis14 amer 195 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_2.csh
+-rwxr-xr-x 1 siddis14 amer 195 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_4.csh
+-rwxr-xr-x 1 siddis14 amer 195 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_6.csh
+-rwxr-xr-x 1 siddis14 amer 195 Oct  8 11:03 /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_8.csh

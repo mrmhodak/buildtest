@@ -37,6 +37,7 @@ ls -l $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/ > $DIR/Shell/GCCcore-6.4.0_csh_lis
 _buildtest build -s GCCcore/6.4.0 --shell bash > $DIR/Shell/GCCcore-6.4.0_bash.txt
 ls -l $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/ > $DIR/Shell/GCCcore-6.4.0_bash_listing.txt
 
+# Job_Template.rst
 cat $BUILDTEST_ROOT/template/job.lsf > $DIR/Job_Template/job.lsf
 _buildtest build --system firefox --job-template template/job.lsf --enable-job > $DIR/Job_Template/firefox_jobscript.txt
 _buildtest build -s GCCcore/6.4.0 --job-template template/job.lsf --enable-job
@@ -53,6 +54,18 @@ _buildtest list -ls --format stdout > $DIR/List_Subcommand/software_format_stdou
 _buildtest list -ls --format json > $DIR/List_Subcommand/software_format_json.txt
 _buildtest list -svr --format csv > $DIR/List_Subcommand/software_format_csv.txt
 
+# Shell.rst
+_buildtest build -s CMake/3.9.5-GCCcore-6.4.0 --shell csh > $DIR/Shell/CMake-3.9.5-GCCcore-6.4.0_csh.txt
+ls -l $BUILDTEST_TESTDIR/ebapp/CMake/3.9.5-GCCcore-6.4.0/*.csh > $DIR/Shell/CMake-3.9.5-GCCcore-6.4.0_csh_listing.txt
+_buildtest build -s CMake/3.9.5-GCCcore-6.4.0 --shell bash > $DIR/Shell/CMake-3.9.5-GCCcore-6.4.0_bash.txt
+ls -l $BUILDTEST_TESTDIR/ebapp/CMake/3.9.5-GCCcore-6.4.0/*.bash > $DIR/Shell/CMake-3.9.5-GCCcore-6.4.0_bash_listing.txt
+cat $BUILDTEST_TESTDIR/ebapp/CMake/3.9.5-GCCcore-6.4.0/CMakeLists.txt > $DIR/Shell/CMake-3.9.5-GCCcore-6.4.0_CMakelists.txt
+_buildtest build -s GCCcore/6.4.0 --shell bash
+cat $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/omp_hello.f.bash > $DIR/Shell/GCCcore-6.4.0_omp_hello.f.bash
+_buildtest build -s GCCcore/6.4.0 --shell csh
+cat $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/omp_hello.f.csh > $DIR/Shell/GCCcore-6.4.0_omp_hello.f.csh
+
+
 # Build_Subcommand.rst
 _buildtest build --help > $DIR/Build_Subcommand/help.txt
 
@@ -60,9 +73,24 @@ _buildtest build --help > $DIR/Build_Subcommand/help.txt
 _buildtest build -s Perl/5.26.0-GCCcore-6.4.0 --perl-package AnyData > $DIR/perl_packagetest_AnyData.txt
 _buildtest build -s Perl/5.26.0-GCCcore-6.4.0 --perl-package Algorithm > $DIR/perl_packagetest_Algorithm.txt
 
+# r_package_testing.rst
+_buildtest build -s R/3.4.3-intel-2018a-X11-20171023 --r-package abc > $DIR/r_packagetest_abc.txt
+
+# python_package_testing.rst
+_buildtest build -s Python/2.7.14-intel-2018a --python-package dateutil > $DIR/python_packagetest_dateutil.txt
+_buildtest build -s Python/2.7.14-GCCcore-6.4.0-bare --python-package Bottleneck > $DIR/python_packagetest_Bottleneck.txt
+
+# ruby_package_testing_addressable
+_buildtest build -s Ruby/2.5.0-intel-2018a --ruby-package addressable > $DIR/ruby_packagetest_addressable.txt
+
 # Run_Subcommand.rst
 _buildtest run --help > $DIR/Run_Subcommand/help.txt
 _buildtest run --systempkg gcc > $DIR/Run_Subcommand/systempkg_gcc.txt
 _buildtest run --app GCCcore/6.4.0 > $DIR/Run_Subcommand/app_GCCcore.txt
 #rm -rf $BUILDTEST_ROOT
+
+#OpenMP_yaml.rst
+cat $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/omp_getEnvInfo.c.csh > $DIR/OpenMP_yaml/omp_getEnvInfo.csh
+ls -l  $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_*.csh > $DIR/OpenMP_yaml/omp_mm_listing.txt
+cat  $BUILDTEST_TESTDIR/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_2.csh > $DIR/OpenMP_yaml/omp_mm.c_nthread_2.csh
 

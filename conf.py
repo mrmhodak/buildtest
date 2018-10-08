@@ -46,7 +46,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'buildtest'
-copyright = u'2017, Shahzeb Siddiqui'
+copyright = u'2017-2018, Shahzeb Siddiqui (shahzebmsiddiqui@gmail.com)'
 author = u'Shahzeb Siddiqui'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -55,9 +55,9 @@ author = u'Shahzeb Siddiqui'
 #
 # The short X.Y version.
 
-version = '0.4.0'
+version = '0.5.0'
 # The full version, including alpha/beta/rc tags.
-release = '2018.08.07'
+release = '2018.10.08'
 
 
 

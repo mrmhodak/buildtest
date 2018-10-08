@@ -83,20 +83,16 @@ you select ``--format=stdout``.
 buildtest also supports json and csv output, where ``--format=json`` and ``--format=csv``
 will output result in json or csv format.
 
-::
-
-    _buildtest list -ls --format=stdout
+Let's run ``_buildtest list -ls --format=stdout``
 
 .. program-output:: cat scripts/List_Subcommand/software_format_stdout.txt
 
-buildtest will write content of csv to file
-::
-
-    _buildtest list -ls --format=csv
+buildtest will write content of csv to file. Let's run ``_buildtest list -svr --format=csv``
 
 .. program-output:: cat scripts/List_Subcommand/software_format_csv.txt
 
 .. program-output:: head scripts/List_Subcommand/software_list.csv
 
+To print output in json let's run ``_buildtest list -ls --format=json``
 
 .. program-output:: cat scripts/List_Subcommand/software_format_json.txt

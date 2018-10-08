@@ -1,9 +1,9 @@
 .. _r_package_testing:
 
-Building Tests for R packages (``_buildtest --r-package <R-PACKAGE>``)
+Building Tests for R packages (``_buildtest build --r-package <R-PACKAGE>``)
 ===============================================================================
 
-buildtest comes with option to build test for R packages to verify R packages
+buildtest comes with option to build test for R packages to test R packages
 are working as expected. The R tests are coming from the repository
 https://github.com/HPC-buildtest/R-buildtest-config
 
@@ -17,7 +17,7 @@ To illustrate the tab completion feature see command below
 
 .. code::
 
-    [siddis14@prometheus buildtest-framework]$ _buildtest --r-package
+    [siddis14@prometheus buildtest-framework]$ _buildtest build --r-package
     Display all 108 possibilities? (y or n)
     abc             animation       bigmemory       calibrate       evaluate        ffbase          forecast        gam             stringi         TeachingDemos   TraMineR
     abind           ape             bio3d           car             expm            fields          foreign         gamlss.data     stringr         tensor          tree
@@ -36,26 +36,11 @@ To build r package test you must specify a ``R`` module. buildtest will
 generate the binarytest along with any test from R package specified by
 option ``--r-package``.
 
-.. code::
+The following command ``_buildtest build -s R/3.4.3-intel-2018a-X11-20171023 --r-package abc``
+will build R test along with R package ``abc``
 
-    [siddis14@prometheus buildtest-framework]$ _buildtest -s R/3.4.3-intel-2018a-X11-20171023 --r-package abc
-    Detecting Software:  R/3.4.3-intel-2018a-X11-20171023
-    --------------------------------------------
-    [STAGE 1]: Building Binary Tests
-    --------------------------------------------
-    Detecting Test Type: Software
-    Processing Binary YAML configuration:  /home/siddis14/github/buildtest-configs/buildtest/ebapps/r/3.4.3/command.yaml
-
-    Generating 2 binary tests
-    Binary Tests are written in /tmp/buildtest-tests/ebapp/R/3.4.3-intel-2018a-X11-20171023/
-    --------------------------------------------
-    [STAGE 2]: Building Source Tests
-    --------------------------------------------
-    Processing all YAML files in directory: /home/siddis14/github/buildtest-configs/buildtest/ebapps/r/config
-    Generating 1 Source Tests and writing at  /tmp/buildtest-tests/ebapp/R/3.4.3-intel-2018a-X11-20171023/
-    Generating  8 tests for  abc
-    Writing Log file:  /tmp/buildtest/R/3.4.3-intel-2018a-X11-20171023/buildtest_10_27_07_08_2018.log
+.. program-output:: cat scripts/r_packagetest_abc.txt
 
 
-This option is compatible with ``--shell`` and ``--job-template`` if you want to build
+This option is compatible with ``--shell``, ``--enable-job`` and  ``--job-template`` if you want to build
 tests with different shell or create job scripts

@@ -38,7 +38,7 @@ of ``_buildtest build -s <application>``.
 Shown below is an output of ``_buildtest run --app GCCcore/6.4.0`` which attempts
 to run all tests for application ``GCCcore/6.4.0``
 
-.. program-output:: more scripts/Run_Subcommand/app_GCCcore.txt
+.. program-output:: head -n 25 scripts/Run_Subcommand/app_GCCcore.txt
 
 
 Run a System Package Test Suite (``_buildtest run --systempkg``)
@@ -49,4 +49,4 @@ that were built by option ``_buildtest build --system <package>``
 
 Shown below is an output of ``_buildtest run --systempkg gcc``
 
-.. program-output:: more scripts/Run_Subcommand/systempkg_gcc.txt
+.. program-output:: head -n 25 scripts/Run_Subcommand/systempkg_gcc.txt

@@ -12,11 +12,11 @@ OpenMP YAML example
 
 .. program-output:: cat scripts/OpenMP_yaml/omp_getEnvInfo.c.yaml
 
-This OpenMP test example can be build with GCC software from easybuild
+This OpenMP test example can be build for GCC software as follows
 
-.. code::
+::
 
-   buildtest -s GCC/5.4.0-2.27 --shell csh
+   buildtest build -s GCCcore/6.4.0 --shell csh
 
 This will generate the following script
 
@@ -30,7 +30,7 @@ by varying thread count.
 Matrix Multiplication with OpenMP Parameterization
 --------------------------------------------------
 
-For instance we have a matrix multiplication example_ we want to build with buildtest for varying parameters, we can do that as follows.
+For instance we have a matrix multiplication example we want to build with buildtest for varying parameters, we can do that as follows.
 
 Let's create a YAML file with the content
 
@@ -48,4 +48,3 @@ buildtest will generate the same test script with different values of OMP_NUM_TH
 
 
 .. _example: https://github.com/HPC-buildtest/buildtest-configs/blob/devel/ebapps/GCC/code/omp_mm.c
-

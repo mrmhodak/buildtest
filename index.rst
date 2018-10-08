@@ -92,7 +92,6 @@ Useful Links
 * R-buildtest-config_ - R test scripts repository
 * Perl-buildtest-config_ - Perl test scripts repository
 * Python-buildtest-config_ - Python test scripts repository
-* Tcl-buildtest-config_ - Tcl test scripts repository
 * Ruby-buildtest-config_ - Ruby test scripts repository
 
 Join the buildtest slack channel (hpcbuildtest.slack.com) to get connected
@@ -104,7 +103,6 @@ with the community. To join this channel please email **shahzebmsiddiqui@gmail.c
 .. _R-buildtest-config: https://github.com/HPC-buildtest/R-buildtest-config
 .. _Perl-buildtest-config: https://github.com/HPC-buildtest/Perl-buildtest-config
 .. _Python-buildtest-config: https://github.com/HPC-buildtest/Python-buildtest-config
-.. _Tcl-buildtest-config: https://github.com/HPC-buildtest/Tcl-buildtest-config
 .. _Ruby-buildtest-config: https://github.com/HPC-buildtest/Ruby-buildtest-config
 
 

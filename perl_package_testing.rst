@@ -25,6 +25,9 @@ To build perl package test you must specify a ``Perl`` module. buildtest will
 generate the binarytest along with any test from perl package specified by
 option ``--perl-package``.
 
+The command ``_buildtest build -s Perl/5.26.0-GCCcore-6.4.0 --perl-package AnyData``
+will build Perl test along with Perl package ``AnyData``
+
 .. program-output:: cat scripts/perl_packagetest_AnyData.txt
 
 Perl Package Check Validation
@@ -35,7 +38,9 @@ in ``--software`` to ensure tests are not created that are bound to fail due to
 missing package.
 
 To illustrate see the following example where we try building test for perl package
-``Algorithm``
+``Algorithm``.
+
+``_buildtest build -s Perl/5.26.0-GCCcore-6.4.0 --perl-package Algorithm``
 
 .. program-output:: cat scripts/perl_packagetest_Algorithm.txt
 

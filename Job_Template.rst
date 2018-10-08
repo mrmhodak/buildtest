@@ -1,7 +1,7 @@
 .. _Job_Template:
 
-Job Template (``_buildtest --job-template <template>``)
-========================================================
+Job Template (``_buildtest build --job-template <template>``)
+===============================================================
 
 
 
@@ -12,8 +12,10 @@ Job Template (``_buildtest --job-template <template>``)
 LSF Job template
 -----------------
 
-buildtest provides a default job template for LSF to generate test scripts for LSF. This template is for creating LSF job submission scripts that can be run
-via ``bsub``. The templates can be found at ``$BUILDTEST_ROOT/template/``
+buildtest provides a default job templates for LSF and SLURM to generate test scripts to be used with batch-scheduler.
+The templates can be found at ``$BUILDTEST_ROOT/template/``
+
+Shown below is a LSF Job Template
 
 .. program-output:: cat scripts/Job_Template/job.lsf
 
@@ -29,9 +31,8 @@ Generate Job scripts via buildtest
 buildtest can automatically generate job scripts with a template job script specified
 by ``--job-template`` option or with variable ``BUILDTEST_JOB_TEMPLATE``
 
-Let's run the following ``_buildtest --system firefox --job-template template/job.lsf --enable-job`` to
+Let's run the following ``_buildtest build --system firefox --job-template template/job.lsf --enable-job`` to
 build LSF job scripts
-
 
 .. program-output:: cat scripts/Job_Template/firefox_jobscript.txt
 
