@@ -1,7 +1,7 @@
 .. _ruby_package_testing:
 
-Building Tests for Ruby packages (``_buildtest build--ruby-package <RUBY-PACKAGE>``)
-====================================================================================
+Building Tests for Ruby packages (``_buildtest build --ruby-package <RUBY-PACKAGE>``)
+=======================================================================================
 
 buildtest comes with option to build test for ruby packages to verify ruby packages
 are working as expected. The ruby tests are coming from the repository

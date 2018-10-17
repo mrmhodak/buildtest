@@ -7,4 +7,4 @@ Processing Binary YAML configuration:  /home/siddis14/github/buildtest-configs/b
 Generating  104  binary tests
 Binary Tests are written in  /tmp/buildtest-tests/ebapp/Perl/5.26.0-GCCcore-6.4.0/
 Generating 1  tests for  AnyData
-Writing Log file:  /tmp/buildtest/Perl/5.26.0-GCCcore-6.4.0/buildtest_11_48_17_10_2018.log
+Writing Log file:  /tmp/buildtest/Perl/5.26.0-GCCcore-6.4.0/buildtest_15_25_17_10_2018.log

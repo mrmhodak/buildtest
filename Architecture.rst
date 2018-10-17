@@ -32,9 +32,6 @@ toolchain must be a software found in module tree ``$BUILDTEST_MODULE_ROOT``.
 Several buildtest options are supplied as **choice** attribute in
 ``argparse.arg_argument``. For more details on implementation see ``buildtest.tools.menu``
 
-1. ModuleFile Verication
-2. Toolchain verfication
-3. Easyconfig Verification
 
 Module File Format and Module Naming Scheme
 -------------------------------------------
@@ -44,8 +41,8 @@ the software's functionality. Typically the HPC software stack is installed in
 a cluster filesystem in a non-standard Linux path so modules
 are used to load the environment properly.
 
-Names of modulefiles depend on module naming scheme in Easybuild this is
-controlled by ``eb --module-naming-scheme``. The default naming scheme is
+Names of modulefiles depend on module naming scheme used at your site. In easybuild
+this is controlled by ``eb --module-naming-scheme``. The default naming scheme is
 **Easybuild Module Naming Scheme (EasyBuildMNS)** which is a flat naming scheme.
 This naming scheme is simple because it presents the software stack in
 one directory and names of module file tend to be long because they take the
@@ -61,17 +58,17 @@ Similarly, easybuild supports **Hierarchical Module Naming Scheme (HMNS)** that
 categorize software module stack in different trees that are loaded dynamically
 based on your current module list.
 
-With HMNS, the the module format will be different. You will  be loading the toolchain module (``GCC``)
-followed by the application module (``OpenMPI``).
+With HMNS, the the module format will be different. You will  be loading the
+toolchain module (``GCC``) followed by the application module (``OpenMPI``).
 
 .. code::
 
    module load GCC/5.4.0-2.27
    module load OpenMPI/2.0.0
 
-Modules in EasyBuildMNS will be unique so you will just  use ``buildtest -s`` and
-toolchain option ``--toolchain`` will be ignored. If you have a HMNS module tree defined
-in BUILDTEST_MODULE_ROOT then you will need to use both options ``buildtest -s <app> -t <toolchain>``
+Modules in EasyBuildMNS will be unique so you will just  use ``buildtest build -s``
+and toolchain option ``--toolchain`` will be ignored. If you have a HMNS module tree defined
+in BUILDTEST_MODULE_ROOT then you will need to use both options ``buildtest build -s <app> -t <toolchain>``
 
 Easybuild automatically generates modules for all software installed by easybuild
 and each module is written in a way to load all dependent modules necessary,
@@ -90,7 +87,7 @@ buildtest ignores ``.version`` or ``.default`` files and accepts all other files
 in the module tree. This information is processed further by stripping full
 path to extract the module name depending if you specified BUILDTEST_MODULE_NAMING_SCHEME
 as Flat Naming Scheme (FNS) or Hierarchical Module Naming Scheme (HMNS). This
-can be specified in the buildtest command line ``buildtest --module-naming-scheme`` or
+can be specified in the buildtest command line ``buildtest build --module-naming-scheme`` or
 environment variable ``$BUILDTEST_MODULE_NAMING_SCHEME`` or in ``config.yaml``
 
 The software module stack is used to populate the choice entries for ``--software``
@@ -128,12 +125,12 @@ into the following issue
 
 .. code::
 
-   [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -s ruby/2.2.4
+   [siddis14@amrndhl1157 buildtest-framework]$ _buildtest build -s ruby/2.2.4
    Application: ruby/2.2.4  is not built from Easybuild, cannot find easyconfig file in installation directory
 
 By default easybuild will check if the software is an easybuild app and will exit
 immediately. If you want to ignore the easybuild check you may use the option
-``_buildtest --ignore-easybuild`` to bypass this error. This also assumes you have
+``_buildtest build --ignore-easybuild`` to bypass this error. This also assumes you have
 the module tree defined in ``MODULEPATH`` so ``module load ruby/2.2.4`` will work
 for the tests. If there are multiple counts of same application version module
 across module trees you will need to fix that in your environment or modify which
@@ -189,9 +186,9 @@ generate the test.
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | $BUILDTEST_CONFIGS_REPO/buildtest/ebapps/$software/command.yaml     |       A list of binary executables and parameters to test                |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_CONFIGS_REPO/buildtest/ebapps/$software/config/          |       Contains the yaml config files used for building test from source  |
+| $BUILDTEST_CONFIGS_REPO/buildtest/source/$software/config/          |       Contains the yaml config files used for building test from source  |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
-| $BUILDTEST_CONFIGS_REPO/buildtest/ebapps/$software/code/            |       Directory Containing the source code, which is referenced          |
+| $BUILDTEST_CONFIGS_REPO/buildtest/source/$software/code/            |       Directory Containing the source code, which is referenced          |
 |                                                                     |       by the testscript and yaml files                                   |
 +---------------------------------------------------------------------+--------------------------------------------------------------------------+
 | $BUILDTEST_CONFIGS_REPO/system/$package/command.yaml                |       A list of binary executables and parameters to for system packages |

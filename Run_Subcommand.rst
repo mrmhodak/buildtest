@@ -31,33 +31,33 @@ You may run individual tests via buildtest using option ``--testname``.
     ---------------------------------------------------------
 
 
-Run an Application Test Suite (``_buildtest run --app``)
------------------------------------------------------------
+Run an Application Test Suite (``_buildtest run --software``)
+---------------------------------------------------------------
 
 buildtest can run test written in ``$BUILDTEST_TESTDIR`` for a particular application
-specified by option ``--app``. The choice field for this option is populated based
+specified by option ``--software``. The choice field for this option is populated based
 on directories found in ``$BUILDTEST_TESTDIR`` which were created by subsequent runs
 of ``_buildtest build -s <application>``.
 
 ::
 
-    (buildtest) [siddis14@adwnode11 buildtest-framework]$ ./_buildtest run --app
+    (buildtest) [siddis14@adwnode11 buildtest-framework]$ ./_buildtest run --software
     GCC/6.4.0-2.28             GCCcore/6.4.0              Perl/5.26.0-GCCcore-6.4.0
 
 
-Shown below is an output of ``_buildtest run --app GCCcore/6.4.0`` which attempts
+Shown below is an output of ``_buildtest run --software GCCcore/6.4.0`` which attempts
 to run all tests for application ``GCCcore/6.4.0``
 
 .. program-output:: tail -n 15 scripts/Run_Subcommand/app_GCCcore.txt
 
 
-Run a System Package Test Suite (``_buildtest run --systempkg``)
+Run a System Package Test Suite (``_buildtest run --package``)
 ------------------------------------------------------------------
 
-Similarly, ``buildtest run --systempkg`` is used to run test suite for system packages
-that were built by option ``_buildtest build --system <package>``
+Similarly, ``buildtest run --package`` is used to run test suite for system packages
+that were built by option ``_buildtest build --package <package>``
 
-Shown below is an output of ``_buildtest run --systempkg gcc``
+Shown below is an output of ``_buildtest run --package gcc``
 
 .. program-output:: cat scripts/Run_Subcommand/systempkg_gcc.txt
 

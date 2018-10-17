@@ -1,5 +1,5 @@
-usage: buildtest [options] build [-h] [-s INSTALLED-EASYBUILD-APPS] [-t INSTALLED-EASYBUILD-TOOLCHAINS]
-                                 [--system SYSTEM-PACKAGE] [--all-systempkg] [--all-apps] [--shell {sh,bash,csh}]
+usage: buildtest [options] build [-h] [-s INSTALLED-SOFTWARE] [-t INSTALLED-SOFTWARE-TOOLCHAINS] [-p SYSTEM-PACKAGE]
+                                 [--all-package] [--all-software] [--shell {sh,bash,csh}]
                                  [--python-package PYTHON-PACKAGES] [--r-package R-PACKAGES]
                                  [--ruby-package RUBY-PACKAGES] [--perl-package PERL-PACKAGES] [--clean-tests]
                                  [--testdir TESTDIR] [--clean-build] [--ignore-easybuild] [--enable-job]
@@ -7,14 +7,14 @@ usage: buildtest [options] build [-h] [-s INSTALLED-EASYBUILD-APPS] [-t INSTALLE
 
 optional arguments:
   -h, --help            show this help message and exit
-  -s INSTALLED-EASYBUILD-APPS, --software INSTALLED-EASYBUILD-APPS
+  -s INSTALLED-SOFTWARE, --software INSTALLED-SOFTWARE
                         Specify software package to test
-  -t INSTALLED-EASYBUILD-TOOLCHAINS, --toolchain INSTALLED-EASYBUILD-TOOLCHAINS
+  -t INSTALLED-SOFTWARE-TOOLCHAINS, --toolchain INSTALLED-SOFTWARE-TOOLCHAINS
                         Specify toolchain for the software package
-  --system SYSTEM-PACKAGE
+  -p SYSTEM-PACKAGE, --package SYSTEM-PACKAGE
                         Build test for system packages
-  --all-systempkg       build tests for all system packages from buildtest repository
-  --all-apps            build tests for all apps from buildtest repository
+  --all-package         build tests for all system packages from buildtest repository
+  --all-software        build tests for all software from buildtest repository
   --shell {sh,bash,csh}
                         Select the type of shell when running test
   --python-package PYTHON-PACKAGES

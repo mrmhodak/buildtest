@@ -1,13 +1,13 @@
 .. _BinaryTest_Yaml_Application:
 
-Building YAML configuration for binary testing for Software Packages (``_buildtest yaml --app``)
-=================================================================================================
+Building YAML configuration for binary testing for Software Packages (``_buildtest yaml --software``)
+==========================================================================================================
 
 In order to test binaries for software packages in HPC environment, buildtest
 will assume there is a modulefile present and accessible via ``module`` command.
 This implies the module tree is defined in ``MODULEPATH`` and ``BUILDTEST_MODULE_ROOT``.
 
-When buildtest takes argument ``_buildtest yaml --app <module>`` it will run the
+When buildtest takes argument ``_buildtest yaml --software <module>`` it will run the
 following command
 
 .. code::
@@ -25,7 +25,7 @@ as well.
 
 To demonstrate an example lets see the following example
 
-``_buildtest yaml --app GCCcore/6.4.0``
+``_buildtest yaml --software GCCcore/6.4.0``
 
 buildtest will search for $PATH in module file. In the case of this example, the modulefile
 will update the ``$PATH`` with directory ``/clust/app/easybuild/2018/IvyBridge/redhat/7.3/software/GCCcore/6.4.0/bin``
@@ -72,7 +72,7 @@ buildtest will write the content in ``command.yaml`` which must be checked for f
 
 .. code::
 
-    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --app GCCcore/6.4.0
+    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --software GCCcore/6.4.0
     Please check YAML file  /home/siddis14/github/buildtest-configs/buildtest/ebapps/gcccore/6.4.0/command.yaml  and fix test accordingly
 
 

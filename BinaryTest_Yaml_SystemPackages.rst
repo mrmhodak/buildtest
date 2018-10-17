@@ -1,7 +1,7 @@
 .. _BinaryTest_Yaml_SystemPackages:
 
 
-Binary Test for System package (``_buildtest yaml --systempkg``)
+Binary Test for System package (``_buildtest yaml --package``)
 ===================================================================
 
 For system packages, typically you need to find all the binaries provided by the
@@ -25,7 +25,7 @@ to the users to determine how they want to perform binary test.
 To create a binary test for a system package, first check
 ``$BUILDTEST_CONFIGS_REPO/buildtest/system/<package>`` to see which system
 package are already provided. If there is no directory then it makes sense to
-create a the system package binary test using ``_buildtest list --systempkg``
+create a the system package binary test using ``_buildtest list --package``
 
 For this example we will generate the YAML configuration for  **firefox** package.
 

@@ -31,13 +31,13 @@ Generate Job scripts via buildtest
 buildtest can automatically generate job scripts with a template job script specified
 by ``--job-template`` option or with variable ``BUILDTEST_JOB_TEMPLATE``
 
-Let's run the following ``_buildtest build --system firefox --job-template template/job.lsf --enable-job`` to
+Let's run the following ``_buildtest build --package firefox --job-template template/job.lsf --enable-job`` to
 build LSF job scripts
 
 .. program-output:: cat scripts/Job_Template/firefox_jobscript.txt
 
 
-Job templates work with option ``--system`` and ``--software``. Let's try another example
+Job templates work with option ``--package`` and ``--software``. Let's try another example
 building job scripts with a software package ``GCCcore/6.4.0`` with lsf job template
 
 

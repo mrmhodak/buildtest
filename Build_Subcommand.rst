@@ -24,7 +24,7 @@ The output will be the following
 Building test for System Packages
 ----------------------------------
 
-To build test for system package you will want to use ``_buildtest build --system`` and
+To build test for system package you will want to use ``_buildtest build --package`` and
 specify the name of the system package. This should be a system package that is installed
 in your system.
 
@@ -32,7 +32,7 @@ To demonstrate this example, lets build the test for package ``coreutils``
 
 ::
 
-    _buildtest build --system coreutils
+    _buildtest build --package coreutils
 
 The output will be the following
 
@@ -46,10 +46,10 @@ TBD
 
 
 
-Building all software tests via (``_buildtest build --all-apps``)
--------------------------------------------------------------------
+Building all software tests via (``_buildtest build --all-software``)
+-----------------------------------------------------------------------
 
-If you want buildtest to generate test for everything you can just run ``_buildtest build --all-apps``
+If you want buildtest to generate test for everything you can just run ``_buildtest build --all-software``
 which will try to build software test for every possible application module that has
 a corresponding yaml file in buildtest repository.
 
@@ -58,7 +58,7 @@ below is a sample output
 
 ::
 
-    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --all-apps
+    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --all-software
     --------------------------------------------
     [STAGE 1]: Building Binary Tests
     --------------------------------------------
@@ -83,18 +83,18 @@ below is a sample output
 
 
 
-Building All system package tests (``_buildtest build --all-systempkg``)
+Building All system package tests (``_buildtest build --all-package``)
 ---------------------------------------------------------------------------
 
-The option ``--all-systempkg`` will attempt to install tests for
-all system package. It is basically running ``_buildtest build --system`` for everything
+The option ``--all-package`` will attempt to install tests for
+all system package. It is basically running ``_buildtest build --package`` for everything
 
 
 Shown below is a sample output.
 
 ::
 
-    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --all-systempkg
+    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --all-package
     --------------------------------------------
     [STAGE 1]: Building Binary Tests
     --------------------------------------------

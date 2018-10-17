@@ -61,8 +61,8 @@ following.
    args
 
 TAB completion works for choice parameters on options: ``--shell``, ``--software``,
-``--toolchain``, ``--system``, ``--python-package``, ``--perl-package``, ``--r-package``,
-``--ruby-package``, ``--testname``, ``--app``, ``--systempkg``
+``--toolchain``, ``--package``, ``--python-package``, ``--perl-package``, ``--r-package``,
+``--ruby-package``, ``--testname``, 
 
 TAB complete on ``_buildtest build --software``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -97,15 +97,15 @@ easybuild toolchains installed in the software stack
     GCC/6.4.0-2.28                      gompi/2018a                         iimpi/2018a
 
 
-TAB complete on ``_buildtest build --system``
+TAB complete on ``_buildtest build --package``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TAB completion on ``_buildtest build --system`` will display all the system package that have a yaml
+TAB completion on ``_buildtest build --package`` will display all the system package that have a yaml
 file typically found in directory ``$BUILDTEST_CONFIGS_REPO/buildtest/system`` directory.
 
 ::
 
-    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --system
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest build --package
     acl                  CentrifyDC-openssh   file                 git                  ncurses              powertop             sed                  util-linux           zip
     at                   chrony               firefox              htop                 numactl              procps-ng            singularity-runtime  wget
     atop                 coreutils            gcc                  hwloc                openssh-clients      python               strace               which
@@ -114,16 +114,16 @@ file typically found in directory ``$BUILDTEST_CONFIGS_REPO/buildtest/system`` d
 
 
 
-TAB complete on ``_buildtest yaml --systempkg``
+TAB complete on ``_buildtest yaml --package``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TAB completion on ``_buildtest yaml --systempkg`` will present all system package available on your
+TAB completion on ``_buildtest yaml --package`` will present all system package available on your
 system. If you are using Centos, RHEL, or Fedora then you will be using yum
 as your package manager. This output is extracted by getting output of ``rpm -qa``
 
 ::
 
-    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --systempkg xorg-x11-
+    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --package xorg-x11-
     xorg-x11-apps                    xorg-x11-drv-qxl                 xorg-x11-fonts-100dpi            xorg-x11-server-Xephyr
     xorg-x11-drivers                 xorg-x11-drv-synaptics           xorg-x11-fonts-ISO8859-1-100dpi  xorg-x11-server-Xorg
     xorg-x11-drv-ati                 xorg-x11-drv-v4l                 xorg-x11-fonts-misc              xorg-x11-server-Xvfb
@@ -133,18 +133,15 @@ as your package manager. This output is extracted by getting output of ``rpm -qa
     xorg-x11-drv-intel               xorg-x11-drv-void                xorg-x11-server-common           xorg-x11-xinit
     xorg-x11-drv-nouveau             xorg-x11-drv-wacom               xorg-x11-server-utils            xorg-x11-xkb-utils
 
-TAB completion on ``_buildtest yaml --app``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TAB completion on ``_buildtest yaml --software``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Tab completion on ``_buildtest yaml --app`` will show which software packages you can generate yaml configuration
-for binary test. The options are auto-populated based on modules found in BUILDTEST_MODULE_ROOT. Whenever you
-you create a yaml configuration using ``--ebyaml`` such as ``_buildtest yaml --app libGLU/9.0.0-intel-2018a`` then buildtest
-will remove this entry from the list of choices to avoid buildtest from overwriting yaml configuration once it is made.
-
+Tab completion on ``_buildtest yaml --software`` will show which software packages you can generate yaml configuration
+for binary test. The options are auto-populated based on modules found in BUILDTEST_MODULE_ROOT.
 
 ::
 
-    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --app lib
+    (buildtest-0.5.0) [siddis14@adwnode1 buildtest-framework]$ _buildtest yaml --software lib
     libdrm/2.4.88-GCCcore-6.4.0        libmatheval/1.1.11-GCCcore-6.4.0   libtool/2.4.6-GCCcore-6.4.0        libxsmm/1.8.3-intel-2018a
     libffi/3.2.1-GCCcore-6.4.0         libpng/1.6.32-GCCcore-6.4.0        libunistring/0.9.7-GCCcore-6.4.0
     libGLU/9.0.0-intel-2018a           libreadline/7.0-GCCcore-6.4.0      libxc/3.0.1-intel-2018a
@@ -171,49 +168,49 @@ tab completion.
 
     --More--
 
-TAB completion on ``_buildtest run --app``
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+TAB completion on ``_buildtest run --software``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TAB completion works on ``_buildtest run --app`` which return a list of software
+TAB completion works on ``_buildtest run --software`` which return a list of software
 you can run tests that were generated by ``_buildtest build -s <module>``
 
 ::
 
-    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --app
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --software
     GCCcore/6.4.0                     Perl/5.26.0-GCCcore-6.4.0         Python/2.7.14-GCCcore-6.4.0-bare  R/3.4.3-intel-2018a-X11-20171023
     OpenMPI/3.0.0-GCC-6.4.0-2.28      Python/2.7.14-GCCcore-6.4.0       Python/2.7.14-intel-2018a         Ruby/2.5.0-intel-2018a
 
 
 
-TAB completion on ``_buildtest run --systempkg``
+TAB completion on ``_buildtest run --package``
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-TAB completion works on ``_buildtest run --systempkg`` which return a list of
-system package you can run tests that were generated by ``_buildtest build --system <package>``
+TAB completion works on ``_buildtest run --package`` which return a list of
+system package you can run tests that were generated by ``_buildtest build --package <package>``
 
 ::
 
-    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --systempkg
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run --package
     acl        at         atop       binutils   bzip2      chrony     coreutils  curl       gcc        wget
 
 
 System Package Test
 -------------------
 
-buildtest can generate tests for system packages using the option ``_buildtest build --system <package>``.
-Currently, system package test only perform binary test. This means you need to
-find the binaries associated with the package and add the executable and any
-parameters in ``command.yaml``.
+buildtest can generate tests for system packages using the option
+``_buildtest build --package <package>``. Currently, system package test only
+perform binary test. This means you need to find the binaries associated with
+the package and add the executable and any parameters in ``command.yaml``.
 
-This file will be ``$BUILDTEST_CONFIGS_REPO/buildtest/system/$pkg/command.yaml`` where $pkg is
-name of system package. At this moment, buildtest is using Redhat package
-naming convention.
+This file will be ``$BUILDTEST_CONFIGS_REPO/buildtest/system/$package/command.yaml``
+where $package is name of system package. At this moment, buildtest is using
+Redhat package naming convention.
 
 For instance to build test for the system package ``gcc`` you can do the following
 
 .. code::
 
-   _buildtest build --system gcc
+   _buildtest build --package gcc
 
 
 Log files
@@ -226,7 +223,7 @@ buildtest will store log files for ``_buildtest build -s <app_name>/<app_ver>`` 
 instance ``_buildtest build -s <app_name>/<app_ver> -t <tc_name>/<tc_ver>`` then
 buildtest will store the logs in ``BUILDTEST_LOGDIR/<app_name>/<app_ver>/<tc_name>/<tc_ver>``.
 
-Similarly logs for system tests like ``_buildtest --system <package>`` will be stored in ``BUILDTEST_LOGDIR/system/<package>``
+Similarly logs for system tests like ``_buildtest --package <package>`` will be stored in ``BUILDTEST_LOGDIR/system/<package>``
 
 You may override BUILDTEST_LOGDIR option at command line via ``_buildtest --logdir``
 and you may even store individual buildtest runs in separate directories such as
