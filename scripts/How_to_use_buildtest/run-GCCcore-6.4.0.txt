@@ -1,708 +1,174 @@
-Test project /tmp/build
-        Start   1: system-gcc-_usr_bin_c89_--version.sh
-  1/347 Test   #1: system-gcc-_usr_bin_c89_--version.sh .........................   Passed    0.06 sec
-        Start   2: system-gcc-_usr_bin_c99_--version.sh
-  2/347 Test   #2: system-gcc-_usr_bin_c99_--version.sh .........................   Passed    0.06 sec
-        Start   3: system-gcc-_usr_bin_gcc_--version.sh
-  3/347 Test   #3: system-gcc-_usr_bin_gcc_--version.sh .........................   Passed    0.06 sec
-        Start   4: system-gcc-_usr_bin_gcc-ar_--version.sh
-  4/347 Test   #4: system-gcc-_usr_bin_gcc-ar_--version.sh ......................   Passed    0.06 sec
-        Start   5: system-gcc-_usr_bin_gcc-nm_--version.sh
-  5/347 Test   #5: system-gcc-_usr_bin_gcc-nm_--version.sh ......................   Passed    0.06 sec
-        Start   6: system-gcc-_usr_bin_gcc-ranlib_--version.sh
-  6/347 Test   #6: system-gcc-_usr_bin_gcc-ranlib_--version.sh ..................   Passed    0.06 sec
-        Start   7: system-gcc-_usr_bin_gcov_--version.sh
-  7/347 Test   #7: system-gcc-_usr_bin_gcov_--version.sh ........................   Passed    0.06 sec
-        Start   8: system-wget-_usr_bin_wget_-V.sh
-  8/347 Test   #8: system-wget-_usr_bin_wget_-V.sh ..............................   Passed    0.06 sec
-        Start   9: system-acl-_usr_bin_chacl_-l__.sh
-  9/347 Test   #9: system-acl-_usr_bin_chacl_-l__.sh ............................   Passed    0.06 sec
-        Start  10: system-acl-_usr_bin_getfacl_-v.sh
- 10/347 Test  #10: system-acl-_usr_bin_getfacl_-v.sh ............................   Passed    0.06 sec
-        Start  11: system-acl-_usr_bin_setfacl_-v.sh
- 11/347 Test  #11: system-acl-_usr_bin_setfacl_-v.sh ............................   Passed    0.06 sec
-        Start  12: system-at-_usr_bin_at_-V.sh
- 12/347 Test  #12: system-at-_usr_bin_at_-V.sh ..................................   Passed    0.06 sec
-        Start  13: system-at-find__usr_bin_batch.sh
- 13/347 Test  #13: system-at-find__usr_bin_batch.sh .............................   Passed    0.06 sec
-        Start  14: system-at-find__usr_sbin_atd.sh
- 14/347 Test  #14: system-at-find__usr_sbin_atd.sh ..............................   Passed    0.06 sec
-        Start  15: system-at-find__usr_sbin_atrun.sh
- 15/347 Test  #15: system-at-find__usr_sbin_atrun.sh ............................   Passed    0.06 sec
-        Start  16: system-atop-find__usr_bin_atop.sh
- 16/347 Test  #16: system-atop-find__usr_bin_atop.sh ............................   Passed    0.06 sec
-        Start  17: system-atop-find__usr_bin_atopd.sh
- 17/347 Test  #17: system-atop-find__usr_bin_atopd.sh ...........................   Passed    0.06 sec
-        Start  18: system-binutils-_usr_bin_addr2line_-v.sh
- 18/347 Test  #18: system-binutils-_usr_bin_addr2line_-v.sh .....................   Passed    0.06 sec
-        Start  19: system-binutils-_usr_bin_ar_-V.sh
- 19/347 Test  #19: system-binutils-_usr_bin_ar_-V.sh ............................   Passed    0.06 sec
-        Start  20: system-binutils-_usr_bin_as_--version.sh
- 20/347 Test  #20: system-binutils-_usr_bin_as_--version.sh .....................   Passed    0.06 sec
-        Start  21: system-binutils-_usr_bin_c++filt_-v.sh
- 21/347 Test  #21: system-binutils-_usr_bin_c++filt_-v.sh .......................   Passed    0.06 sec
-        Start  22: system-binutils-_usr_bin_dwp_-V.sh
- 22/347 Test  #22: system-binutils-_usr_bin_dwp_-V.sh ...........................   Passed    0.06 sec
-        Start  23: system-binutils-_usr_bin_elfedit_-v.sh
- 23/347 Test  #23: system-binutils-_usr_bin_elfedit_-v.sh .......................   Passed    0.06 sec
-        Start  24: system-binutils-_usr_bin_gprof_-v.sh
- 24/347 Test  #24: system-binutils-_usr_bin_gprof_-v.sh .........................   Passed    0.06 sec
-        Start  25: system-binutils-_usr_bin_ld_-v.sh
- 25/347 Test  #25: system-binutils-_usr_bin_ld_-v.sh ............................   Passed    0.06 sec
-        Start  26: system-binutils-_usr_bin_ld.bfd_-v.sh
- 26/347 Test  #26: system-binutils-_usr_bin_ld.bfd_-v.sh ........................   Passed    0.06 sec
-        Start  27: system-binutils-_usr_bin_ld.gold_-v.sh
- 27/347 Test  #27: system-binutils-_usr_bin_ld.gold_-v.sh .......................   Passed    0.06 sec
-        Start  28: system-binutils-_usr_bin_nm_-V.sh
- 28/347 Test  #28: system-binutils-_usr_bin_nm_-V.sh ............................   Passed    0.06 sec
-        Start  29: system-binutils-_usr_bin_objcopy_-V.sh
- 29/347 Test  #29: system-binutils-_usr_bin_objcopy_-V.sh .......................   Passed    0.06 sec
-        Start  30: system-binutils-_usr_bin_objdump_-V.sh
- 30/347 Test  #30: system-binutils-_usr_bin_objdump_-V.sh .......................   Passed    0.07 sec
-        Start  31: system-binutils-_usr_bin_ranlib_-v.sh
- 31/347 Test  #31: system-binutils-_usr_bin_ranlib_-v.sh ........................   Passed    0.06 sec
-        Start  32: system-binutils-_usr_bin_readelf_-v.sh
- 32/347 Test  #32: system-binutils-_usr_bin_readelf_-v.sh .......................   Passed    0.06 sec
-        Start  33: system-binutils-_usr_bin_size_-v.sh
- 33/347 Test  #33: system-binutils-_usr_bin_size_-v.sh ..........................   Passed    0.06 sec
-        Start  34: system-binutils-_usr_bin_strings_-v.sh
- 34/347 Test  #34: system-binutils-_usr_bin_strings_-v.sh .......................   Passed    0.06 sec
-        Start  35: system-binutils-_usr_bin_strip_-V.sh
- 35/347 Test  #35: system-binutils-_usr_bin_strip_-V.sh .........................   Passed    0.06 sec
-        Start  36: system-bzip2-find__usr_bin_bzdiff.sh
- 36/347 Test  #36: system-bzip2-find__usr_bin_bzdiff.sh .........................   Passed    0.06 sec
-        Start  37: system-bzip2-find__usr_bin_bzgrep.sh
- 37/347 Test  #37: system-bzip2-find__usr_bin_bzgrep.sh .........................   Passed    0.06 sec
-        Start  38: system-bzip2-_usr_bin_bzip2_--help.sh
- 38/347 Test  #38: system-bzip2-_usr_bin_bzip2_--help.sh ........................   Passed    0.06 sec
-        Start  39: system-bzip2-find__usr_bin_bzip2recover.sh
- 39/347 Test  #39: system-bzip2-find__usr_bin_bzip2recover.sh ...................   Passed    0.06 sec
-        Start  40: system-bzip2-_usr_bin_bzmore_--help.sh
- 40/347 Test  #40: system-bzip2-_usr_bin_bzmore_--help.sh .......................   Passed    0.06 sec
-        Start  41: system-chrony-_usr_bin_chronyc_--version.sh
- 41/347 Test  #41: system-chrony-_usr_bin_chronyc_--version.sh ..................   Passed    0.06 sec
-        Start  42: system-chrony-_usr_sbin_chronyd_--version.sh
- 42/347 Test  #42: system-chrony-_usr_sbin_chronyd_--version.sh .................   Passed    0.06 sec
-        Start  43: system-coreutils-find__usr_bin_[.sh
- 43/347 Test  #43: system-coreutils-find__usr_bin_[.sh ..........................   Passed    0.06 sec
-        Start  44: system-coreutils-_usr_bin_arch_--version.sh
- 44/347 Test  #44: system-coreutils-_usr_bin_arch_--version.sh ..................   Passed    0.06 sec
-        Start  45: system-coreutils-_usr_bin_base64_--version.sh
- 45/347 Test  #45: system-coreutils-_usr_bin_base64_--version.sh ................   Passed    0.06 sec
-        Start  46: system-coreutils-_usr_bin_basename_--version.sh
- 46/347 Test  #46: system-coreutils-_usr_bin_basename_--version.sh ..............   Passed    0.06 sec
-        Start  47: system-coreutils-_usr_bin_cat_--version.sh
- 47/347 Test  #47: system-coreutils-_usr_bin_cat_--version.sh ...................   Passed    0.06 sec
-        Start  48: system-coreutils-_usr_bin_chcon_--version.sh
- 48/347 Test  #48: system-coreutils-_usr_bin_chcon_--version.sh .................   Passed    0.06 sec
-        Start  49: system-coreutils-_usr_bin_chgrp_--version.sh
- 49/347 Test  #49: system-coreutils-_usr_bin_chgrp_--version.sh .................   Passed    0.06 sec
-        Start  50: system-coreutils-_usr_bin_chmod_--version.sh
- 50/347 Test  #50: system-coreutils-_usr_bin_chmod_--version.sh .................   Passed    0.06 sec
-        Start  51: system-coreutils-_usr_bin_chown_--version.sh
- 51/347 Test  #51: system-coreutils-_usr_bin_chown_--version.sh .................   Passed    0.06 sec
-        Start  52: system-coreutils-_usr_bin_cksum_--version.sh
- 52/347 Test  #52: system-coreutils-_usr_bin_cksum_--version.sh .................   Passed    0.06 sec
-        Start  53: system-coreutils-_usr_bin_comm_--version.sh
- 53/347 Test  #53: system-coreutils-_usr_bin_comm_--version.sh ..................   Passed    0.06 sec
-        Start  54: system-coreutils-_usr_bin_cp_--version.sh
- 54/347 Test  #54: system-coreutils-_usr_bin_cp_--version.sh ....................   Passed    0.06 sec
-        Start  55: system-coreutils-_usr_bin_csplit_--version.sh
- 55/347 Test  #55: system-coreutils-_usr_bin_csplit_--version.sh ................   Passed    0.06 sec
-        Start  56: system-coreutils-_usr_bin_cut_--version.sh
- 56/347 Test  #56: system-coreutils-_usr_bin_cut_--version.sh ...................   Passed    0.06 sec
-        Start  57: system-coreutils-_usr_bin_date_--version.sh
- 57/347 Test  #57: system-coreutils-_usr_bin_date_--version.sh ..................   Passed    0.06 sec
-        Start  58: system-coreutils-_usr_bin_dd_--version.sh
- 58/347 Test  #58: system-coreutils-_usr_bin_dd_--version.sh ....................   Passed    0.06 sec
-        Start  59: system-coreutils-_usr_bin_df_--version.sh
- 59/347 Test  #59: system-coreutils-_usr_bin_df_--version.sh ....................   Passed    0.06 sec
-        Start  60: system-coreutils-_usr_bin_dir_--version.sh
- 60/347 Test  #60: system-coreutils-_usr_bin_dir_--version.sh ...................   Passed    0.06 sec
-        Start  61: system-coreutils-_usr_bin_dircolors_--version.sh
- 61/347 Test  #61: system-coreutils-_usr_bin_dircolors_--version.sh .............   Passed    0.06 sec
-        Start  62: system-coreutils-_usr_bin_dirname_--version.sh
- 62/347 Test  #62: system-coreutils-_usr_bin_dirname_--version.sh ...............   Passed    0.06 sec
-        Start  63: system-coreutils-_usr_bin_du_--version.sh
- 63/347 Test  #63: system-coreutils-_usr_bin_du_--version.sh ....................   Passed    0.06 sec
-        Start  64: system-coreutils-_usr_bin_echo_--version.sh
- 64/347 Test  #64: system-coreutils-_usr_bin_echo_--version.sh ..................   Passed    0.06 sec
-        Start  65: system-coreutils-_usr_bin_env_--version.sh
- 65/347 Test  #65: system-coreutils-_usr_bin_env_--version.sh ...................   Passed    0.06 sec
-        Start  66: system-coreutils-_usr_bin_expand_--version.sh
- 66/347 Test  #66: system-coreutils-_usr_bin_expand_--version.sh ................   Passed    0.06 sec
-        Start  67: system-coreutils-_usr_bin_expr_--version.sh
- 67/347 Test  #67: system-coreutils-_usr_bin_expr_--version.sh ..................   Passed    0.06 sec
-        Start  68: system-coreutils-_usr_bin_factor_--version.sh
- 68/347 Test  #68: system-coreutils-_usr_bin_factor_--version.sh ................   Passed    0.06 sec
-        Start  69: system-coreutils-_usr_bin_false_--version.sh
- 69/347 Test  #69: system-coreutils-_usr_bin_false_--version.sh .................***Failed    0.06 sec
-        Start  70: system-coreutils-_usr_bin_fmt_--version.sh
- 70/347 Test  #70: system-coreutils-_usr_bin_fmt_--version.sh ...................   Passed    0.06 sec
-        Start  71: system-coreutils-_usr_bin_fold_--version.sh
- 71/347 Test  #71: system-coreutils-_usr_bin_fold_--version.sh ..................   Passed    0.06 sec
-        Start  72: system-coreutils-_usr_bin_groups_--version.sh
- 72/347 Test  #72: system-coreutils-_usr_bin_groups_--version.sh ................   Passed    0.06 sec
-        Start  73: system-coreutils-_usr_bin_head_--version.sh
- 73/347 Test  #73: system-coreutils-_usr_bin_head_--version.sh ..................   Passed    0.06 sec
-        Start  74: system-coreutils-_usr_bin_hostid_--version.sh
- 74/347 Test  #74: system-coreutils-_usr_bin_hostid_--version.sh ................   Passed    0.06 sec
-        Start  75: system-coreutils-_usr_bin_id_--version.sh
- 75/347 Test  #75: system-coreutils-_usr_bin_id_--version.sh ....................   Passed    0.06 sec
-        Start  76: system-coreutils-_usr_bin_install_--version.sh
- 76/347 Test  #76: system-coreutils-_usr_bin_install_--version.sh ...............   Passed    0.06 sec
-        Start  77: system-coreutils-_usr_bin_join_--version.sh
- 77/347 Test  #77: system-coreutils-_usr_bin_join_--version.sh ..................   Passed    0.06 sec
-        Start  78: system-coreutils-_usr_bin_link_--version.sh
- 78/347 Test  #78: system-coreutils-_usr_bin_link_--version.sh ..................   Passed    0.06 sec
-        Start  79: system-coreutils-_usr_bin_ln_--version.sh
- 79/347 Test  #79: system-coreutils-_usr_bin_ln_--version.sh ....................   Passed    0.06 sec
-        Start  80: system-coreutils-_usr_bin_logname_--version.sh
- 80/347 Test  #80: system-coreutils-_usr_bin_logname_--version.sh ...............   Passed    0.06 sec
-        Start  81: system-coreutils-_usr_bin_ls_--version.sh
- 81/347 Test  #81: system-coreutils-_usr_bin_ls_--version.sh ....................   Passed    0.06 sec
-        Start  82: system-coreutils-_usr_bin_md5sum_--version.sh
- 82/347 Test  #82: system-coreutils-_usr_bin_md5sum_--version.sh ................   Passed    0.06 sec
-        Start  83: system-coreutils-_usr_bin_mkdir_--version.sh
- 83/347 Test  #83: system-coreutils-_usr_bin_mkdir_--version.sh .................   Passed    0.06 sec
-        Start  84: system-coreutils-_usr_bin_mkfifo_--version.sh
- 84/347 Test  #84: system-coreutils-_usr_bin_mkfifo_--version.sh ................   Passed    0.06 sec
-        Start  85: system-coreutils-_usr_bin_mknod_--version.sh
- 85/347 Test  #85: system-coreutils-_usr_bin_mknod_--version.sh .................   Passed    0.06 sec
-        Start  86: system-coreutils-_usr_bin_mktemp_--version.sh
- 86/347 Test  #86: system-coreutils-_usr_bin_mktemp_--version.sh ................   Passed    0.06 sec
-        Start  87: system-coreutils-_usr_bin_mv_--version.sh
- 87/347 Test  #87: system-coreutils-_usr_bin_mv_--version.sh ....................   Passed    0.06 sec
-        Start  88: system-coreutils-_usr_bin_nice_--version.sh
- 88/347 Test  #88: system-coreutils-_usr_bin_nice_--version.sh ..................   Passed    0.06 sec
-        Start  89: system-coreutils-_usr_bin_nl_--version.sh
- 89/347 Test  #89: system-coreutils-_usr_bin_nl_--version.sh ....................   Passed    0.06 sec
-        Start  90: system-coreutils-_usr_bin_nohup_--version.sh
- 90/347 Test  #90: system-coreutils-_usr_bin_nohup_--version.sh .................   Passed    0.06 sec
-        Start  91: system-coreutils-_usr_bin_nproc_--version.sh
- 91/347 Test  #91: system-coreutils-_usr_bin_nproc_--version.sh .................   Passed    0.06 sec
-        Start  92: system-coreutils-_usr_bin_numfmt_--version.sh
- 92/347 Test  #92: system-coreutils-_usr_bin_numfmt_--version.sh ................   Passed    0.06 sec
-        Start  93: system-coreutils-_usr_bin_od_--version.sh
- 93/347 Test  #93: system-coreutils-_usr_bin_od_--version.sh ....................   Passed    0.06 sec
-        Start  94: system-coreutils-_usr_bin_paste_--version.sh
- 94/347 Test  #94: system-coreutils-_usr_bin_paste_--version.sh .................   Passed    0.06 sec
-        Start  95: system-coreutils-_usr_bin_pathchk_--version.sh
- 95/347 Test  #95: system-coreutils-_usr_bin_pathchk_--version.sh ...............   Passed    0.06 sec
-        Start  96: system-coreutils-_usr_bin_pinky_--version.sh
- 96/347 Test  #96: system-coreutils-_usr_bin_pinky_--version.sh .................   Passed    0.06 sec
-        Start  97: system-coreutils-_usr_bin_pr_--version.sh
- 97/347 Test  #97: system-coreutils-_usr_bin_pr_--version.sh ....................   Passed    0.06 sec
-        Start  98: system-coreutils-_usr_bin_printenv_--version.sh
- 98/347 Test  #98: system-coreutils-_usr_bin_printenv_--version.sh ..............   Passed    0.06 sec
-        Start  99: system-coreutils-_usr_bin_printf_--version.sh
- 99/347 Test  #99: system-coreutils-_usr_bin_printf_--version.sh ................   Passed    0.06 sec
-        Start 100: system-coreutils-_usr_bin_ptx_--version.sh
-100/347 Test #100: system-coreutils-_usr_bin_ptx_--version.sh ...................   Passed    0.06 sec
-        Start 101: system-coreutils-_usr_bin_pwd.sh
-101/347 Test #101: system-coreutils-_usr_bin_pwd.sh .............................   Passed    0.06 sec
-        Start 102: system-coreutils-_usr_bin_readlink_--version.sh
-102/347 Test #102: system-coreutils-_usr_bin_readlink_--version.sh ..............   Passed    0.06 sec
-        Start 103: system-coreutils-_usr_bin_realpath_--version.sh
-103/347 Test #103: system-coreutils-_usr_bin_realpath_--version.sh ..............   Passed    0.06 sec
-        Start 104: system-coreutils-_usr_bin_rm_--version.sh
-104/347 Test #104: system-coreutils-_usr_bin_rm_--version.sh ....................   Passed    0.06 sec
-        Start 105: system-coreutils-_usr_bin_rmdir_--version.sh
-105/347 Test #105: system-coreutils-_usr_bin_rmdir_--version.sh .................   Passed    0.06 sec
-        Start 106: system-coreutils-_usr_bin_runcon_--version.sh
-106/347 Test #106: system-coreutils-_usr_bin_runcon_--version.sh ................   Passed    0.06 sec
-        Start 107: system-coreutils-_usr_bin_seq_--version.sh
-107/347 Test #107: system-coreutils-_usr_bin_seq_--version.sh ...................   Passed    0.06 sec
-        Start 108: system-coreutils-_usr_bin_sha1sum_--version.sh
-108/347 Test #108: system-coreutils-_usr_bin_sha1sum_--version.sh ...............   Passed    0.06 sec
-        Start 109: system-coreutils-_usr_bin_sha224sum_--version.sh
-109/347 Test #109: system-coreutils-_usr_bin_sha224sum_--version.sh .............   Passed    0.06 sec
-        Start 110: system-coreutils-_usr_bin_sha256sum_--version.sh
-110/347 Test #110: system-coreutils-_usr_bin_sha256sum_--version.sh .............   Passed    0.06 sec
-        Start 111: system-coreutils-_usr_bin_sha384sum_--version.sh
-111/347 Test #111: system-coreutils-_usr_bin_sha384sum_--version.sh .............   Passed    0.06 sec
-        Start 112: system-coreutils-_usr_bin_sha512sum_--version.sh
-112/347 Test #112: system-coreutils-_usr_bin_sha512sum_--version.sh .............   Passed    0.06 sec
-        Start 113: system-coreutils-_usr_bin_shred_--version.sh
-113/347 Test #113: system-coreutils-_usr_bin_shred_--version.sh .................   Passed    0.06 sec
-        Start 114: system-coreutils-_usr_bin_shuf_--version.sh
-114/347 Test #114: system-coreutils-_usr_bin_shuf_--version.sh ..................   Passed    0.06 sec
-        Start 115: system-coreutils-_usr_bin_sleep_--version.sh
-115/347 Test #115: system-coreutils-_usr_bin_sleep_--version.sh .................   Passed    0.06 sec
-        Start 116: system-coreutils-_usr_bin_sort_--version.sh
-116/347 Test #116: system-coreutils-_usr_bin_sort_--version.sh ..................   Passed    0.06 sec
-        Start 117: system-coreutils-_usr_bin_split_--version.sh
-117/347 Test #117: system-coreutils-_usr_bin_split_--version.sh .................   Passed    0.06 sec
-        Start 118: system-coreutils-_usr_bin_stat_--version.sh
-118/347 Test #118: system-coreutils-_usr_bin_stat_--version.sh ..................   Passed    0.06 sec
-        Start 119: system-coreutils-_usr_bin_stdbuf_--version.sh
-119/347 Test #119: system-coreutils-_usr_bin_stdbuf_--version.sh ................   Passed    0.06 sec
-        Start 120: system-coreutils-_usr_bin_stty_--version.sh
-120/347 Test #120: system-coreutils-_usr_bin_stty_--version.sh ..................   Passed    0.06 sec
-        Start 121: system-coreutils-_usr_bin_sum_--version.sh
-121/347 Test #121: system-coreutils-_usr_bin_sum_--version.sh ...................   Passed    0.06 sec
-        Start 122: system-coreutils-_usr_bin_sync_--version.sh
-122/347 Test #122: system-coreutils-_usr_bin_sync_--version.sh ..................   Passed    0.06 sec
-        Start 123: system-coreutils-_usr_bin_tac_--version.sh
-123/347 Test #123: system-coreutils-_usr_bin_tac_--version.sh ...................   Passed    0.06 sec
-        Start 124: system-coreutils-_usr_bin_tail_--version.sh
-124/347 Test #124: system-coreutils-_usr_bin_tail_--version.sh ..................   Passed    0.06 sec
-        Start 125: system-coreutils-_usr_bin_tee_--version.sh
-125/347 Test #125: system-coreutils-_usr_bin_tee_--version.sh ...................   Passed    0.06 sec
-        Start 126: system-coreutils-_usr_bin_test_--version.sh
-126/347 Test #126: system-coreutils-_usr_bin_test_--version.sh ..................   Passed    0.06 sec
-        Start 127: system-coreutils-_usr_bin_timeout_--version.sh
-127/347 Test #127: system-coreutils-_usr_bin_timeout_--version.sh ...............   Passed    0.06 sec
-        Start 128: system-coreutils-_usr_bin_touch_--version.sh
-128/347 Test #128: system-coreutils-_usr_bin_touch_--version.sh .................   Passed    0.06 sec
-        Start 129: system-coreutils-_usr_bin_tr_--version.sh
-129/347 Test #129: system-coreutils-_usr_bin_tr_--version.sh ....................   Passed    0.06 sec
-        Start 130: system-coreutils-_usr_bin_true_--version.sh
-130/347 Test #130: system-coreutils-_usr_bin_true_--version.sh ..................   Passed    0.06 sec
-        Start 131: system-coreutils-_usr_bin_truncate_--version.sh
-131/347 Test #131: system-coreutils-_usr_bin_truncate_--version.sh ..............   Passed    0.06 sec
-        Start 132: system-coreutils-_usr_bin_tsort_--version.sh
-132/347 Test #132: system-coreutils-_usr_bin_tsort_--version.sh .................   Passed    0.06 sec
-        Start 133: system-coreutils-_usr_bin_tty_--version.sh
-133/347 Test #133: system-coreutils-_usr_bin_tty_--version.sh ...................   Passed    0.06 sec
-        Start 134: system-coreutils-_usr_bin_uname_--version.sh
-134/347 Test #134: system-coreutils-_usr_bin_uname_--version.sh .................   Passed    0.06 sec
-        Start 135: system-coreutils-_usr_bin_unexpand_--version.sh
-135/347 Test #135: system-coreutils-_usr_bin_unexpand_--version.sh ..............   Passed    0.06 sec
-        Start 136: system-coreutils-_usr_bin_uniq_--version.sh
-136/347 Test #136: system-coreutils-_usr_bin_uniq_--version.sh ..................   Passed    0.06 sec
-        Start 137: system-coreutils-_usr_bin_unlink_--version.sh
-137/347 Test #137: system-coreutils-_usr_bin_unlink_--version.sh ................   Passed    0.06 sec
-        Start 138: system-coreutils-_usr_bin_users_--version.sh
-138/347 Test #138: system-coreutils-_usr_bin_users_--version.sh .................   Passed    0.10 sec
-        Start 139: system-coreutils-_usr_bin_vdir_--version.sh
-139/347 Test #139: system-coreutils-_usr_bin_vdir_--version.sh ..................   Passed    0.06 sec
-        Start 140: system-coreutils-_usr_bin_wc_--version.sh
-140/347 Test #140: system-coreutils-_usr_bin_wc_--version.sh ....................   Passed    0.06 sec
-        Start 141: system-coreutils-_usr_bin_who_--version.sh
-141/347 Test #141: system-coreutils-_usr_bin_who_--version.sh ...................   Passed    0.06 sec
-        Start 142: system-coreutils-_usr_bin_whoami_--version.sh
-142/347 Test #142: system-coreutils-_usr_bin_whoami_--version.sh ................   Passed    0.06 sec
-        Start 143: system-coreutils-_usr_bin_yes_--version.sh
-143/347 Test #143: system-coreutils-_usr_bin_yes_--version.sh ...................   Passed    0.06 sec
-        Start 144: system-coreutils-_usr_sbin_chroot_--version.sh
-144/347 Test #144: system-coreutils-_usr_sbin_chroot_--version.sh ...............   Passed    0.06 sec
-        Start 145: system-curl-_usr_bin_curl_--version.sh
-145/347 Test #145: system-curl-_usr_bin_curl_--version.sh .......................   Passed    0.06 sec
-        Start 146: system-firefox-_usr_bin_firefox_--help.sh
-146/347 Test #146: system-firefox-_usr_bin_firefox_--help.sh ....................   Passed    2.29 sec
-        Start 147: GCCcore-6.4.0-gcc_--version.sh
-147/347 Test #147: GCCcore-6.4.0-gcc_--version.sh ...............................   Passed    0.22 sec
-        Start 148: GCCcore-6.4.0-gcc-nm_-V.sh
-148/347 Test #148: GCCcore-6.4.0-gcc-nm_-V.sh ...................................   Passed    0.15 sec
-        Start 149: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh
-149/347 Test #149: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.sh ...........   Passed    0.15 sec
-        Start 150: GCCcore-6.4.0-cpp_--version.sh
-150/347 Test #150: GCCcore-6.4.0-cpp_--version.sh ...............................   Passed    0.15 sec
-        Start 151: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh
-151/347 Test #151: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.sh ......   Passed    0.14 sec
-        Start 152: GCCcore-6.4.0-gcov_--version.sh
-152/347 Test #152: GCCcore-6.4.0-gcov_--version.sh ..............................   Passed    0.14 sec
-        Start 153: GCCcore-6.4.0-gcov-dump_-V.sh
-153/347 Test #153: GCCcore-6.4.0-gcov-dump_-V.sh ................................   Passed    0.15 sec
-        Start 154: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh
-154/347 Test #154: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.sh ...........   Passed    0.15 sec
-        Start 155: GCCcore-6.4.0-gcc-ar_-V.sh
-155/347 Test #155: GCCcore-6.4.0-gcc-ar_-V.sh ...................................   Passed    0.15 sec
-        Start 156: GCCcore-6.4.0-gcov-tool_--version.sh
-156/347 Test #156: GCCcore-6.4.0-gcov-tool_--version.sh .........................   Passed    0.14 sec
-        Start 157: GCCcore-6.4.0-omp_hello.f.sh
-157/347 Test #157: GCCcore-6.4.0-omp_hello.f.sh .................................   Passed    0.19 sec
-        Start 158: GCCcore-6.4.0-hello.c.sh
-158/347 Test #158: GCCcore-6.4.0-hello.c.sh .....................................   Passed    0.18 sec
-        Start 159: GCCcore-6.4.0-hello.f.sh
-159/347 Test #159: GCCcore-6.4.0-hello.f.sh .....................................   Passed    0.18 sec
-        Start 160: GCCcore-6.4.0-omp_getEnvInfo.f.sh
-160/347 Test #160: GCCcore-6.4.0-omp_getEnvInfo.f.sh ............................   Passed    0.20 sec
-        Start 161: GCCcore-6.4.0-omp_workshare1.f.sh
-161/347 Test #161: GCCcore-6.4.0-omp_workshare1.f.sh ............................   Passed    0.20 sec
-        Start 162: GCCcore-6.4.0-omp_dotprod_serial.c.sh
-162/347 Test #162: GCCcore-6.4.0-omp_dotprod_serial.c.sh ........................   Passed    0.20 sec
-        Start 163: GCCcore-6.4.0-omp_hello.c_nthread_5.sh
-163/347 Test #163: GCCcore-6.4.0-omp_hello.c_nthread_5.sh .......................   Passed    0.19 sec
-        Start 164: GCCcore-6.4.0-omp_hello.c_nthread_9.sh
-164/347 Test #164: GCCcore-6.4.0-omp_hello.c_nthread_9.sh .......................   Passed    0.19 sec
-        Start 165: GCCcore-6.4.0-omp_hello.c_nthread_13.sh
-165/347 Test #165: GCCcore-6.4.0-omp_hello.c_nthread_13.sh ......................   Passed    0.19 sec
-        Start 166: GCCcore-6.4.0-omp_hello.c_nthread_17.sh
-166/347 Test #166: GCCcore-6.4.0-omp_hello.c_nthread_17.sh ......................   Passed    0.19 sec
-        Start 167: GCCcore-6.4.0-omp_getEnvInfo.c.sh
-167/347 Test #167: GCCcore-6.4.0-omp_getEnvInfo.c.sh ............................   Passed    0.19 sec
-        Start 168: GCCcore-6.4.0-omp_workshare2.c.sh
-168/347 Test #168: GCCcore-6.4.0-omp_workshare2.c.sh ............................   Passed    0.20 sec
-        Start 169: GCCcore-6.4.0-omp_workshare2.f.sh
-169/347 Test #169: GCCcore-6.4.0-omp_workshare2.f.sh ............................   Passed    0.21 sec
-        Start 170: GCCcore-6.4.0-omp_orphan.c.sh
-170/347 Test #170: GCCcore-6.4.0-omp_orphan.c.sh ................................   Passed    0.20 sec
-        Start 171: GCCcore-6.4.0-omp_dotprod_openmp.c.sh
-171/347 Test #171: GCCcore-6.4.0-omp_dotprod_openmp.c.sh ........................   Passed    0.20 sec
-        Start 172: GCCcore-6.4.0-omp_reduction.f.sh
-172/347 Test #172: GCCcore-6.4.0-omp_reduction.f.sh .............................   Passed    0.19 sec
-        Start 173: GCCcore-6.4.0-omp_workshare1.c.sh
-173/347 Test #173: GCCcore-6.4.0-omp_workshare1.c.sh ............................   Passed    0.20 sec
-        Start 174: GCCcore-6.4.0-omp_mm.f.sh
-174/347 Test #174: GCCcore-6.4.0-omp_mm.f.sh ....................................   Passed    0.23 sec
-        Start 175: GCCcore-6.4.0-hello.cpp.sh
-175/347 Test #175: GCCcore-6.4.0-hello.cpp.sh ...................................   Passed    0.48 sec
-        Start 176: GCCcore-6.4.0-omp_reduction.c.sh
-176/347 Test #176: GCCcore-6.4.0-omp_reduction.c.sh .............................   Passed    0.20 sec
-        Start 177: GCCcore-6.4.0-arglist.c.sh
-177/347 Test #177: GCCcore-6.4.0-arglist.c.sh ...................................   Passed    0.18 sec
-        Start 178: GCCcore-6.4.0-omp_mm.c_nthread_2.sh
-178/347 Test #178: GCCcore-6.4.0-omp_mm.c_nthread_2.sh ..........................   Passed    0.22 sec
-        Start 179: GCCcore-6.4.0-omp_mm.c_nthread_4.sh
-179/347 Test #179: GCCcore-6.4.0-omp_mm.c_nthread_4.sh ..........................   Passed    0.22 sec
-        Start 180: GCCcore-6.4.0-omp_mm.c_nthread_6.sh
-180/347 Test #180: GCCcore-6.4.0-omp_mm.c_nthread_6.sh ..........................   Passed    0.22 sec
-        Start 181: GCCcore-6.4.0-omp_mm.c_nthread_8.sh
-181/347 Test #181: GCCcore-6.4.0-omp_mm.c_nthread_8.sh ..........................   Passed    0.22 sec
-        Start 182: GCCcore-6.4.0-omp_mm.c_nthread_10.sh
-182/347 Test #182: GCCcore-6.4.0-omp_mm.c_nthread_10.sh .........................   Passed    0.22 sec
-        Start 183: GCCcore-6.4.0-omp_mm.c_nthread_12.sh
-183/347 Test #183: GCCcore-6.4.0-omp_mm.c_nthread_12.sh .........................   Passed    0.22 sec
-        Start 184: GCCcore-6.4.0-omp_mm.c_nthread_14.sh
-184/347 Test #184: GCCcore-6.4.0-omp_mm.c_nthread_14.sh .........................   Passed    0.22 sec
-        Start 185: GCCcore-6.4.0-omp_mm.c_nthread_16.sh
-185/347 Test #185: GCCcore-6.4.0-omp_mm.c_nthread_16.sh .........................   Passed    0.23 sec
-        Start 186: GCCcore-6.4.0-omp_dotprod_openmp.f.sh
-186/347 Test #186: GCCcore-6.4.0-omp_dotprod_openmp.f.sh ........................   Passed    0.20 sec
-        Start 187: GCCcore-6.4.0-omp_orphan.f.sh
-187/347 Test #187: GCCcore-6.4.0-omp_orphan.f.sh ................................   Passed    0.19 sec
-        Start 188: GCCcore-6.4.0-omp_dotprod_serial.f.sh
-188/347 Test #188: GCCcore-6.4.0-omp_dotprod_serial.f.sh ........................   Passed    0.19 sec
-        Start 189: GCCcore-6.4.0-gcc_--version.csh
-189/347 Test #189: GCCcore-6.4.0-gcc_--version.csh ..............................   Passed    1.01 sec
-        Start 190: GCCcore-6.4.0-gcc-nm_-V.csh
-190/347 Test #190: GCCcore-6.4.0-gcc-nm_-V.csh ..................................   Passed    0.98 sec
-        Start 191: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.csh
-191/347 Test #191: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.csh ..........   Passed    0.98 sec
-        Start 192: GCCcore-6.4.0-cpp_--version.csh
-192/347 Test #192: GCCcore-6.4.0-cpp_--version.csh ..............................   Passed    0.98 sec
-        Start 193: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.csh
-193/347 Test #193: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.csh .....   Passed    1.02 sec
-        Start 194: GCCcore-6.4.0-gcov_--version.csh
-194/347 Test #194: GCCcore-6.4.0-gcov_--version.csh .............................   Passed    0.98 sec
-        Start 195: GCCcore-6.4.0-gcov-dump_-V.csh
-195/347 Test #195: GCCcore-6.4.0-gcov-dump_-V.csh ...............................   Passed    0.99 sec
-        Start 196: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.csh
-196/347 Test #196: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.csh ..........   Passed    0.99 sec
-        Start 197: GCCcore-6.4.0-gcc-ar_-V.csh
-197/347 Test #197: GCCcore-6.4.0-gcc-ar_-V.csh ..................................   Passed    1.00 sec
-        Start 198: GCCcore-6.4.0-gcov-tool_--version.csh
-198/347 Test #198: GCCcore-6.4.0-gcov-tool_--version.csh ........................   Passed    1.08 sec
-        Start 199: GCCcore-6.4.0-omp_hello.f.csh
-199/347 Test #199: GCCcore-6.4.0-omp_hello.f.csh ................................   Passed    1.02 sec
-        Start 200: GCCcore-6.4.0-hello.c.csh
-200/347 Test #200: GCCcore-6.4.0-hello.c.csh ....................................   Passed    1.02 sec
-        Start 201: GCCcore-6.4.0-hello.f.csh
-201/347 Test #201: GCCcore-6.4.0-hello.f.csh ....................................   Passed    1.02 sec
-        Start 202: GCCcore-6.4.0-omp_getEnvInfo.f.csh
-202/347 Test #202: GCCcore-6.4.0-omp_getEnvInfo.f.csh ...........................   Passed    1.03 sec
-        Start 203: GCCcore-6.4.0-omp_workshare1.f.csh
-203/347 Test #203: GCCcore-6.4.0-omp_workshare1.f.csh ...........................   Passed    1.04 sec
-        Start 204: GCCcore-6.4.0-omp_dotprod_serial.c.csh
-204/347 Test #204: GCCcore-6.4.0-omp_dotprod_serial.c.csh .......................   Passed    1.02 sec
-        Start 205: GCCcore-6.4.0-omp_hello.c_nthread_5.csh
-205/347 Test #205: GCCcore-6.4.0-omp_hello.c_nthread_5.csh ......................   Passed    1.03 sec
-        Start 206: GCCcore-6.4.0-omp_hello.c_nthread_9.csh
-206/347 Test #206: GCCcore-6.4.0-omp_hello.c_nthread_9.csh ......................   Passed    1.02 sec
-        Start 207: GCCcore-6.4.0-omp_hello.c_nthread_13.csh
-207/347 Test #207: GCCcore-6.4.0-omp_hello.c_nthread_13.csh .....................   Passed    1.03 sec
-        Start 208: GCCcore-6.4.0-omp_hello.c_nthread_17.csh
-208/347 Test #208: GCCcore-6.4.0-omp_hello.c_nthread_17.csh .....................   Passed    1.03 sec
-        Start 209: GCCcore-6.4.0-omp_getEnvInfo.c.csh
-209/347 Test #209: GCCcore-6.4.0-omp_getEnvInfo.c.csh ...........................   Passed    1.03 sec
-        Start 210: GCCcore-6.4.0-omp_workshare2.c.csh
-210/347 Test #210: GCCcore-6.4.0-omp_workshare2.c.csh ...........................   Passed    1.05 sec
-        Start 211: GCCcore-6.4.0-omp_workshare2.f.csh
-211/347 Test #211: GCCcore-6.4.0-omp_workshare2.f.csh ...........................   Passed    1.04 sec
-        Start 212: GCCcore-6.4.0-omp_orphan.c.csh
-212/347 Test #212: GCCcore-6.4.0-omp_orphan.c.csh ...............................   Passed    1.05 sec
-        Start 213: GCCcore-6.4.0-omp_dotprod_openmp.c.csh
-213/347 Test #213: GCCcore-6.4.0-omp_dotprod_openmp.c.csh .......................   Passed    1.05 sec
-        Start 214: GCCcore-6.4.0-omp_reduction.f.csh
-214/347 Test #214: GCCcore-6.4.0-omp_reduction.f.csh ............................   Passed    1.04 sec
-        Start 215: GCCcore-6.4.0-omp_workshare1.c.csh
-215/347 Test #215: GCCcore-6.4.0-omp_workshare1.c.csh ...........................   Passed    1.04 sec
-        Start 216: GCCcore-6.4.0-omp_mm.f.csh
-216/347 Test #216: GCCcore-6.4.0-omp_mm.f.csh ...................................   Passed    1.07 sec
-        Start 217: GCCcore-6.4.0-hello.cpp.csh
-217/347 Test #217: GCCcore-6.4.0-hello.cpp.csh ..................................   Passed    1.31 sec
-        Start 218: GCCcore-6.4.0-omp_reduction.c.csh
-218/347 Test #218: GCCcore-6.4.0-omp_reduction.c.csh ............................   Passed    1.05 sec
-        Start 219: GCCcore-6.4.0-arglist.c.csh
-219/347 Test #219: GCCcore-6.4.0-arglist.c.csh ..................................   Passed    1.02 sec
-        Start 220: GCCcore-6.4.0-omp_mm.c_nthread_2.csh
-220/347 Test #220: GCCcore-6.4.0-omp_mm.c_nthread_2.csh .........................   Passed    1.07 sec
-        Start 221: GCCcore-6.4.0-omp_mm.c_nthread_4.csh
-221/347 Test #221: GCCcore-6.4.0-omp_mm.c_nthread_4.csh .........................   Passed    1.07 sec
-        Start 222: GCCcore-6.4.0-omp_mm.c_nthread_6.csh
-222/347 Test #222: GCCcore-6.4.0-omp_mm.c_nthread_6.csh .........................   Passed    1.07 sec
-        Start 223: GCCcore-6.4.0-omp_mm.c_nthread_8.csh
-223/347 Test #223: GCCcore-6.4.0-omp_mm.c_nthread_8.csh .........................   Passed    1.10 sec
-        Start 224: GCCcore-6.4.0-omp_mm.c_nthread_10.csh
-224/347 Test #224: GCCcore-6.4.0-omp_mm.c_nthread_10.csh ........................   Passed    1.07 sec
-        Start 225: GCCcore-6.4.0-omp_mm.c_nthread_12.csh
-225/347 Test #225: GCCcore-6.4.0-omp_mm.c_nthread_12.csh ........................   Passed    1.07 sec
-        Start 226: GCCcore-6.4.0-omp_mm.c_nthread_14.csh
-226/347 Test #226: GCCcore-6.4.0-omp_mm.c_nthread_14.csh ........................   Passed    1.07 sec
-        Start 227: GCCcore-6.4.0-omp_mm.c_nthread_16.csh
-227/347 Test #227: GCCcore-6.4.0-omp_mm.c_nthread_16.csh ........................   Passed    1.08 sec
-        Start 228: GCCcore-6.4.0-omp_dotprod_openmp.f.csh
-228/347 Test #228: GCCcore-6.4.0-omp_dotprod_openmp.f.csh .......................   Passed    1.04 sec
-        Start 229: GCCcore-6.4.0-omp_orphan.f.csh
-229/347 Test #229: GCCcore-6.4.0-omp_orphan.f.csh ...............................   Passed    1.04 sec
-        Start 230: GCCcore-6.4.0-omp_dotprod_serial.f.csh
-230/347 Test #230: GCCcore-6.4.0-omp_dotprod_serial.f.csh .......................   Passed    1.02 sec
-        Start 231: GCCcore-6.4.0-gcc_--version.bash
-231/347 Test #231: GCCcore-6.4.0-gcc_--version.bash .............................   Passed    0.15 sec
-        Start 232: GCCcore-6.4.0-gcc-nm_-V.bash
-232/347 Test #232: GCCcore-6.4.0-gcc-nm_-V.bash .................................   Passed    0.15 sec
-        Start 233: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.bash
-233/347 Test #233: GCCcore-6.4.0-x86_64-pc-linux-gnu-g++_--version.bash .........   Passed    0.15 sec
-        Start 234: GCCcore-6.4.0-cpp_--version.bash
-234/347 Test #234: GCCcore-6.4.0-cpp_--version.bash .............................   Passed    0.15 sec
-        Start 235: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.bash
-235/347 Test #235: GCCcore-6.4.0-x86_64-pc-linux-gnu-gfortran_--version.bash ....   Passed    0.15 sec
-        Start 236: GCCcore-6.4.0-gcov_--version.bash
-236/347 Test #236: GCCcore-6.4.0-gcov_--version.bash ............................   Passed    0.15 sec
-        Start 237: GCCcore-6.4.0-gcov-dump_-V.bash
-237/347 Test #237: GCCcore-6.4.0-gcov-dump_-V.bash ..............................   Passed    0.15 sec
-        Start 238: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.bash
-238/347 Test #238: GCCcore-6.4.0-x86_64-pc-linux-gnu-gcc-ranlib_-V.bash .........   Passed    0.15 sec
-        Start 239: GCCcore-6.4.0-gcc-ar_-V.bash
-239/347 Test #239: GCCcore-6.4.0-gcc-ar_-V.bash .................................   Passed    0.15 sec
-        Start 240: GCCcore-6.4.0-gcov-tool_--version.bash
-240/347 Test #240: GCCcore-6.4.0-gcov-tool_--version.bash .......................   Passed    0.15 sec
-        Start 241: GCCcore-6.4.0-omp_hello.f.bash
-241/347 Test #241: GCCcore-6.4.0-omp_hello.f.bash ...............................   Passed    0.19 sec
-        Start 242: GCCcore-6.4.0-hello.c.bash
-242/347 Test #242: GCCcore-6.4.0-hello.c.bash ...................................   Passed    0.18 sec
-        Start 243: GCCcore-6.4.0-hello.f.bash
-243/347 Test #243: GCCcore-6.4.0-hello.f.bash ...................................   Passed    0.18 sec
-        Start 244: GCCcore-6.4.0-omp_getEnvInfo.f.bash
-244/347 Test #244: GCCcore-6.4.0-omp_getEnvInfo.f.bash ..........................   Passed    0.19 sec
-        Start 245: GCCcore-6.4.0-omp_workshare1.f.bash
-245/347 Test #245: GCCcore-6.4.0-omp_workshare1.f.bash ..........................   Passed    0.20 sec
-        Start 246: GCCcore-6.4.0-omp_dotprod_serial.c.bash
-246/347 Test #246: GCCcore-6.4.0-omp_dotprod_serial.c.bash ......................   Passed    0.19 sec
-        Start 247: GCCcore-6.4.0-omp_hello.c_nthread_5.bash
-247/347 Test #247: GCCcore-6.4.0-omp_hello.c_nthread_5.bash .....................   Passed    0.19 sec
-        Start 248: GCCcore-6.4.0-omp_hello.c_nthread_9.bash
-248/347 Test #248: GCCcore-6.4.0-omp_hello.c_nthread_9.bash .....................   Passed    0.19 sec
-        Start 249: GCCcore-6.4.0-omp_hello.c_nthread_13.bash
-249/347 Test #249: GCCcore-6.4.0-omp_hello.c_nthread_13.bash ....................   Passed    0.19 sec
-        Start 250: GCCcore-6.4.0-omp_hello.c_nthread_17.bash
-250/347 Test #250: GCCcore-6.4.0-omp_hello.c_nthread_17.bash ....................   Passed    0.19 sec
-        Start 251: GCCcore-6.4.0-omp_getEnvInfo.c.bash
-251/347 Test #251: GCCcore-6.4.0-omp_getEnvInfo.c.bash ..........................   Passed    0.19 sec
-        Start 252: GCCcore-6.4.0-omp_workshare2.c.bash
-252/347 Test #252: GCCcore-6.4.0-omp_workshare2.c.bash ..........................   Passed    0.20 sec
-        Start 253: GCCcore-6.4.0-omp_workshare2.f.bash
-253/347 Test #253: GCCcore-6.4.0-omp_workshare2.f.bash ..........................   Passed    0.21 sec
-        Start 254: GCCcore-6.4.0-omp_orphan.c.bash
-254/347 Test #254: GCCcore-6.4.0-omp_orphan.c.bash ..............................   Passed    0.20 sec
-        Start 255: GCCcore-6.4.0-omp_dotprod_openmp.c.bash
-255/347 Test #255: GCCcore-6.4.0-omp_dotprod_openmp.c.bash ......................   Passed    0.20 sec
-        Start 256: GCCcore-6.4.0-omp_reduction.f.bash
-256/347 Test #256: GCCcore-6.4.0-omp_reduction.f.bash ...........................   Passed    0.20 sec
-        Start 257: GCCcore-6.4.0-omp_workshare1.c.bash
-257/347 Test #257: GCCcore-6.4.0-omp_workshare1.c.bash ..........................   Passed    0.20 sec
-        Start 258: GCCcore-6.4.0-omp_mm.f.bash
-258/347 Test #258: GCCcore-6.4.0-omp_mm.f.bash ..................................   Passed    0.24 sec
-        Start 259: GCCcore-6.4.0-hello.cpp.bash
-259/347 Test #259: GCCcore-6.4.0-hello.cpp.bash .................................   Passed    0.44 sec
-        Start 260: GCCcore-6.4.0-omp_reduction.c.bash
-260/347 Test #260: GCCcore-6.4.0-omp_reduction.c.bash ...........................   Passed    0.20 sec
-        Start 261: GCCcore-6.4.0-arglist.c.bash
-261/347 Test #261: GCCcore-6.4.0-arglist.c.bash .................................   Passed    0.18 sec
-        Start 262: GCCcore-6.4.0-omp_mm.c_nthread_2.bash
-262/347 Test #262: GCCcore-6.4.0-omp_mm.c_nthread_2.bash ........................   Passed    0.22 sec
-        Start 263: GCCcore-6.4.0-omp_mm.c_nthread_4.bash
-263/347 Test #263: GCCcore-6.4.0-omp_mm.c_nthread_4.bash ........................   Passed    0.22 sec
-        Start 264: GCCcore-6.4.0-omp_mm.c_nthread_6.bash
-264/347 Test #264: GCCcore-6.4.0-omp_mm.c_nthread_6.bash ........................   Passed    0.22 sec
-        Start 265: GCCcore-6.4.0-omp_mm.c_nthread_8.bash
-265/347 Test #265: GCCcore-6.4.0-omp_mm.c_nthread_8.bash ........................   Passed    0.22 sec
-        Start 266: GCCcore-6.4.0-omp_mm.c_nthread_10.bash
-266/347 Test #266: GCCcore-6.4.0-omp_mm.c_nthread_10.bash .......................   Passed    0.22 sec
-        Start 267: GCCcore-6.4.0-omp_mm.c_nthread_12.bash
-267/347 Test #267: GCCcore-6.4.0-omp_mm.c_nthread_12.bash .......................   Passed    0.22 sec
-        Start 268: GCCcore-6.4.0-omp_mm.c_nthread_14.bash
-268/347 Test #268: GCCcore-6.4.0-omp_mm.c_nthread_14.bash .......................   Passed    0.23 sec
-        Start 269: GCCcore-6.4.0-omp_mm.c_nthread_16.bash
-269/347 Test #269: GCCcore-6.4.0-omp_mm.c_nthread_16.bash .......................   Passed    0.22 sec
-        Start 270: GCCcore-6.4.0-omp_dotprod_openmp.f.bash
-270/347 Test #270: GCCcore-6.4.0-omp_dotprod_openmp.f.bash ......................   Passed    0.20 sec
-        Start 271: GCCcore-6.4.0-omp_orphan.f.bash
-271/347 Test #271: GCCcore-6.4.0-omp_orphan.f.bash ..............................   Passed    0.20 sec
-        Start 272: GCCcore-6.4.0-omp_dotprod_serial.f.bash
-272/347 Test #272: GCCcore-6.4.0-omp_dotprod_serial.f.bash ......................   Passed    0.41 sec
-        Start 273: Python-2.7.14-intel-2018a-which_idle.sh
-273/347 Test #273: Python-2.7.14-intel-2018a-which_idle.sh ......................   Passed    0.24 sec
-        Start 274: Python-2.7.14-intel-2018a-which_python2.7-config.sh
-274/347 Test #274: Python-2.7.14-intel-2018a-which_python2.7-config.sh ..........   Passed    0.21 sec
-        Start 275: Python-2.7.14-intel-2018a-pydoc_-V.sh
-275/347 Test #275: Python-2.7.14-intel-2018a-pydoc_-V.sh ........................   Passed    0.32 sec
-        Start 276: Python-2.7.14-intel-2018a-2to3_--help.sh
-276/347 Test #276: Python-2.7.14-intel-2018a-2to3_--help.sh .....................   Passed    0.34 sec
-        Start 277: Python-2.7.14-intel-2018a-python2.7_-V.sh
-277/347 Test #277: Python-2.7.14-intel-2018a-python2.7_-V.sh ....................   Passed    0.21 sec
-        Start 278: Python-2.7.14-intel-2018a-smtpd.py_-V.sh
-278/347 Test #278: Python-2.7.14-intel-2018a-smtpd.py_-V.sh .....................   Passed    0.27 sec
-        Start 279: Python-2.7.14-intel-2018a-arg.sh
-279/347 Test #279: Python-2.7.14-intel-2018a-arg.sh .............................   Passed    0.24 sec
-        Start 280: Python-2.7.14-intel-2018a-array_1.sh
-280/347 Test #280: Python-2.7.14-intel-2018a-array_1.sh .........................   Passed    0.25 sec
-        Start 281: Python-2.7.14-intel-2018a-array_2.sh
-281/347 Test #281: Python-2.7.14-intel-2018a-array_2.sh .........................   Passed    0.24 sec
-        Start 282: Python-2.7.14-intel-2018a-array_3.sh
-282/347 Test #282: Python-2.7.14-intel-2018a-array_3.sh .........................   Passed    0.24 sec
-        Start 283: Python-2.7.14-intel-2018a-hello_logoutput.sh
-283/347 Test #283: Python-2.7.14-intel-2018a-hello_logoutput.sh .................   Passed    0.24 sec
-        Start 284: Python-2.7.14-intel-2018a-readline.sh
-284/347 Test #284: Python-2.7.14-intel-2018a-readline.sh ........................   Passed    0.25 sec
-        Start 285: Python-2.7.14-intel-2018a-dateutil-date.sh
-285/347 Test #285: Python-2.7.14-intel-2018a-dateutil-date.sh ...................   Passed    0.26 sec
-        Start 286: Python-2.7.14-GCCcore-6.4.0-bare-which_idle.sh
-286/347 Test #286: Python-2.7.14-GCCcore-6.4.0-bare-which_idle.sh ...............   Passed    0.17 sec
-        Start 287: Python-2.7.14-GCCcore-6.4.0-bare-which_python2.7-config.sh
-287/347 Test #287: Python-2.7.14-GCCcore-6.4.0-bare-which_python2.7-config.sh ...   Passed    0.18 sec
-        Start 288: Python-2.7.14-GCCcore-6.4.0-bare-pydoc_-V.sh
-288/347 Test #288: Python-2.7.14-GCCcore-6.4.0-bare-pydoc_-V.sh .................   Passed    0.24 sec
-        Start 289: Python-2.7.14-GCCcore-6.4.0-bare-2to3_--help.sh
-289/347 Test #289: Python-2.7.14-GCCcore-6.4.0-bare-2to3_--help.sh ..............   Passed    0.28 sec
-        Start 290: Python-2.7.14-GCCcore-6.4.0-bare-python2.7_-V.sh
-290/347 Test #290: Python-2.7.14-GCCcore-6.4.0-bare-python2.7_-V.sh .............   Passed    0.17 sec
-        Start 291: Python-2.7.14-GCCcore-6.4.0-bare-smtpd.py_-V.sh
-291/347 Test #291: Python-2.7.14-GCCcore-6.4.0-bare-smtpd.py_-V.sh ..............   Passed    0.21 sec
-        Start 292: Python-2.7.14-GCCcore-6.4.0-bare-arg.sh
-292/347 Test #292: Python-2.7.14-GCCcore-6.4.0-bare-arg.sh ......................   Passed    0.19 sec
-        Start 293: Python-2.7.14-GCCcore-6.4.0-bare-array_1.sh
-293/347 Test #293: Python-2.7.14-GCCcore-6.4.0-bare-array_1.sh ..................   Passed    0.19 sec
-        Start 294: Python-2.7.14-GCCcore-6.4.0-bare-array_2.sh
-294/347 Test #294: Python-2.7.14-GCCcore-6.4.0-bare-array_2.sh ..................   Passed    0.19 sec
-        Start 295: Python-2.7.14-GCCcore-6.4.0-bare-array_3.sh
-295/347 Test #295: Python-2.7.14-GCCcore-6.4.0-bare-array_3.sh ..................   Passed    0.20 sec
-        Start 296: Python-2.7.14-GCCcore-6.4.0-bare-hello_logoutput.sh
-296/347 Test #296: Python-2.7.14-GCCcore-6.4.0-bare-hello_logoutput.sh ..........   Passed    0.19 sec
-        Start 297: Python-2.7.14-GCCcore-6.4.0-bare-readline.sh
-297/347 Test #297: Python-2.7.14-GCCcore-6.4.0-bare-readline.sh .................   Passed    0.19 sec
-        Start 298: Python-2.7.14-GCCcore-6.4.0-which_idle.sh
-298/347 Test #298: Python-2.7.14-GCCcore-6.4.0-which_idle.sh ....................   Passed    0.17 sec
-        Start 299: Python-2.7.14-GCCcore-6.4.0-which_python2.7-config.sh
-299/347 Test #299: Python-2.7.14-GCCcore-6.4.0-which_python2.7-config.sh ........   Passed    0.17 sec
-        Start 300: Python-2.7.14-GCCcore-6.4.0-pydoc_-V.sh
-300/347 Test #300: Python-2.7.14-GCCcore-6.4.0-pydoc_-V.sh ......................   Passed    0.24 sec
-        Start 301: Python-2.7.14-GCCcore-6.4.0-2to3_--help.sh
-301/347 Test #301: Python-2.7.14-GCCcore-6.4.0-2to3_--help.sh ...................   Passed    0.28 sec
-        Start 302: Python-2.7.14-GCCcore-6.4.0-python2.7_-V.sh
-302/347 Test #302: Python-2.7.14-GCCcore-6.4.0-python2.7_-V.sh ..................   Passed    0.17 sec
-        Start 303: Python-2.7.14-GCCcore-6.4.0-smtpd.py_-V.sh
-303/347 Test #303: Python-2.7.14-GCCcore-6.4.0-smtpd.py_-V.sh ...................   Passed    0.21 sec
-        Start 304: Python-2.7.14-GCCcore-6.4.0-arg.sh
-304/347 Test #304: Python-2.7.14-GCCcore-6.4.0-arg.sh ...........................   Passed    0.19 sec
-        Start 305: Python-2.7.14-GCCcore-6.4.0-array_1.sh
-305/347 Test #305: Python-2.7.14-GCCcore-6.4.0-array_1.sh .......................   Passed    0.19 sec
-        Start 306: Python-2.7.14-GCCcore-6.4.0-array_2.sh
-306/347 Test #306: Python-2.7.14-GCCcore-6.4.0-array_2.sh .......................   Passed    0.19 sec
-        Start 307: Python-2.7.14-GCCcore-6.4.0-array_3.sh
-307/347 Test #307: Python-2.7.14-GCCcore-6.4.0-array_3.sh .......................   Passed    0.19 sec
-        Start 308: Python-2.7.14-GCCcore-6.4.0-hello_logoutput.sh
-308/347 Test #308: Python-2.7.14-GCCcore-6.4.0-hello_logoutput.sh ...............   Passed    0.19 sec
-        Start 309: Python-2.7.14-GCCcore-6.4.0-readline.sh
-309/347 Test #309: Python-2.7.14-GCCcore-6.4.0-readline.sh ......................   Passed    0.19 sec
-        Start 310: R-3.4.3-intel-2018a-X11-20171023-Rscript_--version.sh
-310/347 Test #310: R-3.4.3-intel-2018a-X11-20171023-Rscript_--version.sh ........   Passed    0.53 sec
-        Start 311: R-3.4.3-intel-2018a-X11-20171023-R_--version.sh
-311/347 Test #311: R-3.4.3-intel-2018a-X11-20171023-R_--version.sh ..............   Passed    0.55 sec
-        Start 312: R-3.4.3-intel-2018a-X11-20171023-hello.R.sh
-312/347 Test #312: R-3.4.3-intel-2018a-X11-20171023-hello.R.sh ..................   Passed    0.66 sec
-        Start 313: R-3.4.3-intel-2018a-X11-20171023-abc-basic_abc.sh
-313/347 Test #313: R-3.4.3-intel-2018a-X11-20171023-abc-basic_abc.sh ............***Failed    0.76 sec
-        Start 314: R-3.4.3-intel-2018a-X11-20171023-abc-postpr.sh
-314/347 Test #314: R-3.4.3-intel-2018a-X11-20171023-abc-postpr.sh ...............***Failed    0.63 sec
-        Start 315: R-3.4.3-intel-2018a-X11-20171023-abc-gfit.sh
-315/347 Test #315: R-3.4.3-intel-2018a-X11-20171023-abc-gfit.sh .................***Failed    1.24 sec
-        Start 316: R-3.4.3-intel-2018a-X11-20171023-abc-cv4abc.sh
-316/347 Test #316: R-3.4.3-intel-2018a-X11-20171023-abc-cv4abc.sh ...............***Failed    0.70 sec
-        Start 317: R-3.4.3-intel-2018a-X11-20171023-abc-human.sh
-317/347 Test #317: R-3.4.3-intel-2018a-X11-20171023-abc-human.sh ................   Passed    2.50 sec
-        Start 318: R-3.4.3-intel-2018a-X11-20171023-abc-expected.deviance.sh
-318/347 Test #318: R-3.4.3-intel-2018a-X11-20171023-abc-expected.deviance.sh ....   Passed    5.01 sec
-        Start 319: R-3.4.3-intel-2018a-X11-20171023-abc-cv4postpr.sh
-319/347 Test #319: R-3.4.3-intel-2018a-X11-20171023-abc-cv4postpr.sh ............***Failed    1.25 sec
-        Start 320: R-3.4.3-intel-2018a-X11-20171023-abc-gfitpca.sh
-320/347 Test #320: R-3.4.3-intel-2018a-X11-20171023-abc-gfitpca.sh ..............***Failed    1.24 sec
-        Start 321: Ruby-2.5.0-intel-2018a-which_htmldiff_--version.sh
-321/347 Test #321: Ruby-2.5.0-intel-2018a-which_htmldiff_--version.sh ...........   Passed    0.18 sec
-        Start 322: Ruby-2.5.0-intel-2018a-ri_--version.sh
-322/347 Test #322: Ruby-2.5.0-intel-2018a-ri_--version.sh .......................   Passed    0.36 sec
-        Start 323: Ruby-2.5.0-intel-2018a-rspec_--version.sh
-323/347 Test #323: Ruby-2.5.0-intel-2018a-rspec_--version.sh ....................   Passed    0.49 sec
-        Start 324: Ruby-2.5.0-intel-2018a-rdoc_--version.sh
-324/347 Test #324: Ruby-2.5.0-intel-2018a-rdoc_--version.sh .....................   Passed    0.43 sec
-        Start 325: Ruby-2.5.0-intel-2018a-bundler_--version.sh
-325/347 Test #325: Ruby-2.5.0-intel-2018a-bundler_--version.sh ..................   Passed    0.44 sec
-        Start 326: Ruby-2.5.0-intel-2018a-which_rubygems-cabin-test.sh
-326/347 Test #326: Ruby-2.5.0-intel-2018a-which_rubygems-cabin-test.sh ..........   Passed    0.19 sec
-        Start 327: Ruby-2.5.0-intel-2018a-gem_--version.sh
-327/347 Test #327: Ruby-2.5.0-intel-2018a-gem_--version.sh ......................   Passed    0.37 sec
-        Start 328: Ruby-2.5.0-intel-2018a-irb_--version.sh
-328/347 Test #328: Ruby-2.5.0-intel-2018a-irb_--version.sh ......................   Passed    0.32 sec
-        Start 329: Ruby-2.5.0-intel-2018a-launchy_--version.sh
-329/347 Test #329: Ruby-2.5.0-intel-2018a-launchy_--version.sh ..................   Passed    0.41 sec
-        Start 330: Ruby-2.5.0-intel-2018a-tilt_--help.sh
-330/347 Test #330: Ruby-2.5.0-intel-2018a-tilt_--help.sh ........................   Passed    0.35 sec
-        Start 331: Ruby-2.5.0-intel-2018a-rackup_--version.sh
-331/347 Test #331: Ruby-2.5.0-intel-2018a-rackup_--version.sh ...................   Passed    0.36 sec
-        Start 332: Ruby-2.5.0-intel-2018a-erb_--version.sh
-332/347 Test #332: Ruby-2.5.0-intel-2018a-erb_--version.sh ......................   Passed    0.26 sec
-        Start 333: Ruby-2.5.0-intel-2018a-ruby_--version.sh
-333/347 Test #333: Ruby-2.5.0-intel-2018a-ruby_--version.sh .....................   Passed    0.18 sec
-        Start 334: Ruby-2.5.0-intel-2018a-ldiff_--version.sh
-334/347 Test #334: Ruby-2.5.0-intel-2018a-ldiff_--version.sh ....................   Passed    0.35 sec
-        Start 335: Ruby-2.5.0-intel-2018a-rake_--version.sh
-335/347 Test #335: Ruby-2.5.0-intel-2018a-rake_--version.sh .....................   Passed    0.40 sec
-        Start 336: Ruby-2.5.0-intel-2018a-bundle_--version.sh
-336/347 Test #336: Ruby-2.5.0-intel-2018a-bundle_--version.sh ...................   Passed    0.42 sec
-        Start 337: Ruby-2.5.0-intel-2018a-addressable-uri.sh
-337/347 Test #337: Ruby-2.5.0-intel-2018a-addressable-uri.sh ....................   Passed    0.29 sec
-        Start 338: Perl-5.26.0-GCCcore-6.4.0-hello.pl.sh
-338/347 Test #338: Perl-5.26.0-GCCcore-6.4.0-hello.pl.sh ........................   Passed    0.16 sec
-        Start 339: Perl-5.26.0-GCCcore-6.4.0-AnyData-AnyData.sh
-339/347 Test #339: Perl-5.26.0-GCCcore-6.4.0-AnyData-AnyData.sh .................   Passed    0.20 sec
-        Start 340: CMake-3.9.5-GCCcore-6.4.0-which_ccmake.csh
-340/347 Test #340: CMake-3.9.5-GCCcore-6.4.0-which_ccmake.csh ...................   Passed    0.99 sec
-        Start 341: CMake-3.9.5-GCCcore-6.4.0-which_ctest.csh
-341/347 Test #341: CMake-3.9.5-GCCcore-6.4.0-which_ctest.csh ....................   Passed    0.99 sec
-        Start 342: CMake-3.9.5-GCCcore-6.4.0-which_cpack.csh
-342/347 Test #342: CMake-3.9.5-GCCcore-6.4.0-which_cpack.csh ....................   Passed    0.99 sec
-        Start 343: CMake-3.9.5-GCCcore-6.4.0-which_cmake.csh
-343/347 Test #343: CMake-3.9.5-GCCcore-6.4.0-which_cmake.csh ....................   Passed    0.99 sec
-        Start 344: CMake-3.9.5-GCCcore-6.4.0-which_ccmake.bash
-344/347 Test #344: CMake-3.9.5-GCCcore-6.4.0-which_ccmake.bash ..................   Passed    0.15 sec
-        Start 345: CMake-3.9.5-GCCcore-6.4.0-which_ctest.bash
-345/347 Test #345: CMake-3.9.5-GCCcore-6.4.0-which_ctest.bash ...................   Passed    0.15 sec
-        Start 346: CMake-3.9.5-GCCcore-6.4.0-which_cpack.bash
-346/347 Test #346: CMake-3.9.5-GCCcore-6.4.0-which_cpack.bash ...................   Passed    0.15 sec
-        Start 347: CMake-3.9.5-GCCcore-6.4.0-which_cmake.bash
-347/347 Test #347: CMake-3.9.5-GCCcore-6.4.0-which_cmake.bash ...................   Passed    0.16 sec
-
-98% tests passed, 7 tests failed out of 347
-
-Total Test time (real) = 105.17 sec
-
-The following tests FAILED:
-	 69 - system-coreutils-_usr_bin_false_--version.sh (Failed)
-	313 - R-3.4.3-intel-2018a-X11-20171023-abc-basic_abc.sh (Failed)
-	314 - R-3.4.3-intel-2018a-X11-20171023-abc-postpr.sh (Failed)
-	315 - R-3.4.3-intel-2018a-X11-20171023-abc-gfit.sh (Failed)
-	316 - R-3.4.3-intel-2018a-X11-20171023-abc-cv4abc.sh (Failed)
-	319 - R-3.4.3-intel-2018a-X11-20171023-abc-cv4postpr.sh (Failed)
-	320 - R-3.4.3-intel-2018a-X11-20171023-abc-gfitpca.sh (Failed)
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcc.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcc-nm.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_x86_64-pc-linux-gnu-g++.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_cpp.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_x86_64-pc-linux-gnu-gfortran.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcov.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcov-dump.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_x86_64-pc-linux-gnu-gcc-ranlib.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcc-ar.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/which_gcov-tool.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_hello.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/hello.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/hello.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_getEnvInfo.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_workshare1.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_dotprod_serial.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_hello.c_nthread_5.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_hello.c_nthread_9.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_hello.c_nthread_13.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_hello.c_nthread_17.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_getEnvInfo.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_workshare2.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_workshare2.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_orphan.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_dotprod_openmp.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_reduction.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_workshare1.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/hello.cpp.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_reduction.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/arglist.c.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_2.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_4.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_6.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_8.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_10.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_12.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_14.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_mm.c_nthread_16.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_dotprod_openmp.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_orphan.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/omp_dotprod_serial.f.sh >/dev/null 2>&1
+---------------------------------------------------------
+Test Successful
+---------------------------------------------------------
+==============================================================
+                         Test summary                         
+Application:  GCCcore/6.4.0
+Executed 42 tests
+Passed Tests: 42    Percentage: 100.0%
+Passed Tests: 0    Percentage: 0.0%

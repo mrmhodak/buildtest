@@ -73,6 +73,15 @@ If an easyconfig is not found you may get the following message
 
     Could not find easyconfig in /clust/app/easybuild/2018/IvyBridge/redhat/7.3/software/NWChem/6.8.revision47-intel-2018a-2017-12-14-Python-2.7.14/easybuild
 
+Listing buildtest software (``_buildtest list --buildtest-software``)
+----------------------------------------------------------------------
+
+buildtest can report the software packages supported by buildtest which are found in
+BUILDTEST_CONFIGS_REPO
+
+.. program-output:: head -n 15 scripts/List_Subcommand/buildtest_software.txt
+
+
 Formatting output (``_buildtest list --format``)
 ------------------------------------------------------
 

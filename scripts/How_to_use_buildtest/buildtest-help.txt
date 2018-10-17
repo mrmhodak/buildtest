@@ -1,8 +1,10 @@
 usage: buildtest [options]
 
 positional arguments:
-  {list,build,run}      subcommand help
+  {list,yaml,build,run}
+                        subcommand help
     list                list help
+    yaml                Options for building YAML configuration
     build               build help
     run                 run help
 
@@ -12,8 +14,6 @@ optional arguments:
   --logdir LOGDIR       Path to write buildtest logs. Override configuration BUILDTEST_LOGDIR
   --show                show buildtest environment configuration
   --show-keys           display yaml key description
-  -mns {HMNS,FNS}, --module-naming-scheme {HMNS,FNS}
-                        Specify module naming scheme for easybuild apps
   --scantest            Report all tests that can be built with buildtest by checking all available apps found in eb
                         stack and system packages
   --clean-logs          delete buildtest log directory ($BUILDTEST_LOGDIR)
@@ -32,11 +32,3 @@ Find Options:
                         scripts use -ft all
   --diff-trees DIFF_TREES
                         Show difference between two module trees
-
-YAML Options:
-  Options for YAML configuration
-
-  --sysyaml INSTALLED-SYSTEM-PACKAGE
-                        generate YAML configuration for binary test for system package
-  --ebyaml YAML-APP-CHOICES
-                        generate YAML configuration for binary test for software package

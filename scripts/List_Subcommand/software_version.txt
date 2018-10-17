@@ -126,4 +126,15 @@
 123  | 	xprop                     |	/clust/app/easybuild/2018/IvyBridge/redhat/7.3/modules/all/xprop/1.2.3-intel-2018a.lua
 124  | 	zlib                      |	/clust/app/easybuild/2018/IvyBridge/redhat/7.3/modules/all/zlib/1.2.11-GCCcore-6.4.0.lua
 125  | 	zlib                      |	/clust/app/easybuild/2018/IvyBridge/redhat/7.3/modules/all/zlib/1.2.11.lua
-Total Software Modules Found:  125
+126  | 	Anaconda2                 |	/clust/app/easybuild/2018/commons/modules/all/Anaconda2/5.1.0.lua
+127  | 	Anaconda3                 |	/clust/app/easybuild/2018/commons/modules/all/Anaconda3/5.1.0.lua
+128  | 	CUDA                      |	/clust/app/easybuild/2018/commons/modules/all/CUDA/7.5.18.lua
+129  | 	CUDA                      |	/clust/app/easybuild/2018/commons/modules/all/CUDA/8.0.61.lua
+130  | 	CUDA                      |	/clust/app/easybuild/2018/commons/modules/all/CUDA/9.1.85.lua
+131  | 	EasyBuild                 |	/clust/app/easybuild/2018/commons/modules/all/EasyBuild/3.5.3.lua
+132  | 	EasyBuild                 |	/clust/app/easybuild/2018/commons/modules/all/EasyBuild/3.6.0.lua
+133  | 	IGV                       |	/clust/app/easybuild/2018/commons/modules/all/IGV/2.3.98-Java-1.8.0_152.lua
+134  | 	Java                      |	/clust/app/easybuild/2018/commons/modules/all/Java/1.8.0_152.lua
+135  | 	cuDNN                     |	/clust/app/easybuild/2018/commons/modules/all/cuDNN/7.1-CUDA-9.1.85.lua
+136  | 	git-lfs                   |	/clust/app/easybuild/2018/commons/modules/all/git-lfs/2.4.0.lua
+Total Software Modules Found:  136

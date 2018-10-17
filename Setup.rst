@@ -125,4 +125,4 @@ You can check the current version of buildtest by running the following
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -V
-   buildtest version: 0.5.0
+   buildtest version: 0.6.0

@@ -57,8 +57,18 @@ Running tests
    Run_Subcommand
    module_load_test
 
-Writing YAML configuration
---------------------------
+binarytest yaml configuration
+-------------------------------
+
+.. toctree::
+   :maxdepth: 2
+
+   Yaml_Subcommand
+   BinaryTest_Yaml_Application
+   BinaryTest_Yaml_SystemPackages
+
+buildtest YAML Framework
+------------------------
 
 .. toctree::
    :maxdepth: 2
@@ -67,7 +77,6 @@ Writing YAML configuration
    Writing_Test_In_YAML
    MPI_yaml
    OpenMP_yaml
-   Generate_yaml_from_buildtest
    Jobscript_yaml_configuration
 
 
