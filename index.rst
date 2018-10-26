@@ -28,6 +28,7 @@ Getting Started
    :maxdepth: 2
 
    Setup
+   Buildtest_Variables
    How_to_use_BuildTest
    Show_Configuration
    scan_test
@@ -88,6 +89,15 @@ Jobscript Features
 
    Job_Template
    Automate_BatchJobs
+
+Additional Features
+--------------------
+
+.. toctree::
+    :maxdepth: 2
+
+    EasyBuild_Integration
+    OHPC_Integration
 
 
 

@@ -96,3 +96,25 @@ by running the following
 
 
 .. program-output:: cat scripts/Run_Subcommand/run-GCCcore-6.4.0.txt
+
+Output Test Results (``--output``)
+-------------------------------------
+
+By default output of test is disabled when using ``_buildtest run`` command. To enable
+output specify ``--output yes`` when running a test to view the output to STDOUT.
+
+Example below illustrates when output is enabled.
+
+::
+
+    (buildtest) [siddis14@adwnode1 buildtest-framework]$ _buildtest run -t /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/hello.c.sh --output yes
+    Executing Test: /tmp/buildtest-tests/ebapp/GCCcore/6.4.0/hello.c.sh >/dev/stdout 2>&1
+    ---------------------------------------------------------
+    hello world
+
+    Test Successful
+    ---------------------------------------------------------
+
+
+This option can work with other run options like ``--software``, ``--package``, ``--all-software``
+and ``--all-package``

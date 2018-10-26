@@ -70,15 +70,6 @@ Once you clone the repos you will want to edit your ``config.yaml`` file to spec
 buildtest configuration
 
 
-
-buildtest Configuration Variables
----------------------------------
-
-There are a few buildtest variables that you should be aware of when using buildtest.
-
-.. include:: Setup/buildtest-environment.txt
-
-
 Take a look at file ``$BUILDTEST_ROOT/config.dummy.yaml`` and copy this file to
 ``$HOME/.local/buildtest/config.yaml`` and edit the file accordingly. You can refer
 to ``config.example.yaml`` for more details
@@ -125,4 +116,4 @@ You can check the current version of buildtest by running the following
 .. code::
 
    [siddis14@amrndhl1157 buildtest-framework]$ _buildtest -V
-   buildtest version: 0.6.1
+   buildtest version: 0.6.2
