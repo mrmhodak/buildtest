@@ -30,7 +30,7 @@ A typical HPC facility supports hundreds of applications that is supported by th
 Building these software is a challnege and then figuring out how this software stack behaves
 due to system changes (OS release, kernel path, glibc, etc...).
 
-Application Testing is difficult. Commericial and open-source application typically provide
+Application Testing is difficult. Commercial and open-source application typically provide
 test scripts such as **make test** or **ctest** that can test the software after building
 (**make**) step. Unfortunately, these methods perform tests prior to installation so
 the ability to test software in production is not possible. One could try to change the
